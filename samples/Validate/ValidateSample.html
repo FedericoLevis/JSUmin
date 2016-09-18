@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
+  <title>JS Utility | JSU Validate Plugin | Federico Levis</title>
+  <meta charset="utf-8"/>
+  <meta name="description" content="JSU utility (JSU) - Validate Items with many constraints/options | Show Validate Errors in Red Items or Section, Popup, Gif | Add tooltip near items" />
+  <meta name="keywords" content="js, utility, JSU, validate, tooltip, popup, alarm, federico, levis" />
+  <!-- This sample -->
+  <script type="text/javascript" src="./ValidateSample.js" ></script>
+	
+  <!--  ***************************   JSU   ****************************** -->
+  <!-- OPTIONAL Settings ONLY for Development phase ----->
+  <script>
+     var JSU_GA_TRACKING_ID = 'UA-83225633-1'; // Define JSU_GA_TRACKING_ID to Enable GoogleAnalitycs and send a pageView statistic
+     var JSU_PATH_BASE = '../..'; // Path of JSU, relative to this HTML. To use Local File instead of Default defined in jsu-jq.js: JSU_PATH_BASE="https://rawgit.com/FedericoLevis/JSU/master"
+  </script>
+  <!--   STANDARD JSU-JQ LOAD -->
+  <link rel="stylesheet" href="https://rawgit.com/FedericoLevis/externalPlugin/master/jquery/jquery-ui.css">
+  <link rel="stylesheet" href="../../core/jsu.css" type="text/css">
+  <script  data-main="../../plugin/jsu-jq.js" src="../../core/require.js"></script>
+    
+	<!--  JSU with IEPopup -->
+<!--    
+	<link rel="stylesheet" href="../../core/jsu.css" type="text/css">
+	<script  data-main="../../plugin/jsu.js" src="../../core/require.js"></script>
+-->
+  <!-- JSUtility with JQPopup and jq (jquery, jquery-ui)  -->
+  <link rel="stylesheet" href="../../externalPlugin/jquery/jquery-ui.css">
+  <link rel="stylesheet" href="../../core/jsu.css" type="text/css">
+  <script  data-main="../../plugin/jsu-jq.js" src="../../core/require.js"></script>
+
+  
+   <!-- ONLY FOR About -->
+  <link rel="stylesheet" href="../about/about.css" type="text/css">
+  <script type="text/javascript" src="../about/about.js" ></script>
+   
+    
+</head>
+<body>
+<div class="jsuLoading" id="jsuLoading"></div> 
+
+<!--  TOOLBAR Table: GoogleAnalytics and download -  common for all the JSU HTML -->
+<table class="sampleToolbar" valign="top" width="100%" >
+  <tr >
+    <td class="tipl" valign="middle" width="50%">
+        <input type="button"  class="googleAnalList" id="googleAnalList"  onclick="jsuGoogleAnalList(event)"  onmouseover="jsuGoogleAnalListTip(event);" onmouseout="UnTip(event)"/> 
+    </td>
+    <td class="tipr" width="50%">
+     <table valign="middle" align="right">
+        <tr>
+            <td valign="middle"> <input type="button" class="downloadJsu" id="downloadJsu" onclick="downloadJsu(event);" onmouseover="downloadJsuTip(event);" onmouseout="UnTip(event)"  /> </td>
+            <td valign="middle"> <input type="button"  class="googleAnal jsuDownloadGA" id="googleAnalFree"  onclick="jsuGoogleAnalFree();"  onmouseover="jsuGoogleAnalFreeTip(event);" onmouseout="UnTip(event)"/> </td>
+            <td class="donate" valign="top">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="2HF4Z8X989Q4Y">
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
+                    onmouseover="donateTip(event);" onmouseout="UnTip(event)">
+                <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+                </form>
+           </td>
+        </tr>
+     </table>   
+    </td> 
+  </tr>
+</table>   
+
+<hr>
+<h1 class="jsuSample">JSU - JS Utility Plugin  - Validate Sample</h1>
+
+
+<table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
+    <tr class="tipTitleBig">
+      <th class="tipTitleBig" colspan="4">JSU<input type="button" class="tipFix" id="tipJSUTitle" onclick="aboutTipFixJSU(event);" />
+        <label class="aboutAuthor">by Federico Levis</label> <input type="button" class="tipFix" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
+        <label class="jsuHelp">Validate Documentation</label>  <input type="button" class="jsuHelp" onclick="jsuDocValidate();"  onmouseover="Tip(JSU_TIP_DOC_VALIDATE);" onmouseout="UnTip(event)" /> 
+        
+        <!--  ONLY for developers: displayed when URL PAR opt=1 -->     
+        <select id="selectShowCol" class="parOption" onchange="onchangeShowCol()">
+            <option value="1">Show SAMPLE</option>
+            <option value="2">Show DESCRIPTION</option>
+            <option value="ALL" selected>Show ALL</option>
+        </select> 
+      </th>
+    </tr>
+    <tr id="tr_sample_0" class="tipTitleBig2">
+      <td width="50%" id="col_0_1" class="tipc">SAMPLE
+        <!--  To show all sample or only ONE   -->
+        <select id="selectSample" class="selectSample"  onchange="onchange_sample()">
+            <option value="1">Show SAMPLE_1: DEFAULT Validate OPTIONS</option>
+            <option value="2">Show SAMPLE_2: OPTION to Show Section with ERRORS</option>
+            <option value="3">Show SAMPLE_3: OPTION to Show Popup with ERRORS</option>
+            <option value="ALL" selected>Show ALL SAMPLES</option>
+      
+      </td>
+      <td width="50%"  id="col_0_2" class="tipc">DESCRIPTION</td>
+    </tr>
+    <!--   ===================================== SAMPLE_1 ==============================================  -->
+    <tr  id="tr_sample_1">
+ 
+      <td class="sample"  id="col_1_1" valign="top" >
+        <label class="sampleTitle">SAMPLE_1 - DEFAULT Validate OPTIONS </label>
+             <table class="sampleNote"><tr>
+                <td class="sampleNote"><input class="sampleNote"></td>
+                <td>
+                 <ul class="sampleNote">
+                  <li>With default Validate Options, <b>Items are instantly validated</b> at onchange event</li>
+                  <li>Clicking <b>Submit</b> button, all the items will be validated</li>
+                  <li>You can Try other Validate Options with the OPTION Button</li>
+                </ul>
+                </td>
+             </tr>
+             </table>
+ 
+        <table class="tipNoBorder" width="100%">
+           <tr>
+              <td width="90%">           
+                <!--   ==================================     DIV with the SAMPLE_1 ITEMS to VALIDATE -->
+                <div>
+                    <!--  DIV for ERR Section -->
+                    <div id="errSect1" class="validateErrSect"></div>
+                     <table class="sampleNoBorder" >
+                      <tr> <td><label>Email</label></td>    <td ><input id="email" type="email" ></td> </tr>
+                      <tr> <td><label>Duration</label></td>      <td ><input id="duration" type="text" >  </td>           </tr>
+                      <tr> <td><label>Birthdate</label></td> <td><input id="birthdate" type="text" placeholder="yyyy-MM-dd"></td></tr> 
+                      <tr> <td></td><td align="left"> <input type="button" onclick="onclickSubmit1();" value="Submit"/>  </td> </tr>
+                    </table>
+                </div>
+              </td>
+              <!-- OPTION Button -->
+              <td class="sampleOpt" width="10%">
+                  <input  type="button"  class="jsuOpt" id="jsuSample1Opt"  onclick="sampleOpt(event,1);"  onmouseover="sampleOptTip(event,1);" onmouseout="UnTip(event)"/> 
+              </td>
+            </tr>
+         </table>  
+      </td>
+      <td class="sampleDesc"  id="col_1_2" valign="top">
+         <table >
+           <tr valign="top"><td> 
+     <label class="jsuAPI">JSU Validate API </label> supports all the constraints of <i>Open Source Component</i> <a class="tipLink" href="http://validatejs.org#validators" target="_self">Validate.js v. 0.10.0</a> <i>[MIT License] </i><BR/>               
+      The <b>constraints</b> are passed to <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/cValidate.js/cValidate.html" target="_blank">JSU API cValidate()</a>  in the <b>constraints</b> <i>JSON parameter</i>, 
+      that in addition supports also the optional <b>tip</b> field, used to setup a <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/Tip.html" target="_self">JSU Floating Tooltip</a> on the right of the item to validate.<BR/>
+               With JSU Validate API <b>only 2 calls are enought for BOTH constraints validation and UI Presentation</b> (errors, Tips,..): <ul>
+               <li>Setup everything (<b>Constraints Validation, Error Presentation, Tooltips</b>) with <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/cValidate.js/cValidate.html" target="_blank">new cValidate()</a>  </li>
+               <li>In a button, or where you prefer, you can call <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/cValidate.js/cValidate.html" target="_blank">cValidate.validateApply()</a> to <b>Validate all the section</b> </li>
+               </ul>
+               <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_1: 
+               <input type="button" class="tipFixJS" id="tipJSValidate1" onclick="sample1Js(event);" /><BR/><BR/>
+               <b>cValidate constraints</b> used in this Sample:<ul type="square">
+               <li>Email: <b>Mandatory email</b></li>
+               <li>Duration: <b>Mandatory</b> duration in <b>range [1..10]</b> - <b>Tooltip</b> present</li>
+               <li>Birthday: <b>Optional</b>, if present it must be a <b>date in format YYYY-MM-DD</b></li>
+               </ul>
+           </td></tr>
+         </table>
+      </td>     
+    </tr>
+    <!--   ===================================== SAMPLE_2 ==============================================  -->
+    <tr  id="tr_sample_2">
+ 
+      <td class="sample"  id="col_2_1" valign="top" >
+        <label class="sampleTitle">SAMPLE_2 - OPTION to Show Section with ERRORS</label>
+             <table class="sampleNote"><tr>
+                <td class="sampleNote"><input class="sampleNote"></td>
+                <td>
+                 <ul class="sampleNote">
+                  <li>Validate Options <b>bOnErrShowSect=true</b> is used to show a Section with all Validate Errors</li>
+                  <li>Click <b>Submit</b> button to see the Error Section</li>
+                  <li>You can Try other Validate Options with the OPTION Button</li>
+                </ul>
+                </td>
+             </tr>
+             </table>
+        <table class="tipNoBorder" width="100%">
+           <tr>
+              <td width="90%">           
+                <!--   ==================================     DIV with the SAMPLE_2 ITEMS to VALIDATE -->
+                <div>
+                  <!--  DIV for ERR Section -->
+                  <div id="errSect2" class="validateErrSect"></div>
+                   <table class="sampleNoBorder">
+                      <tr> <td><label>Username</label></td> <td><input id="username" type="text"> </td>  </tr>
+                      <tr> <td><label>Password</label></td><td><input id="password" type="password" ></td></tr> 
+                      <tr> <td><label>Confirm-Password</label></td><td><input id="confirm-password" type="password" ></td></tr> 
+                      <tr> <td></td><td align="left"> <input type="button" onclick="onclickSubmit2();" value="Submit"/>  </td> </tr>
+                      </tr>
+                    </table>
+                </div>
+              </td>
+              <!-- OPTION Button -->
+              <td class="sampleOpt" width="10%">
+                  <input  type="button"  class="jsuOpt" id="jsuSample2Opt"  onclick="sampleOpt(event,2);"  onmouseover="sampleOptTip(event,2);" onmouseout="UnTip(event)"/> 
+              </td>
+            </tr>
+         </table>  
+      </td>
+      <td class="sampleDesc"  id="col_2_2" valign="top">
+         <table >
+           <tr valign="top"><td>
+               <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_2: 
+               <input type="button" class="tipFixJS" id="tipJSValidate2" onclick="sample2Js(event);" /><BR/><BR/>
+               <b>cValidate Options of This SAMPLE:</b> <ul>
+                 <li>Validate all items with <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/cValidate.js/cValidate.html" target="_blank">cValidate.validateApply()</a> called when Submit Button is clicked </li>  
+                 <li><b>Error Section</b> with all the Validate errors displayed on the Top</label></li>
+                 <li><b>Alarm Gif</b> in the Items with Validation error</label></li>
+               </ul>  
+               <BR/><b>cValidate constraints</b> used in this Sample:<ul type="square">
+               <ul type="square">
+               <li>Username: <b>Mandatory</b> username with <b>constraints</b> explained in the <b>tip</b></li>
+               <li>Password: <b>Mandatory</b> password with <b>constraints</b> explained in the <b>tip</b></li>
+               <li>Confirm Password: <b>Mandatory, must be equal to password</b> </li>
+               </ul>
+           </td></tr>
+           
+         </table>
+      </td>
+    </tr>
+    <!--   ===================================== SAMPLE_3 ==============================================  -->
+    <tr  id="tr_sample_3">
+      <td class="sample"  id="col_3_1" valign="top" >
+        <label class="sampleTitle">SAMPLE_3 - OPTION to Show Popup with ERRORS </label>
+             <table class="sampleNote"><tr>
+                <td class="sampleNote"><input class="sampleNote"></td>
+                <td>
+                 <ul class="sampleNote">
+                  <li>Validate Options <b>bOnErrShowPopup=true</b> is used to show a Popup with all Validate Errors</li>
+                  <li>Click <b>Submit</b> button to see the Popup with Validate Errors</li>
+                  <li>You can Try other Validate Options with the OPTION Button</li>
+                </ul>
+                </td>
+             </tr>
+             </table>
+             
+        <table class="tipNoBorder" width="100%">
+           <tr>
+              <td width="90%">           
+                <!--   ==================================     DIV with the SAMPLE_3 ITEMS to VALIDATE -->
+                <div>
+                  <!--  DIV for ERR Section -->
+                  <div id="errSect3" class="validateErrSect"></div>
+                   <table class="sampleNoBorder">
+                      <tr> <td><label>Size</label></td> <td>
+                        <select id="size" >
+                          <option "XS">XS</option><option "S">S</option><option "M" selected >M</option><option "L">L</option><option "XL">XL</option>
+                        </select></td></tr> 
+                      <tr> <td><label>Country</label></td> <td><select id="country" ></select></td></tr> 
+                      <tr> <td><label>ZIP Code</label></td> <td><input id="zip" type="text"  placeholder="12345"> </td>  </tr>
+                      <tr> <td></td><td align="left"> <input type="button" onclick="onclickSubmit3();" value="Submit"/>  </td> </tr>
+                      </tr>
+                    </table>
+                </div>
+              </td>
+              <!-- OPTION Button -->
+              <td class="sampleOpt" width="10%">
+                  <input  type="button"  class="jsuOpt" id="jsuSample3Opt"  onclick="sampleOpt(event,3);"  onmouseover="sampleOptTip(event,3);" onmouseout="UnTip(event)"/> 
+              </td>
+            </tr>
+         </table>  
+      </td>
+      <td class="sampleDesc" id="col_3_2"  valign="top">
+         <table >
+           <tr valign="top"><td>
+               <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_3: 
+               <input type="button" class="tipFixJS" id="tipJSValidate3" onclick="sample3Js(event);" /><BR/><BR/>
+               <b>cValidate Options of This SAMPLE:</b> <ul>
+                 <li>Validate all items with <a class="tipLink" href="https://rawgit.com/FedericoLevis/JSUDoc/master/cValidate.js/cValidate.html" target="_blank">cValidate.validateApply()</a> called when Submit Button is clicked </li>  
+                 <li><b>Popup Error</b> with all the Validate errors</label></li>
+               </ul>
+               
+               <BR/><b>cValidate constraints</b> used in this Sample:<ul type="square">
+               <ul type="square">
+               <li>Size: <b>Mandatory</b>, the choice <b>exclude XS or S</b> - <b>tip</b> </li>
+               <li>Country: <b>Mandatory</b>, the choice must be <b>within Italy or Spain</b> - <b>tip</b> </li>
+               <li>ZIP CODE: Optional ZIP CODE with <b>5 digits</b> if present</li>
+               </ul>
+           </td></tr>
+           
+         </table>
+      </td>
+    </tr>
+</table>
+
+</body>
+</html>

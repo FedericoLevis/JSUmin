@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JS Utility | FREE JSU Download | Federico Levis</title>
+<meta charset="utf-8"/>
+<meta name="description" content="JSU utility (JSU) - FREE JSU Download" />
+<meta name="keywords" content="js, utility, JSU, download, free, tooltip, popup, sort, table, google, analytics, validate, loading, federico, levis" />
+
+
+  <!--  ***************************   JSU   ****************************** -->
+  <!-- OPTIONAL Settings ONLY for Development phase ----->
+  <script>
+     // var JSU_GA_TRACKING_ID = 'UA-83225633-1'; // DO NOT Enable standard GoogleAnalitycs for this page because we want to send pageview only when user click the button to download  
+     var JSU_PATH_BASE = '..'; // Path of JSU, relative to this HTML. To use Local File instead of Default defined in jsu.js: JSU_PATH_BASE="https://rawgit.com/FedericoLevis/JSU/master"
+  </script>
+  <!--   STANDARD JSU LOAD -->
+  <link rel="stylesheet" href="../core/jsu.css" type="text/css">
+  <script  data-main="../plugin/jsu.js" src="../core/require.js"></script>
+
+
+<!-- About -->
+<link rel="stylesheet" href="./about/about.css" type="text/css">
+<script type="text/javascript" src="./about/about.js" ></script>
+
+<!--  This sample  -->
+<link rel="stylesheet" href="./Sample.css" type="text/css">
+
+<script>
+  // only ga_create of this specific ID used to monitior the Click on Download Button
+  jsuGACreate('UA-83225633-2');
+</script> 
+
+</head>
+<body>
+
+<script>
+// var JSU_GA_TRACKING_ID = 'UA-83225633-2';  // GA Tracking ID of Download Page 
+var TIP_JSU_ZIP='<div style="width:250px;" align="left">Click to Download <b>JSU-master.zip</b><BR/>with <b>JSU FULL Development Version:</b>' +
+  '<ul>' +
+  '  <li>JS sources plenty of comments </li>' +
+  '  <li>JSU Samples plenty of comments</li>' +
+  '</ul> ' +
+  '</div>';
+
+var TIP_JSU_MIN_ZIP='<div style="width:250px;" align="left">Click to Download <b>JSUmin-master.zip</b><BR/> with <b>JSU Minified Version:</b>' +
+  '<ul>' +
+  '  <li>JS minified</li>' +
+  '  <li>JSU Samples minified</li>' +
+  '</ul> ' +
+  '</div>';
+</script>
+
+
+<div width="100%" align="center">
+<table class="det" BORDER="2" cellspacing="0" cellpadding="0" width="900px" style="border-spacing: 0px; border-collapse:separate;">
+   <tr>
+     <td>
+       <table class="detNoborder" cellspacing="0" cellpadding="0" style="border-spacing: 0px;border-collapse:separate;">   
+		    <tr>
+		      <td width="377px" align="center" class="jsuAbouTitle"> <img style="height:80px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> 
+		      <td width="250px" class="tipc tipTitle"><h1 class="jsuDownload">FREE JSU DOWNLOAD</h1></td>
+          <td align="center" class="jsuAboutTitle" width="375px" height="80px">  
+              <table class="tipNoBorder" width="100%">
+               <tr>
+                <td align="center" width="33%"><img class="jsuAboutJust" style="height:70px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutJust.gif"/></td>
+                <td align="center" width="34%"><img class="jsuAboutSimple" style="height:70px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutSimple.gif"/></td>
+                <td align="center" width="33%"><img class="jsuAboutUse" style="height:70px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutUse.gif"/></td>
+               </tr>
+              </table>
+          </td> 
+		    </tr>
+       </table>   
+     </td>
+   </tr>
+   <tr>
+      <td colspan="3" width="100%">
+<table lass="det" BORDER="2" cellspacing="0" cellpadding="4" width="100%">      
+  <tr class="detTitle" style="font-size:13px">
+	<td width="20%" class="detc">JSU Feature</td>
+	<td width="80%" class="detc">Description</td>
+  </tr>
+  <tr>
+    <td class="detc"><a class="tipLink" href="javascript:jsuDocTip();">Tooltip</a></td>
+    <td class="tipl"><b>Floating/Fixed Tips</b> with GIF, Video, Code Highlight (JS, CSS, Java, Shell,...)</td> 
+  </tr>
+  <tr>
+    <td class="detc"><a class="tipLink" href="javascript:jsuDocValidate();">Validate</a></td>
+    <td class="tipl">API for both <b>Item Validation </b> and also <b>Presentation of Validation Errors</b> (in Red Items, Section, Popup)</td> 
+  </tr>
+  <tr>
+    <td class="detc"><a class="tipLink" href="javascript:jsuDocLoading();">LoadingDiv</a></td>
+    <td class="tipl"><b>Loading Div</b> to display during Long Operation. Many Options: <b>Loading Gif, Title, Message, ElapsedSec...</b></td> 
+  </tr>
+  <tr>
+    <td class="detc"><a class="tipLink" href="javascript:jsuDocGA();">Google Analytics</a></td>
+    <td class="tipl">API to build in few minutes a <b>User Friendly List of Links to Google Analytics Pages</b> </td> 
+  </tr>
+  <tr>
+    <td class="detc"><a class="tipLink" href="javascript:jsuDocJSLog();">JSLog</a></td>
+    <td class="tipl"><b>Log from JS Code with various LogLevel</b> into an optional Window displayed adding an URL parameter.</b></td> 
+  </tr>
+  <tr>
+    <td class="detc"><a class="tipLink" href="javascript:jsuDocSort();">SortTable</a></td>
+    <td class="tipl"><b>Sort HTML Table</b> by clicking column header</td> 
+  </tr>
+  <tr>
+    <td class="detc"><a class="tipLink" href="javascript:jsuDocIEPopup();">IE Popup</a></td>
+    <td class="tipl"><b>Modal Blocking Popup only for IE</b>. Blocking Code, based on <i>IE ShowModalDialog</i></td>
+  </tr>
+  <tr>
+    <td class="detc"><a class="tipLink" href="javascript:jsuDocJQPopup();">JQ Popup</a></td>
+    <td class="tipl"><b>Modal Popup for whatever Browser</b>. Not Blocking code with callback function </td> 
+  </tr>
+  <tr>
+     <td colspan="2" class="tipl tipNote"> <BR/>
+		<table class="tipNote" align="left" width="100%">
+        <tr> 
+		  <td width="5%" align="right">
+             <input class="tipNote">
+          </td>
+		  <td width="70%" align="left">
+          JSU is a <b>FREE NO-Profit project</b>.<BR/>
+          If it was useful for your job, <b>You can Contribute to JSU Evolution with your Donation</b><BR/>
+          Thanks
+          </td> 
+          
+          <td width="25%" align="right">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="2HF4Z8X989Q4Y">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
+                    onmouseover="donateDownalodTip(event);" onmouseout="UnTip(event)">
+            <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+            </form>
+
+          </td>      
+          </tr> 
+        </table> 
+     </td>
+  </tr>
+  
+</table>
+</td>
+   <tr>
+     <td>
+       <table class="tipNoBorder" width="100%" BORDER="2" cellspacing="0" cellpadding="0"  style="border:0px;border-spacing:0px;">
+         <tr>
+		  <td width="50%" class="detc" style="padding-top:20px;padding-bottom:20px;background-color:#ECECEC;border:0px;border-spacing:0px;">
+		     <a href="javascript:downloadJsuExecute();" target="_blank"> 
+              <input type="button" class="downloadJsuExecute" onmouseover="Tip(TIP_JSU_ZIP);" onmouseout="UnTip(event)"  />   
+        	 </a> 
+		  </td>
+		  <td width="50%" class="detc" style="padding-top:20px;padding-bottom:20px;background-color:#ECECEC;border:0px;border-spacing:0px;">
+		     <a href="javascript:downloadJsuMinExecute();" target="_blank"> 
+              <input type="button" class="downloadJsuMinExecute" onmouseover="Tip(TIP_JSU_MIN_ZIP);" onmouseout="UnTip(event)"  />   
+        	 </a> 
+		  </td>
+         </tr>
+        </table>
+      </td>  
+    </tr>
+  </table>			 
+  <BR/>
+</div>
+
+
+<a id="href_hidden" target="_blank" href="" style="display:none">HIDDEN</a>
+
+
+</body>
+</html>

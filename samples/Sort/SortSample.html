@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
+  <title>JS Utility | JSU Sort Table Plugin | Federico Levis</title>
+  <meta charset="utf-8"/>
+  <meta name="description" content="JSU utility (JSU) - Sort HTML Table by clicking column header" />
+  <meta name="keywords" content="js, utility, JSU, sort, table, html, federico, levis" />
+	<!-- This sample -->
+		<script type="text/javascript" src="./SortSample.js" ></script>
+
+  <!--  ***************************   JSU   ****************************** -->
+  <!-- OPTIONAL Settings ONLY for Development phase ----->
+  <script>
+     var JSU_GA_TRACKING_ID = 'UA-83225633-1'; // Define JSU_GA_TRACKING_ID to Enable GoogleAnalitycs and send a pageView statistic
+     var JSU_PATH_BASE = '../..'; // Path of JSU, relative to this HTML. To use Local File instead of Default defined in jsu.js: JSU_PATH_BASE="https://rawgit.com/FedericoLevis/JSU/master"
+  </script>
+  <!--   STANDARD JSU LOAD -->
+  <link rel="stylesheet" href="../../core/jsu.css" type="text/css">
+  <script  data-main="../../plugin/jsu.js" src="../../core/require.js"></script>
+  
+  <!-- ONLY FOR About -->
+  <link rel="stylesheet" href="../about/about.css" type="text/css">
+  <script type="text/javascript" src="../about/about.js" ></script>
+
+  <!-- ONLY FOR About -->
+  <link rel="stylesheet" href="../about/about.css" type="text/css">
+  <script type="text/javascript" src="../about/about.js" ></script>
+
+
+</head>
+
+<body>
+
+<!--  TOOLBAR Table: GoogleAnalytics and download -  common for all the JSU HTML -->
+<table class="sampleToolbar" valign="top" width="100%" >
+  <tr >
+    <td class="tipl" valign="middle" width="50%">
+        <input type="button"  class="googleAnalList" id="googleAnalList"  onclick="jsuGoogleAnalList(event)"  onmouseover="jsuGoogleAnalListTip(event);" onmouseout="UnTip(event)"/> 
+    </td>
+    <td class="tipr" width="50%">
+     <table valign="middle" align="right">
+        <tr>
+            <td valign="middle"> <input type="button" class="downloadJsu" id="downloadJsu" onclick="downloadJsu(event);" onmouseover="downloadJsuTip(event);" onmouseout="UnTip(event)"  /> </td>
+            <td valign="middle"> <input type="button"  class="googleAnal jsuDownloadGA" id="googleAnalFree"  onclick="jsuGoogleAnalFree();"  onmouseover="jsuGoogleAnalFreeTip(event);" onmouseout="UnTip(event)"/> </td>
+            <td class="donate" valign="top">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="2HF4Z8X989Q4Y">
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
+                    onmouseover="donateTip(event);" onmouseout="UnTip(event)">
+                <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+                </form>
+           </td>
+        </tr>
+     </table>   
+    </td> 
+  </tr>
+</table>   
+
+<hr>
+<h1 class="jsuSample">JSU - JS Utility Plugin  - Sort Table Sample</h1>
+
+
+<table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
+    <tr class="tipTitleBig">
+      <th class="tipTitleBig" colspan="4">JSU<input type="button" class="tipFix" id="tipJSUTitle" onclick="aboutTipFixJSU(event);" />
+        <label class="aboutAuthor">by Federico Levis</label> <input type="button" class="tipFix" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
+        <label class="jsuHelp">SortTable Documentation</label>  <input type="button" class="jsuHelp" onclick="jsuDocSort();"  onmouseover="Tip(JSU_TIP_DOC_SORT);" onmouseout="UnTip(event)" /> 
+        
+        <!--  ONLY for developers: displayed when URL PAR opt=1 -->     
+        <select id="selectShowCol" class="parOption" onchange="onchangeShowCol()">
+            <option value="1">Show SAMPLE</option>
+            <option value="2">Show DESCRIPTION</option>
+            <option value="ALL" selected>Show ALL</option>
+        </select> 
+      </th>
+    </tr>
+    <tr class="tipTitleBig2" id="tr_sample_0" >
+      <td id="col_0_1" width="45%" class="tipc">SAMPLE
+        <!--  To show all sample or only ONE   -->
+        <select id="selectSample" class="selectSample"  onchange="onchange_sample()">
+            <option value="1">Show SAMPLE_1: Table with Standard Format</option>
+            <option value="2">Show SAMPLE_2: Table with a CUSTOM FORMAT</option>
+            <option value="3">Show SAMPLE_3: Other cSortTable API</option>
+            <option value="ALL" selected>Show ALL SAMPLES</option>
+      
+      </td>
+      <td id="col_0_2" width="55%" class="tipc">DESCRIPTION</td>
+    </tr>
+
+    <!--   ===================================== SAMPLE_1 ==============================================  -->
+    <tr  id="tr_sample_1">
+      <td class="sample"  id="col_1_1"  valign="top">
+        <label class="sampleTitle">SAMPLE_1 - Sort a Table with a Standard Format </label>
+ 	     	<table style="margin-left:10px;margin-top:5px">
+			          <tr>
+			            <td align="left">
+						          <b>SET Table Rows</b>: 
+						          <select id="selectTbl1NumRow" onchange="sortTbl1();">   
+							          <option value="10">10</option>  
+							          <option value="50">50</option>  
+							          <option value="100" selected>100</option>  
+							          <option value="500">500</option>  
+							          <option value="1000">1000</option> 
+				            	 </select>
+			           	</td>
+			        </tr>
+			        <tr>
+			          <td>
+			            <!--  div containing the table to sort  -->
+							    <div id="divTbl1" class="sampleSort det" style="width:500px;max-height:180px" >
+							       <div class="jsuLoading" style="height:180px"></div>
+							    </div>
+			          </td>
+			        </tr>
+		     </table>
+			 </td>    
+      <!--   tbl1 SAMPLE DESCRIPTION -->
+      <td class="sampleDesc"  id="col_1_2"  valign="top">
+         <table >
+           <tr valign="top"><td>
+               <label class="aboutSource">JS Souce Code</label> of Sample_1: <input type="button" class="tipFixJS" id="tipJSTbl1" onclick="TipFixCode( JS_CODE_SORT_TBL1,event);" /><BR/>
+               Table of this sample has <label class="sampleBrown">FEW PROPERTIES (in Brown below) different from <label class="jsuAPI">cSortTable</label> JSU default.</label><BR/>
+               Table Columns:
+               <ul type="square">
+               <li>Country: <b>STRING</b></li>
+               <li>Name: <b>STRING</b></li>
+               <li>Date: <b>DATETIME</b> with <label class="sampleBrown">Format=NNN dd, yyyy HH:mm:ss</label></li>
+               <li>Amount: <b>NUMBER</b> with Default Locale GroupSeparator and DecimalSeparator</li>
+               </ul>
+               Header and Footer:
+               <ul type="square">
+               <li>Table <b>Header has 1 rows</b> (That is JSU cSortTable default)</li> 
+               <li>Table <b>Footer has class=footer</b> (That is JSU cSortTable default)</li> 
+               </ul>
+           </td></tr>
+         </table>
+      </td>
+			          
+    </tr>
+    <!--   ===================================== TBL2 ==============================================  -->
+    <tr id="tr_sample_2">
+      <td class="sample"  id="col_2_1" valign="top">
+        <label class="sampleTitle">SAMPLE_2 - Sort a Table with a CUSTOM FORMAT </label>
+        <!--     TABLE tbl2 to SORT -->
+				<table class="sampleSort" style="margin-top:5px;margin-left:10px"  id="tbl2" border="1" width="500px">  
+				   <thead>    
+				    <tr class="header" style="background-color: #99CCFF; color:black;" >  
+				      <td style="text-align:center" colspan="5">Request List</td>  
+				    </tr>
+				    <tr class="header" style="background-color: #99FFFF; color:black;">      
+				        <th width="20px" class="header"></th>      
+				        <th width="80px" class="header">Request Number</th>      
+				        <th width="90px" class="header">Insert Date</th>      
+				        <th width="100px" class="header">State</th>      
+				        <th width="100px" class="header">Amount</th>      
+				  </thead>  
+				  <tbody>   
+				    <tr>       
+				      <td class="sampleSort" align="center" ></td>
+				      <td class="sampleSort" align="right">11</td>
+				      <td class="sampleSort" align="right">21/04/2016</td>
+				      <td class="sampleSort" align="right">INSERTED</td>
+				      <td class="sampleSort" align="right">1,000,200.00</td>
+				    </tr>
+				    <tr>       
+				      <td class="sampleSort" align="center"><img class="sampleSort" src="https://raw.githubusercontent.com/FedericoLevis/images/master/samples/delete.png"/></td>
+				      <td class="sampleSort" align="right">5</td>
+				      <td class="sampleSort" align="right">19/04/2016</td>
+				      <td class="sampleSort" align="right">DONE</td>
+				      <td class="sampleSort" align="right">1,725.50</td>
+				    </tr>
+				    <tr>       
+				      <td class="sampleSort" align="center"><img class="sampleSort" src="https://raw.githubusercontent.com/FedericoLevis/images/master/samples/delete.png"/></td>
+				      <td class="sampleSort" align="right">5</td>
+				      <td class="sampleSort" align="right">12/04/2016</td>
+				      <td class="sampleSort" align="right">DONE</td>
+				      <td class="sampleSort" align="right">5,728.23</td>
+				    </tr>
+				    <tr>       
+				       <td class="sampleSort" align="center"></td>
+				       <td class="sampleSort" align="right">4</td>
+				       <td class="sampleSort" align="right">19/04/2016</td>
+				      <td class="sampleSort" align="right">WORKING</td>
+				      <td class="sampleSort" align="right">1,725</td>
+				    </tr>
+				    <tr class="myFooter" >
+				      <td class="myFooter" align="right" colspan="4">Total</td>
+				      <td class="myFooter" align="right">1,009,378.73</td>
+				    </tr>
+				   </tbody> 
+				</table>
+      </td>
+    
+      <!--   tbl2 SAMPLE DESCRIPTION -->
+      <td class="sampleDesc" id="col_2_2"  valign="top">
+         <table >
+           <tr valign="top"><td>
+               <label class="aboutSource">JS Source Code</label> of SAMPLE_2: <input type="button" class="tipFixJS" id="tipJSTbl2" onclick="TipFixCode( JS_CODE_SORT_TBL2,event);" /><BR/>
+               Table has <label class="sampleBrown">MANY PROPERTIES (in Brown below) different from <label class="jsuAPI">cSortTable</label> JSU default.</label><BR/>
+               Table Columns:
+               <ul type="square">
+               <li>First Column: <label class="sampleBrown">NOT TO SORT</label></li>
+               <li>Request Number: <b>NUMBER</b></li>
+               <li>Insert Date: <b>DATETIME</b> with <label class="sampleBrown">Format=dd/MM/yyyy</label></li>
+               <li>State: <b>STRING</b></li>
+               <li>Amount: <b>NUMBER</b> with <label class="sampleBrown">GroupSeparator=,</label> and <label class="sampleBrown">DecimalSeparator=.</label></li>
+               </ul>
+               Header and Footer:
+               <ul type="square">
+               <li>Table <label class="sampleBrown">Header has 2 rows</label> (JSU default is <b>Header with 1 row</b>)</li> 
+               <li>Table <label class="sampleBrown">Footer has class=myFooter</label> (JSU default is <b>footer</b>)</li> 
+               </ul>
+           </td></tr>
+         </table>
+      </td>
+
+   
+    </tr>
+    
+    
+    <!--   ===================================== SORT API ==============================================  -->
+    <tr  id="tr_sample_3">
+
+      <td class="sample"  id="col_3_1" valign="top">
+        <label  class="sampleTitle">SAMPLE_3 - Other cSortTable API </label>
+      
+        <!--     SORT API -->
+        <table width="100%" height="180px" BORDER="0" style="marging-left:20px">
+            <tr>
+               <td>
+									<fieldset>
+  										<legend class="tipTitle"><b>cSortTable API: </b><label class="tipJSUApi">setSort</label></legend>
+											   <table>
+											      <tr >
+											      	<td style="padding-top:10px">
+																<input type="button" style="margin-left:5px" value="Set Sort Col" onclick="tblSetSort()"/>
+				                        <select id="selectSortCol"  style="margin-left:10px">  
+				                                <option value="Country">Country</option>
+																				<option value="Name">Name</option>
+																				<option value="Date">Date</option>
+																				<option value="Amount" selected>Amount</option>
+												         </select>
+				                         <select id="selectSortDir" style="padding-left:5px">  
+				                            <option value="-1">Ascending (A..Z)</option>
+																		<option value="1" selected>Descending (Z..A)</option>
+												         </select>
+                                 <label style="padding-left:10px;"> on Table of </label>
+                                 <select id="selectTblSetSort"  style="margin-left:5px"  onchange="onchangeSelectTblSetSort();">    
+				                                <option value="tbl1" selected>SAMPLE_1</option>
+				                                <option value="tbl2">SAMPLE_2</option>
+												         </select>
+											        </td>
+											      </tr>  
+									   		</table>
+ 									</fieldset>
+									<fieldset style="margin-top:20px;">
+  										<legend class="tipTitle"><b>cSortTable API: </b><label class="tipJSUApi">getSortCol</label> and <label class="tipJSUApi">getSortDir</label></legend>
+											   <table>
+											      <tr >
+											      	<td style="padding-top:10px">
+																  <input type="button" style="margin-left:10px" value="getSortCol" onclick="tblGetSortCol()" />				
+																  <input type="button" style="margin-left:20px" value="getSortDir" onclick="tblGetSortDir()"/>				
+                                 <label style="padding-left:20px;"> From Table of </label>
+                                 <select id="selectTblGetSort"  style="margin-left:5px">  
+				                                <option value="tbl1" selected>SAMPLE_1</option>
+				                                <option value="tbl2">SAMPLE_2</option>
+												         </select>
+											        </td>
+											      </tr>  
+									   </table>
+ 									</fieldset>
+               </td>
+             </tr>
+         </table>
+      </td>
+ 
+        <!--   tbl3 SAMPLE DESCRIPTION -->
+      <td class="sampleDesc" id="col_3_2"  valign="top">
+         <table >
+           <tr><td>
+               As explained in previous samples, to add Sort features to a Table we simply call <label class="tipJSUApi">new cSortTable</label>  <BR/>  
+               If required, there are also following <label class="jsuAPI">cSortTable</label> API:
+               <ul type="square">
+               <li><b>setSort</b> Set SortCol and SortDirection<input type="button" class="tipFixJS" id="tipJSSetSort" onclick="TipFixCode( JS_CODE_SET_SORT,event);" /></li>
+               <li><b>getSortCol</b> Get Sort Column<input type="button" class="tipFixJS" id="tipJSGetSortCol" onclick="TipFixCode( JS_CODE_GET_SORT_COL,event);" /></li>
+               <li><b>getSortDir</b> Get Sort Direction  <input type="button" class="tipFixJS" id="tipJSGetSortDir" onclick="TipFixCode( JS_CODE_GET_SORT_DIR,event);" /></li>
+               </ul>
+           </td></tr>
+         </table>
+      </td>       
+    </tr>  
+</table>
+
+<br>
+<!--  USED by jsuGoToURL()  -->
+<a id="href_hidden" target="_blank" href="" style="display:none"">HIDDEN</a>
+
+
+</body>
+</html>

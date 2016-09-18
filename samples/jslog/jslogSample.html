@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
+  <title>JS Utility | JSU JSLog Plugin | Federico Levis</title>
+  <meta charset="utf-8"/>
+  <meta name="description" content="JSU utility (JSU) - Log from JS Code into an optional Window: log Text, Object, JSON, DOM, Elapsed Time" />
+  <meta name="keywords" content="js, utility, JSU, log, console, json, object, elapsed, time, DOM, federico, levis" />
+  <!-- This sample -->
+  <script type="text/javascript" src="./jslogSample.js" ></script>
+
+  <!--  ***************************   JSU   ****************************** -->
+  <!-- OPTIONAL Settings ONLY for Development phase ----->
+  <script>
+     var JSU_GA_TRACKING_ID = 'UA-83225633-1'; // Define JSU_GA_TRACKING_ID to Enable GoogleAnalitycs and send a pageView statistic
+     var JSU_PATH_BASE = '../..'; // Path of JSU, relative to this HTML. To use Local File instead of Default defined in jsu.js: JSU_PATH_BASE="https://rawgit.com/FedericoLevis/JSU/master"
+  </script>
+  <!--   STANDARD JSU LOAD -->
+  <link rel="stylesheet" href="../../core/jsu.css" type="text/css">
+  <script  data-main="../../plugin/jsu.js" src="../../core/require.js"></script>
+    
+  <!-- ONLY FOR About -->
+  <link rel="stylesheet" href="../about/about.css" type="text/css">
+  <script type="text/javascript" src="../about/about.js" ></script>
+
+</head>
+<body>
+
+<!--  TOOLBAR Table: GoogleAnalytics and download -  common for all the JSU HTML -->
+<table class="sampleToolbar" valign="top" width="100%" >
+  <tr >
+    <td class="tipl" valign="middle" width="50%">
+        <input type="button"  class="googleAnalList" id="googleAnalList"  onclick="jsuGoogleAnalList(event)"  onmouseover="jsuGoogleAnalListTip(event);" onmouseout="UnTip(event)"/> 
+    </td>
+    <td class="tipr" width="50%">
+     <table valign="middle" align="right">
+        <tr>
+            <td valign="middle"> <input type="button" class="downloadJsu" id="downloadJsu" onclick="downloadJsu(event);" onmouseover="downloadJsuTip(event);" onmouseout="UnTip(event)"  /> </td>
+            <td valign="middle"> <input type="button"  class="googleAnal jsuDownloadGA" id="googleAnalFree"  onclick="jsuGoogleAnalFree();"  onmouseover="jsuGoogleAnalFreeTip(event);" onmouseout="UnTip(event)"/> </td>
+            <td class="donate" valign="top">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="2HF4Z8X989Q4Y">
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
+                    onmouseover="donateTip(event);" onmouseout="UnTip(event)">
+                <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+                </form>
+           </td>
+        </tr>
+     </table>   
+    </td> 
+  </tr>
+</table>   
+
+<hr>
+<h1 class="jsuSample">JSU - JS Utility Plugin  - JS Log Sample</h1>
+
+<table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
+    <tr class="tipTitleBig">
+      <th class="tipTitleBig" colspan="4">JSU<input type="button" class="tipFix" id="tipJSUTitle" onclick="aboutTipFixJSU(event);" />
+        <label class="aboutAuthor">by Federico Levis</label><input type="button" class="tipFix" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
+        <label class="jsuHelp">JSLog Documentation</label>  <input type="button" class="jsuHelp" onclick="jsuDocJSLog();"  onmouseover="Tip(JSU_TIP_DOC_JSLOG);" onmouseout="UnTip(event)" /> 
+        <!--  ONLY for developers: displayed when URL PAR opt=1 -->     
+        <select id="selectShowCol" class="parOption" onchange="onchangeShowCol()">
+            <option value="1">Show SAMPLE</option>
+            <option value="2">Show DESCRIPTION</option>
+            <option value="ALL" selected>Show ALL</option>
+        </select> 
+      </th>
+    </tr>
+    <tr class="tipTitleBig2">
+      <td width="65%" class="tipc">SAMPLE
+        <!--  To show all sample or only ONE   -->
+        <select id="selectSample" class="selectSample"  onchange="onchange_sample()">
+            <option value="1">Show Sample_1: Main JSLog APIs</option>
+            <option value="2">Show Sample_2: jslog as URL PARAMETER</option>
+            <option value="ALL" selected>Show ALL Samples</option>
+      
+      </td>
+      <td width="35%" class="tipc">DESCRIPTION</td>
+    </tr>
+
+    <!--   ===================================== SAMPLE_1 ==============================================  -->
+    <tr  id="tr_sample_1" style="vertical-align:top;">
+       <td class="sample"  id="col_1_1">
+         <label class="sampleTitle">SAMPLE_1 - Main JSLog APIs </label>
+         <table class="sampleNote"><tr>
+                <td class="sampleNote"><input class="sampleNote"></td>
+                <td>
+                 <ul class="sampleNote">
+                  <li>Click <b>Start jslog</b> with desired   
+				     <a class="tipLink "href="https://rawgit.com/FedericoLevis/JSUDoc/master/jslog.js/global.html#jslog" target="_blank">JS LogLevel</a>  and other  options</li>
+                  <li>Click the 4 Log Buttons to Test jslog APIs at different LogLevel and Test the utility buttons of the JSLog Window (<b>Show debug Fields</b>, Change LogLevel,..)</li>
+				 <ul>
+                </td>
+             </tr>
+         </table>
+				 <!--  debug hidden field, that can be displayed with jslog windows Buttons  -->
+				 <div class="debug" style="width:400px">
+				  <b>Debug Fields:</b>
+					         <table class="sampleNoBorder">
+									    <tr> 
+									      <td >Example of Debug Field 1:</td>   
+									      <td > <input value="1234567" ></td>
+									    </tr>     
+									    <tr> 
+									      <td >Example of Debug Field 2:</td>   
+									      <td > <input value="This was hidden" ></td>
+									    </tr>     
+									  </table>
+									<BR/>
+		        </div>    
+		 
+		 
+		 
+		 <ul>
+		    <li><input type="button" class="jsuButton" value="Start jslog" onclick="sample1_jslogStart()">
+				&nbsp;&nbsp;&nbsp;<b>Options:&nbsp;&nbsp;</b><a class="tipLink "href="https://rawgit.com/FedericoLevis/JSUDoc/master/jslog.js/global.html#jslog" target="_blank">JS LogLevel</a>:
+				&nbsp;<select id="logLev"></select>
+                &nbsp;&nbsp;<select id="logTime">
+						      <option value="0" selected>NO Time Log</option>
+						      <option value="1">Log Time</option>
+						   </select> 
+			</li>
+		    <li> <b>JSlog APIs sample: </b>
+				<table class="tipNoBorder" width="100%" cellspacing="4" >
+                    <tr>
+                      <td width="30%" align="left">
+                           <input type="button" class="jsuButton" style="width:230px" value="Log Message at JSLOG_INFO (1)" onclick="jslog1()">
+                      </td>
+                      <td width="35%" align="right">
+                        <input type="button" class="jsuButton" style="width:230px;" value="Log Obj at JSLOG_DEBUG (2)" onclick="jslog2()">
+                      </td>
+                      <td width="35%" align="left">
+								    <b>&nbsp;&nbsp;Options:&nbsp;&nbsp;</b>
+									  <select id="logCompact">
+							            <option value="0" selected>NO Compact</option>
+							            <option value="1">Compact</option>
+						            </select><BR/>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="left">
+                        <input type="button" class="jsuButton" style="width:230px" value="Log JSON at JSLOG_DEBUG (4)" onclick="jslog4()">                    
+                      </td>
+                      <td align="right">
+                        <input type="button" class="jsuButton" style="width:230px" value="Log DOM Obj at JSLOG_TEST (8)" onclick="jslog8()"> 
+                      </td>
+                      <td align="left">
+						<b>&nbsp;&nbsp;Options:&nbsp;&nbsp;</b>
+									<a class="tipLink "href="https://rawgit.com/FedericoLevis/JSUDoc/master/jslog.js/global.html#JSLOG_STYLE" target="_blank">logStyle</a>
+									  <select id="logStyle">
+							            <option value="NONE" selected>NONE</option>
+							            <option value="ONLY_MEANINGFUL">ONLY_MEANINGFUL</option>
+							            <option value="ALL">ALL</option>
+						            </select>
+                      </td>
+                    </tr>
+				</table>
+			</li>
+			
+		    <li><input type="button" class="jsuButton" value="Stop jslog" onclick="jslog_end()">
+			</li>
+		 </ul>
+					
+      </td>
+  
+      <!--    SAMPLE_1 DESCRIPTION -->
+      <td class="sampleDesc"  id="col_1_2" valign="top">
+        <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_1: 
+       
+         <table >
+           <tr><td>
+              <ul type="square">
+               <li><b>START jslog:</b> <input type="button" class="tipFixJS" id="sample1Code_start" onclick="sample1Code_start(event);" />
+			   </li><BR/>
+               <li><label style="margin-right:30px;"><b>JSlog API sample at various Level: </b></label>
+				<table class="tipNoBorder" width="100%" cellspacing="4" >
+                    <tr>
+                      <td width="50%" align="left">
+                         <b>Log Message at JSLOG_INFO (1)</b> <input type="button" class="tipFixJS" id="tipJS1Lev1" onclick="sample1Code_log1(event);" />
+                      </td>
+                      <td width="50%" align="right">
+                         <b>Log OBJECT at JSLOG_DEBUG (2):</b><input type="button" class="tipFixJS" id="tipJS1Lev2" onclick="sample1Code_log2(event);" />
+                      </td>
+                    </tr>
+                    <tr style="marging-top=20px;">
+                      <td width="50%" align="left">
+                        <b>Log JSON at JSLOG_DEBUG (4):</b><input type="button" class="tipFixJS" id="tipJS1Lev4" onclick="sample1Code_log4(event);" /> 
+                      </td>
+                      <td width="50%" align="right">
+                        <b>Log DOM Elements at JSLOG_TEST (8):</b><input type="button" class="tipFixJS" id="tipJS1Lev8" onclick="sample1Code_log8(event);" /></li>
+                      </td>
+                    </tr>
+				</table>
+				<BR/>
+	           </li>
+               <li> <label style="margin-left:30px;"><b>STOP JSlog:</b></label> <input type="button" class="tipFixJS" id="sample1Code_stop" onclick="sample1Code_stop(event);" /></li>
+			   
+             </ul>
+           </td></tr>
+         </table>
+      </td>   
+  
+    </tr>
+
+    <!--   ===================================== SAMPLE_2 ==============================================  -->
+    <tr  id="tr_sample_2">
+       <td class="sample" id="col_2_1" >
+         <label class="sampleTitle">SAMPLE_2 -  PASSING jslog as URL PARAMETER</label>
+         <table style="margin-top:5px" class="tipNoBorder" width="100%">
+							<tr> 
+								<td align="left">Following Links show the different behaviour when passing various jslog PARAMETER: <BR/> 
+								  <ul>
+                    <li><b>jslog=0</b> or do not pass jslog <i>NO Log</i>
+                       <a id="href_0" style="margin-left:20px"  target="_blank" href="https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/GoogleAnalSample.html?jslog=0">
+                        https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/GoogleAnalSample.html?jslog=0</a> 
+                    </li>
+								    <li><b>jslog=1</b> <i>JSLOG_INFO=1</i> 
+                      <a id="href_1" style="margin-left:20px" target="_blank" href="https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/GoogleAnalSample.html?jslog=1">
+                        https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/GoogleAnalSample.html?jslog=1</a> 
+								    </li>
+                    <li><b>jslog=3</b> <i>JSLOG_INFO=1 JSLOG_DEBUG=2</i> 
+                      <a id="href_3" style="margin-left:20px"   target="_blank" href="https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/GoogleAnalSample.html?jslog=3">
+                        https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/GoogleAnalSample.html?jslog=3</a> 
+                    </li>
+                    <li><b>jslog=16</b>  <i>JSLOG_JSU=16</i> 
+                      <a id="href_16" style="margin-left:20px" target="_blank" href="https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/GoogleAnalSample.html?jslog=16">
+                        https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/GoogleAnalSample.html?jslog=16</a> 
+                    </li>
+                    <li><b>jslog=31</b> <i>JSLOG_INFO=1 ... JSLOG_JSU=16</i>
+                      <a id="href_31" style="margin-left:20px" target="_blank" href="https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/GoogleAnalSample.html?jslog=31">
+                        https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/GoogleAnalSample.html?jslog=31</a> 
+                    </li>
+				</ul>
+                <BR/>
+                  <b>Jslog sample in WEB Application:</b>
+                    <input style="margin-left:10px" class="jsuButton" type="button" value="JSlog Video Sample" onclick="sample2_web(event)" /> 
+                </td>
+              </td>
+			</tr>
+       </table>
+  
+ 
+					
+      </td>
+  
+      <!--    SAMPLE_2 DESCRIPTION -->
+      <td class="sampleDesc"  id="col_2_2" valign="top">
+        <label style="color:blue;font-weight:bold">JS Source Code</label> of Sample_2: 
+         <input type="button"  class="tipFixJS" id="tipJS2Start" onclick="sample2Code_url(event);" />
+ 
+      </td>   
+  
+    </tr>
+
+
+
+</table>
+
+<br>
+
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
+  <title>Main Product - Google Analytics Sample</title>
+  <meta charset="utf-8"/>
+  <meta name="description" content="JSU Sample | access Google Analytics pages created with goo.gl url shortener"/>
+  <meta name="keywords" content="js, utility, google, analytics, goo.gl, shortener, JSU, tooltip, tip, statistics, federico, levis" />
+</head>
+
+<!-- GOOGLE_ANAL Modification  STEP 1)  LOAD JSU  -->
+<link rel="stylesheet" href="https://rawgit.com/FedericoLevis/JSU/master/core/jsu.css" type="text/css">
+<script data-main="https://rawgit.com/FedericoLevis/JSU/master/plugin/jsu.js" src="https://rawgit.com/FedericoLevis/JSU/master/core/require.js"></script>
+<!--  -->
+
+<body>
+
+
+<script>
+
+// -------------- GOOGLE_ANAL Modification  STEP 2) 
+// replace Long URL with the ShortUrl obtained with "https://goo.gl/"
+var JSU_URL_DOWNLOAD  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/JSUFreeDownload.html";
+var JSU_URL_TIP  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/Tooltip.html";
+var JSU_URL_LOADING  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/LoadingDiv.html";
+var JSU_URL_SORT  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/SortTable.html";
+var JSU_URL_JSLOG  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/jslog.html";
+/*
+
+var JSU_URL_DOWNLOAD  =	"https://goo.gl/HnNqnM";
+var JSU_URL_TIP  =	"https://goo.gl/AGKlpQ";
+var JSU_URL_LOADING  =	"https://goo.gl/0tIOIJ";
+var JSU_URL_SORT  =	"https://goo.gl/aKR7b2";
+var JSU_URL_JSLOG  =	"https://goo.gl/Iobg3a";
+*/
+
+
+
+/* GOOGLE_ANAL Modification  STEP 4a)  ADD JS procedure to show Show a Box with an <b>User Friendly List of URLs to Google Analytics */
+/*
+function showGAList(event){
+  var GA_CAT_DOWN = "JSU DOWNLOAD";
+  var GA_CAT_FEAT = "JSU FEATURE";
+
+  // show the TipFix with the List of Link
+  gaShortUrlList([
+       {shortUrl: JSU_URL_DOWNLOAD,cat:GA_CAT_DOWN,desc:'Download JSU.ZIP FREE'},
+       {shortUrl: JSU_URL_TIP, cat:GA_CAT_FEAT,desc:'JSU Tooltip'},
+       {shortUrl: JSU_URL_LOADING, cat:GA_CAT_FEAT,desc:'JSU LOadingDiv'},
+       {shortUrl: JSU_URL_SORT, cat:GA_CAT_FEAT,desc:'JSU TableSort'},
+       {shortUrl: JSU_URL_JSLOG, cat:GA_CAT_FEAT,desc:'JSU JSLog'}
+      ],
+      event,
+      { iWidth: 800 }
+    );
+}
+*/
+
+</script>
+
+
+
+<table width="100%" >
+  <tr >
+    <td class="tipl" width="50%">
+	   <!--  GOOGLE_ANAL Modification  STEP 4b)  ADD googleAnalList for the List of GoogleAnalytics URLs   -->
+	   <!--
+        <input type="button"  class="googleAnalList" id="googleAnalList"  onclick="showGAList(event);"  onmouseover="Tip('Show a Box with an <b>User Friendly List of URLs to Google Analytics</b>');" onmouseout="UnTip(event)"/> 
+		-->
+		
+    </td>
+    <td class="tipr" width="50%">
+     <table valign="bottom" align="right">
+        <tr>
+            <td valign="bottom"> <input type="button" 
+			  style="  width: 146px; height: 27px; cursor: pointer; background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/downloadFree.png) no-repeat right center;"
+			  onclick="window.location=JSU_URL_DOWNLOAD;"/> </td>
+	        <!--  GOOGLE_ANAL Modification  STEP 3)  ADD googleAnal Button to show the Page of LastMonth GoogleAnalytics of JSU_URL_DOWNLOAD   -->
+			<!--
+            <td valign="bottom"> <input type="button"  class="googleAnal" id="googleAnalFree"  onclick="gaShortUrlPage (JSU_URL_DOWNLOAD, {  bNewWindow: true,  szParTime: GA_PAR_TIME.month });"
+            		onmouseover="Tip('Show the Page of <b>Last Month GoogleAnalytics</b> of <i>FREE JSU Download Page</i>');" onmouseout="UnTip(event)"	/> </td>
+			-->		
+        </tr>
+      </table>  
+    </td>
+  </tr>
+</table>   
+
+
+
+<h1 align="center">JSU - Example of Main Product Page</h1>
+<BR/>
+<BR/>
+<a href="javascript:window.location=JSU_URL_TIP;" target="_self">Product Item 1: Tooltip</a><BR/>
+<a href="javascript:window.location=JSU_URL_LOADING" target="_self">Product Item 2: LoadingDiv</a><BR/>
+<a href="javascript:window.location=JSU_URL_SORT" target="_self">Product Item 3: TableSort</a><BR/>
+<a href="javascript:window.location=JSU_URL_JSLOG" target="_self">Product Item 4: JSLog</a><BR/>
+
+
+
+
+</body>
+</html>

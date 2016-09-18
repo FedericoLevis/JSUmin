@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
+  <title>JSU - VERY SIMPLE Tooltip Sample (by F. Levis)</title>
+    <!-- This sample -->
+  <script type="text/javascript" src="./TipSimple.js" ></script>
+        
+  <link rel="stylesheet" href="../../core/jsu.css" type="text/css">
+  <script type="text/javascript" src="../../core/tooltip.js" ></script>
+  <script type="text/javascript" src="../../core/jsuCmn.js" ></script>
+  <script type="text/javascript" src="../../locale/EN/locale-core.js" ></script>
+
+</head>
+<body>
+
+
+<table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="600px">
+    <tr class="tipTitleBig">
+      <th class="tipTitleBig" colspan="4">JSU
+        <label class="aboutAuthor">by Federico Levis</label>
+      </th>
+    </tr>
+    <tr class="tipTitleBg2">
+      <th class="tipTitleBig2" colspan="4">VERY SIMPLE Tooltip Sample - JSU <label class="jsuAPI">tooltip.js API</label>
+      </th>
+      
+      
+    </tr>
+
+    <!--   ===================================== SAMPLE_1 ==============================================  -->
+    <tr id="tr_sample_1" valign="top">
+      <td class="sample tipl" id="col_1_1">
+         <label class="sampleTitle">SAMPLE_1 - Floating Tip:</label><BR/><BR/>
+         <table class="sampleNoBorder">
+              <tr>
+                  <td width="33%">
+                     <input type="button" value="Text Tip"
+                        onmouseover="Tip('Simple Tooltip without HTML tags.\nNewline is working')"
+                         onmouseout="UnTip(event)" />
+                   </td>
+                  <td width="33%">
+                      <input type="text" value="HTML Tip" style="width:60px;"
+                        onmouseover="Tip(JSU_TIP_HTML);" onmouseout="UnTip(event)" /> 
+                  </td>
+                  <td width="34%">
+                  Tip image <b>jsuInfo</b>      
+                  <input type="button" class="jsuInfo"
+                        onmouseover="Tip(JSU_TIP_INFO)"    onmouseout="UnTip(event)"/>
+                  </td>                        
+              </tr>           
+          </table>
+      </td>
+    </tr>
+
+    <!--   ===================================== SAMPLE_2 ==============================================  -->
+    <tr id="tr_sample_2" valign="top">
+      <td class="sample tipl" id="col_2_1" >
+         <label class="sampleTitle">SAMPLE_2 - Fixed Tip</label><BR/><BR/>
+          input type="button" class="<label class="jsuAPI">tipFix</label>":  
+               <input type="button"  class="tipFix" id="tipFixSample_a"  onclick="sample2Fixed(event,1000,true)" />
+      </td>
+</table>
+
+<br>
+
+
+</body>
+</html>
