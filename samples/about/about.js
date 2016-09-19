@@ -58,6 +58,10 @@ var JSU_LONG_URL_GITHUB = "https://github.com/FedericoLevis/JSU";
 var JSU_LONG_URL_PLSQL = "https://github.com/FedericoLevis/PLSQLUtility";
 
 
+var JSU_LONG_URL_COGNOS_RS = "http://federicolevis.wix.com/cognos/report-studio"
+var JSU_LONG_URL_COGNOS_CEL = "http://federicolevis.wix.com/cognos/CEL"
+var JSU_LONG_URL_COGNOS_BLOG = "http://federicolevis.wix.com/cognos/single-post/2015/02/05/CEL-Dynamically-Sort-a-RS-List-by-Clicking-Column-Header";
+
 var JSU_IMG_PLAY_VIDEO = "https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png";
 
 var JSU_SORT_CODE_H = 220;
@@ -1639,7 +1643,13 @@ var ar_test = [{iCountReq:4,bPresent:true,szName:'DownloadFree',szURL:JSU_SHORT_
               {iCountReq:8,bPresent:false, szName:'DocGA',szURL:JSU_SHORT_URL_DOC_GA, iCountCur:0, iClickDone:0},
               {iCountReq:7,bPresent:false, szName:'DocLOADING',szURL:JSU_SHORT_URL_DOC_LOADING, iCountCur:0, iClickDone:0},
               {iCountReq:8,bPresent:false, szName:'DocSORT',szURL:JSU_SHORT_URL_DOC_SORT, iCountCur:0, iClickDone:0},
-              {iCountReq:7,bPresent:false, szName:'DocIEPOPUP',szURL:JSU_SHORT_URL_DOC_IEPOPUP, iCountCur:0, iClickDone:0},
+              {iCountReq:6,bPresent:false, szName:'DocIEPOPUP',szURL:JSU_SHORT_URL_DOC_IEPOPUP, iCountCur:0, iClickDone:0},
+              //--------------- COGNOS
+              {iCountReq:6,bPresent:true, szName:'Cognos',szURL:JSU_LONG_URL_COGNOS, iCountCur:0, iClickDone:0},
+              {iCountReq:6,bPresent:false, szName:'CognosRS',szURL:JSU_LONG_URL_COGNOS_RS, iCountCur:0, iClickDone:0},
+              {iCountReq:6,bPresent:false, szName:'CognosCEL',szURL:JSU_LONG_URL_COGNOS_CEL, iCountCur:0, iClickDone:0},
+              {iCountReq:6,bPresent:false, szName:'CognosBLOG',szURL:JSU_LONG_URL_COGNOS_BLOG, iCountCur:0, iClickDone:0}
+                            
               ];
 
 
