@@ -1626,7 +1626,7 @@ function testExecute(){
 
 // quelli con bPresent=false possono essere presenti randomicamente con 1 possilita su par.pos
 var ar_test = [{iCountReq:4,bPresent:true,szName:'DownloadFree',szURL:JSU_SHORT_URL_DOWNLOAD_FREE, iCountCur:0, iClickDone:0},
-              {iCountReq:7,bPresent:true,szName:'SampleAll',szURL:JSU_SHORT_URL_SAMPLE_ALL, iCountCur:0, iClickDone:0},
+              {iCountReq:7,bPresent:false,szName:'SampleAll',szURL:JSU_SHORT_URL_SAMPLE_ALL, iCountCur:0, iClickDone:0},
               {iCountReq:7,bPresent:false,szName:'SampleTIP',szURL:JSU_SHORT_URL_SAMPLE_TIP, iCountCur:0, iClickDone:0},
               {iCountReq:5,bPresent:false,szName:'SampleValidate',szURL:JSU_SHORT_URL_SAMPLE_VALIDATE, iCountCur:0, iClickDone:0},
               {iCountReq:5,bPresent:false,szName:'SampleJQPopup',szURL:JSU_SHORT_URL_SAMPLE_JQPOPUP, iCountCur:0, iClickDone:0},

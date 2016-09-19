@@ -33,13 +33,7 @@ This file may be freely distributed under the MIT license.   <BR/>
 */  
 
 if (typeof (JSU_PATH_BASE) == "undefined"){
-    // LOCAL_DEV_START --------
-	var JSU_PATH_BASE = '../..';  // Default: it is the setting for the JSU sample
-    // LOCAL_DEV_END --------
-    
-  /* GIT_INSTALLATION_START -------------
      var JSU_PATH_BASE="https://rawgit.com/FedericoLevis/JSU/master";
-     GIT_INSTALLATION_END ------------- */
 }
 
 //===================================== OPTIONAL CONFIGURATION: JS with Comment or Minified   
