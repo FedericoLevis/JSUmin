@@ -220,74 +220,61 @@ var JSU_HREF_HIDDEN = '<a id="' + JSU_HREF_HIDDEN_ID +'" target="_blank" style="
 //Not allowed:  Reference to other Sub-Tip
 //allowed:   Popup call
  
-var JSU_TIP_SECT2_FEAT =  '<table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="780">' +
+var JSU_TIP_SECT2_FEAT =  '<table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="520">' +
 '	  <tr class="tipTitle">' +
-'		  <th class="tipTitle" colspan="6">JSU FEATURES</th>' +
+'		  <th class="tipTitle" colspan="4">JSU FEATURES</th>' +
 '	  </tr>' +
 '	  <tr class="tipTitle2">' +
 '		  <td width="60px" class="tipc">Feature<BR/>Doc</td>' +
-'		  <td width="280px" class="tipc">Description</td>' +
-'		  <td width="70px" class="tipc">Browser Compatibility</td>' +
-'		  <td width="60px" class="tipc">Plugin Required</td>' +
-'		  <td width="60px" class="tipc">YouTube<BR/>Video Sample  ' +
-'     </td>' +
+'		  <td width="330px" class="tipc">Description</td>' +
+'		  <td width="60px" class="tipc">YouTube<BR/>Video Sample</td>' +
 '		  <td width="70px" class="tipc">Try an Example</td>' +
 '	  </tr>' +
 '	  <tr >' +
 '		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocTip(true);">Tooltip</a> </td>' +
-'		  <td class="tipl"><b>Floating/Fixed Tips</b> with GIF, Video, Code Highlight (JS, CSS, Java, Shell,...), <b>Google Analytics</b>     </td>' + 
-'     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
-'		  <td class="tipc tipGoodBold" rowspan="7">No Plugin is required</b></td>' +
+'		  <td class="tipl"><b>Floating/Fixed Tips</b> with GIF, Video, Code Highlight</td>' + 
 '     <td class="tipc"><a href="javascript:jsuVideoTip()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of Tooltip Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleTip();">Tooltip Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
 '		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocValidate(true);" target="_blank">Validate</a> </td>' +
-'     <td class="tipl">API for both <b>Item Validation </b> and also <b>Presentation of Validation Errors</b> (in Red Items, Section, Popup)</td>' + 
-'     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
+'     <td class="tipl">API for both <b>Item Validation </b> and also <b>Presentation</b> of Validation Errors</td>' + 
 '     <td class="tipc"><a href="javascript:jsuVideoValidate()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of Validate Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleValidate();">Validate Sample</a></td>' +
 '	  </tr>' +
 '	  <tr >' + 
 '		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocLoading(true);">Loading Div</a> </td>' +
-'		  <td class="tipl"><b>Loading Div</b> to display during Long Operation. Many Options: <b>Loading Gif, Title, Message, ElapsedSec...</b></td> ' +
-'     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
+'		  <td class="tipl"><b>Loading Div</b> to display during Long Operation.</td> ' +
 '     <td class="tipc"><a href="javascript:jsuVideoLoading()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of LoadingDiv Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleLoading();">LoadingDiv Sample</a></td>' +
 '	  </tr>' +
 '	  <tr >' +
 '		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocGA(true);">Google Analytics</a> </td>' +
-'		  <td class="tipl">API to build in few minutes a <b>User Friendly List of Links to Google Analytics Pages</b> </td>' + 
-'     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
+'		  <td class="tipl"><b>User Friendly List of Links to Google Analytics Pages</b> </td>' + 
 '     <td class="tipc"><a href="javascript:jsuVideoGA()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of Google Analytics Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleGA();">Google Analytics Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
 '		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocJSLog(true);" target="_blank">jslog</a> </td>' +
-'		      <td class="tipl"><b>Log from JS Code with various LogLevel</b> into an optional Window displayed adding an URL parameter. Log Text, Object, JSON, DOM elements, Elapsed Time... </b></td> ' + 
-'     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
+'		  <td class="tipl"><b>Log from JS Code with various LogLevel</b> into an optional Window</b></td> ' + 
 '     <td class="tipc"><a href="javascript:jsuVideoJSLog()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of JSLog Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleJSlog();">JSlog Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
 '		  <td class="tipc"><a class="tipLink" href="javascript:jsuSort(true);" target="_blank">Table Sort</a> </td>' +
 '		  <td class="tipl"><b>Sort HTML Table</b> by clicking column header</td>' + 
-'     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
 '     <td class="tipc"><a href="javascript:jsuVideoSort()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of SortTable Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleSort();">SortTable Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
 '		  <td class="tipc"><a class="tipLink" href="javascript:jsuIEPopup(true);" target="_blank">IE Popup</a> </td>' +
 '		  <td class="tipl"><b>Modal/Blocking Popup</b> designed ONLY for <b>IE</b><BR/><b> </td>' + 
-'     <td class="tipc"><input type="button"  class="browserIESmall" title="' + JSU_TITLE_BROWSER_IEPOPUP + '"/> </td> ' +
 '     <td class="tipc"><a href="javascript:jsuVideoIEPopup()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of IE Popup Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleIEPopup();">IE Popup Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
 '		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocJQPopup(true);" target="_blank">JQ Popup</a> </td>' +
 '		  <td class="tipl"><b>Modal Popup for whatever Browser</b><BR/><b>Not Blocking code</b> with callback function</td>' + 
-'     <td class="tipc"><input type="button"  class="browserAllSmall" title="' + JSU_TITLE_BROWSER_ALL + '"/> </td> ' +
-'		  <td class="tipc"><b>jquery, jquery-ui</b></td>' + 
 '     <td class="tipc"><a href="javascript:jsuVideoJQPopup()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of JQ Popup Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleJQPopup();">JQ Popup Sample</a></td>' +
 '	  </tr>' +
@@ -296,14 +283,15 @@ var JSU_TIP_SECT2_FEAT =  '<table class="tip" BORDER="2" cellspacing="0" cellpad
 //Message on the right of the Table of Features
 var JSU_TIP_SECT2_MSG = '<a class="tipLink" href="'+ JSU_SITE +'" target="_blank">JSU</a> is a <b>JavaScript Utility</b>  library very Lightweight, powerful and simply to use:' +
 '<ul type="square">' +
-'<li><b>Very Easy to Install and try</b>: download JSU ZIP and try jsu/samples/AllSamples.html (that points to all the other samples)</li>'+ 
-'<li><b>Very Simple to include in your project</b> with only one JS file: as you can see in the html of the JSU samples, the desired JSU modules are loaded with require.js using the proper plugin/jsu.js file </li>'+ 
-'<li><b>No dependencies for most of the JSU Features (Pure JS features):</b> only if you include JQ Popup, it is required jquery and jquery-ui</li>'+ 
+'<li><b>Easy to Install/Test</b>: download JSU ZIP and try samples in jsu/samples</li>'+ 
+'<li><b>Simple to include in your project</b> with only one JS load instruction: <b>requires.js loads plugin/jsu.js </b></li>'+ 
+'<li><b>No dependencies</b> for all the JSU Features (<b>Pure JS code</b>) with the only exception of JQ Popup (requiring jquuery, jquery-ui)</li>'+ 
 '<li><b>All modern browsers are supported</b>: IE9+, Firefox 3+, Chrome,... </li>'+ 
-'<li><b>Examples provided</b> for each JSU feature, with all the <b> relative JSU code calls explained in Fixed Tips</b></li>'+ 
-'<li><b>Very Powerful and Simple to use</b>: only 1 or 2 JS instructions to get all the power and flexibilty of the JSU feature </li>'+ 
-'<li><b>Localization support</b>: all the messages are isolated in local/<b><i>LAN</i></b>/locale-core.js</BR>So you can easily select the desired language simply including the proper locale file.<BR/>JSU provides <b>locale/<i>EN</i>/locale-core.js</b> (English=default) and <b>locale/<i>ITA</i>/locale-core.js</b> (Italian)</BR>You can also add and include your personal <b>local/<i>LAN</i>/locale-core.js</b>   </li>'+
-'<li><b>CSS support</b>: if required you can easily customize presentation modifying <b><i>jsu.css </i></b></li>' +
+'<li><b>Many Examples provided</b> for each JSU feature, with all the <b> relative JSU code calls explained in Fixed Tips</b></li>'+ 
+'<li><b>Feature Documentation and JSDoc API</b> for each feature</li>'+ 
+'<li><b>Very Powerful and Simple to use</b>: only 1 or maximum 2 JS instructions are required for each JSU features </li>'+ 
+'<li><b>Localization support</b>: all the messages are isolated in local/<b><i>LAN</i></b>/locale-core.js  </li>'+
+'<li><b>CSS support (jsu.css)</b> with powerful CSSDoc with graphical CSS preview</li>' +
 '</ul>';
 
 
@@ -346,20 +334,20 @@ var tmo_resize = null;
  */
 function showJsuPopupAbout(){
 
-	var szMsg = '<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="1250px">' +
-  '  <tr class="jsuAbout jsuAboutHea">' +
+	var szMsg = '<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="950px">' +
+  '  <tr width="350px" class="jsuAbout jsuAboutHea">' +
   '    <td><table class="tipNoBorder" width="100%"><tr>' +
-  '      <td  align="center" class="jsuAboutTitle"> <img class="jsuAboutTitle" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> ' +
-  '      <td ><table class="tipNoBorder" width="100%"><tr>' +
-  '        <td align="right" width="40%"><img class="jsuAboutJust" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutJust.gif"/></td>' +
-  '        <td align="center" width="20%"><img class="jsuAboutSimple" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutSimple.gif"/></td>' +
-  '        <td align="left" width="40%"><img class="jsuAboutUse" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutUse.gif"/></td>' +
+  '      <td width="250px" align="center" class="jsuAboutTitle"> <img class="jsuAboutTitle" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> ' +
+  '      <td width="350px"><table class="tipNoBorder" width="100%"><tr>' +
+  '        <td align="right" width="33%"><img class="jsuAboutJust" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutJust.gif"/></td>' +
+  '        <td align="center" width="33%"><img class="jsuAboutSimple" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutSimple.gif"/></td>' +
+  '        <td align="left" width="33%"><img class="jsuAboutUse" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutUse.gif"/></td>' +
   '      </tr></table></td> ' +
   '    </tr></table></td>' +
   '  </tr>' +
   '  <tr class="jsuAboutMsg"><td class="tipl" >' + JSU_TIP_SECT2 + '</td></tr> ' +
   '</table>';
-  Popup(POPUP_TYPE.INFO, szMsg,	{ bShowImg: false, szTitle: "JSU ABOUT", iWidth: 1300, position: {at: "top"}});
+  Popup(POPUP_TYPE.INFO, szMsg,	{ bShowImg: false, szTitle: "JSU ABOUT", iWidth: 9600, position: {at: "top"}});
 }
 
 
@@ -378,7 +366,7 @@ function aboutTipFixJSU(event,bShowAllSample){
 	// var szLocation = window.n + ""; 
 	// var bJSUDoc = szLocation.indexOf ("JSUDoc") >= 0;
 	
-	var szMsg = '<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="1300px">' +
+	var szMsg = '<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="900px">' +
   '  <tr class="jsuAbout jsuAboutHea">' +
   '    <td >' +
   '      <table class="jsuHeaderNoBorder"  width="100%">' +
@@ -411,7 +399,7 @@ function aboutTipFixJSU(event,bShowAllSample){
   '  <tr class="jsuAboutMsg"><td class="tipl">' + JSU_TIP_SECT2  + '</td></tr> ' +
   '  <tr class="jsuAbout jsuAboutFooter" >' +
   ' </tr></table>';
-	TipFix (szMsg,event,{iTipWidth:1300, szTitle: "JSU: JS Utility FEATURES"});	
+	TipFix (szMsg,event,{iTipWidth:960, szTitle: "JSU: JS Utility FEATURES"});	
 }
 
 /**

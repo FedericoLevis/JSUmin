@@ -219,7 +219,7 @@ h1.jsuDownload{  /* inside the Title */
   margin-bottom: 0px;
   font-family: Arial-Black ;
   font-weight: bold ;
-  font-size: 40px ;
+  font-size: 30px ;
 } 
 
 
@@ -269,12 +269,12 @@ table.jsuDocHeaderNoBorder,table.jsuDocFooterNoBorder { /* used for Header and F
 /* ================================   About ========================================================== */
 
 
-.jsuAboutTitle, .jsuAboutJust, .jsuAboutSimple, .jsuAboutUse {
-  height: 100px;
+.jsuAboutTitle{
+  height: 80px;
 }	
 
 .jsuAboutJust, .jsuAboutSimple, .jsuAboutUse {
-  height: 80px;
+  height: 65px;
 } 
 
 
