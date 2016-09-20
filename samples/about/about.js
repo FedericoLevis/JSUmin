@@ -22,7 +22,7 @@ var URL_PAR_OPT="opt"; // if 1 we see Optional Columns used to Show/Hide Column 
 // -- Test google, used only by AllSamples.html
 var URL_PAR_TEST="test"; // 0= No TEST  1.. Number of Automatic Test to execute with Test Google Button 
 var URL_PAR_PERIOD="period"; // Number of second sin randfom period  default = 60 
-var URL_PAR_POS="pos"; //Possibilitybfrequence 1=100% 2 =50% 
+var URL_PAR_POS="pos";  
 
 
 var JSU_TIP_PLAY_VIDEO='<div style="width:300px;">Click to Show a <b>YouTube Video of this JSU feature</b>';
@@ -326,7 +326,7 @@ var url_par = {
 	doc : undefined,
 	bTest: false, // TRUE if we are in Test mode
 	test : 1000,
-	pos: 4, // 1..  freq of possbility for the test with random presence 1=100% 2 = 50% ...
+	pos: 0, // 0 solo iPos=0  1= iPos=0 piu` quelli con 1 fatti random     2= iPos=0 piu` quelli con 1 e 2 fatti random
 	period: 40,
 	opt : undefined
 };
@@ -1080,12 +1080,10 @@ function getSampleUrl(szUrl,iId){
 
 
 function showSampleJQPopup(bNewWindow){
-	if (bNewWindow == undefined){  bNewWindow= false}
 	jsuGoToURL(JSU_SHORT_URL_SAMPLE_JQPOPUP,bNewWindow);
 }
 
-function showSampleJQPopup(bNewWindow){
-	if (bNewWindow == undefined){  bNewWindow= false}
+function showSampleValidate(bNewWindow){
 	jsuGoToURL(JSU_SHORT_URL_SAMPLE_VALIDATE,bNewWindow);
 }
 
@@ -1095,7 +1093,6 @@ function showSampleJQPopup(bNewWindow){
  * 
  */
 function showSampleLoading(bNewWindow){
-	if (bNewWindow == undefined){  bNewWindow= false}
 	jsuGoToURL(JSU_SHORT_URL_SAMPLE_LOADING,bNewWindow);
 }
 
@@ -1104,14 +1101,12 @@ function showSampleLoading(bNewWindow){
  * 
  */
 function showSampleSort(bNewWindow){
-	if (bNewWindow == undefined){  bNewWindow= false}
 	jsuGoToURL(JSU_SHORT_URL_SAMPLE_SORT,bNewWindow);
 }
 /*
  * 
  */
 function showSampleTip(bNewWindow){
-	if (bNewWindow == undefined){  bNewWindow= false}
 	jsuGoToURL(JSU_SHORT_URL_SAMPLE_TIP,bNewWindow);
 }
 
@@ -1119,7 +1114,6 @@ function showSampleTip(bNewWindow){
  * 
  */
 function showSampleGA(bNewWindow){
-	if (bNewWindow == undefined){  bNewWindow= false}
 	jsuGoToURL(JSU_SHORT_URL_SAMPLE_GA,bNewWindow);
 }
 
@@ -1127,7 +1121,6 @@ function showSampleGA(bNewWindow){
  * 
  */
 function showSampleJSlog(bNewWindow){
-	if (bNewWindow == undefined){  bNewWindow= false}
 	jsuGoToURL(JSU_SHORT_URL_SAMPLE_JSLOG,bNewWindow);
 }
 
@@ -1135,24 +1128,8 @@ function showSampleJSlog(bNewWindow){
  * 
  */
 function showSampleIEPopup(bNewWindow){
-	if (bNewWindow == undefined){  bNewWindow= false}
 	jsuGoToURL(JSU_SHORT_URL_SAMPLE_IEPOPUP,bNewWindow);
 }
-
-
-function showJSUVersion(bNewWindow){
-	if (bNewWindow == undefined){  bNewWindow= true}
-	jsuGoToURL(JSU_SHORT_URL_VERSION,bNewWindow);
-}
-
-/**
- * Go to the Page.par Free
- */
-function showJSUVersionParLimit(bNewWindow){
-	if (bNewWindow == undefined){  bNewWindow= true}
-	jsuGoToURL(JSU_LONG_URL_VERSION_PAR_LIMIT,bNewWindow);
-}
-
 
 
 
@@ -1463,11 +1440,12 @@ function fakeClick(event, anchorObj) {
  * WE use an Hidden a tag, for compatibility with MObile (instead of using window.open)
  * 
  * @param szUrl
- * @param [bNewWindow] {Boolean} default false
+ * @param [bNewWindow] {Boolean} default true
  * @returns
  */
 function jsuGoToURL(szUrl,bNewWindow){
 	var fn = "[about.js jsuGoToURL()] ";
+	if (bNewWindow == undefined){  bNewWindow= true;}
 	try{
 		jslog (JSLOG_JSU,fn + JSLOG_FUN_START);
 		UnTip(); // UnTip if required
@@ -1574,10 +1552,13 @@ function testStart(bFrame){
 	// random enable
   for (i=0; i < ar_test.length; i++){
   	var el = ar_test[i];
+  	el.bPresent = false;
 		// jslogObj (JSLOG_DEBUG,Fn + "PROVA el",el);
-  	if (!el.bPresent){
-  		var iRandom = Math.floor(Math.random() * url_par.pos);
-  		if (iRandom == 0){
+  	if (el.iPos == 0){
+			el.bPresent = true;
+  	}else if (el.iPos >=  par_url.pos){
+  		var iRandom = Math.floor(Math.random() * 2); // 0..2
+  		if (iRandom == 1){
   			el.bPresent = true;
   		}
   		jslog (JSLOG_DEBUG, Fn + "[" + i + "].bPresent=" + el.bPresent + " - url_par.pos="+ url_par.pos + "  iRandom=" + iRandom );
@@ -1628,27 +1609,28 @@ function testExecute(){
 	}		
 }
 
-// quelli con bPresent=false possono essere presenti randomicamente con 1 possilita su par.pos
-var ar_test = [{iCountReq:4,bPresent:true,szName:'DownloadFree',szURL:JSU_SHORT_URL_DOWNLOAD_FREE, iCountCur:0, iClickDone:0},
-              {iCountReq:7,bPresent:false,szName:'SampleAll',szURL:JSU_SHORT_URL_SAMPLE_ALL, iCountCur:0, iClickDone:0},
-              {iCountReq:7,bPresent:false,szName:'SampleTIP',szURL:JSU_SHORT_URL_SAMPLE_TIP, iCountCur:0, iClickDone:0},
-              {iCountReq:5,bPresent:false,szName:'SampleValidate',szURL:JSU_SHORT_URL_SAMPLE_VALIDATE, iCountCur:0, iClickDone:0},
-              {iCountReq:5,bPresent:false,szName:'SampleJQPopup',szURL:JSU_SHORT_URL_SAMPLE_JQPOPUP, iCountCur:0, iClickDone:0},
-              {iCountReq:8,bPresent:false, szName:'SampleGA',szURL:JSU_SHORT_URL_SAMPLE_GA, iCountCur:0, iClickDone:0},
-              {iCountReq:9,bPresent:false, szName:'SampleLOADING',szURL:JSU_SHORT_URL_SAMPLE_LOADING, iCountCur:0, iClickDone:0},
-              {iCountReq:6,bPresent:false, szName:'SampleSORT',szURL:JSU_SHORT_URL_SAMPLE_SORT, iCountCur:0, iClickDone:0},
-              {iCountReq:5,bPresent:false, szName:'DocIEPOPUP',szURL:JSU_SHORT_URL_DOC_IEPOPUP, iCountCur:0, iClickDone:0},
-              {iCountReq:8,bPresent:false, szName:'DocAll',szURL:JSU_SHORT_URL_DOC, iCountCur:0, iClickDone:0},
-              {iCountReq:7,bPresent:false, szName:'DocTIP',szURL:JSU_SHORT_URL_DOC_TIP, iCountCur:0, iClickDone:0},
-              {iCountReq:8,bPresent:false, szName:'DocGA',szURL:JSU_SHORT_URL_DOC_GA, iCountCur:0, iClickDone:0},
-              {iCountReq:7,bPresent:false, szName:'DocLOADING',szURL:JSU_SHORT_URL_DOC_LOADING, iCountCur:0, iClickDone:0},
-              {iCountReq:8,bPresent:false, szName:'DocSORT',szURL:JSU_SHORT_URL_DOC_SORT, iCountCur:0, iClickDone:0},
-              {iCountReq:6,bPresent:false, szName:'DocIEPOPUP',szURL:JSU_SHORT_URL_DOC_IEPOPUP, iCountCur:0, iClickDone:0},
-              //--------------- COGNOS
-              {iCountReq:6,bPresent:true, szName:'Cognos',szURL:JSU_LONG_URL_COGNOS, iCountCur:0, iClickDone:0},
-              {iCountReq:6,bPresent:false, szName:'CognosRS',szURL:JSU_LONG_URL_COGNOS_RS, iCountCur:0, iClickDone:0},
-              {iCountReq:6,bPresent:false, szName:'CognosCEL',szURL:JSU_LONG_URL_COGNOS_CEL, iCountCur:0, iClickDone:0},
-              {iCountReq:6,bPresent:false, szName:'CognosBLOG',szURL:JSU_LONG_URL_COGNOS_BLOG, iCountCur:0, iClickDone:0}
+// quelli con iPos=0 ci sono sempre. Poi vengono considerato solo quelli con iPos <= par_check, e fatto random
+var ar_test = [{iCountReq:4,iPos:0,szName:'DownloadFree',szURL:JSU_SHORT_URL_DOWNLOAD_FREE, iCountCur:0, iClickDone:0},
+               // --------------- random se iPos>=1
+              {iCountReq:7,iPos:1,szName:'SampleAll',szURL:JSU_SHORT_URL_SAMPLE_ALL, iCountCur:0, iClickDone:0},
+              {iCountReq:7,iPos:1,szName:'SampleTIP',szURL:JSU_SHORT_URL_SAMPLE_TIP, iCountCur:0, iClickDone:0},
+              {iCountReq:5,iPos:1,szName:'SampleValidate',szURL:JSU_SHORT_URL_SAMPLE_VALIDATE, iCountCur:0, iClickDone:0},
+              {iCountReq:5,iPos:1,szName:'SampleJQPopup',szURL:JSU_SHORT_URL_SAMPLE_JQPOPUP, iCountCur:0, iClickDone:0},
+              {iCountReq:8,iPos:1, szName:'SampleGA',szURL:JSU_SHORT_URL_SAMPLE_GA, iCountCur:0, iClickDone:0},
+              {iCountReq:9,iPos:1, szName:'SampleLOADING',szURL:JSU_SHORT_URL_SAMPLE_LOADING, iCountCur:0, iClickDone:0},
+              {iCountReq:6,iPos:1, szName:'SampleSORT',szURL:JSU_SHORT_URL_SAMPLE_SORT, iCountCur:0, iClickDone:0},
+              {iCountReq:5,iPos:1, szName:'DocIEPOPUP',szURL:JSU_SHORT_URL_DOC_IEPOPUP, iCountCur:0, iClickDone:0},
+              {iCountReq:8,iPos:1, szName:'DocAll',szURL:JSU_SHORT_URL_DOC, iCountCur:0, iClickDone:0},
+              {iCountReq:7,iPos:1, szName:'DocTIP',szURL:JSU_SHORT_URL_DOC_TIP, iCountCur:0, iClickDone:0},
+              {iCountReq:8,iPos:1, szName:'DocGA',szURL:JSU_SHORT_URL_DOC_GA, iCountCur:0, iClickDone:0},
+              {iCountReq:7,iPos:1, szName:'DocLOADING',szURL:JSU_SHORT_URL_DOC_LOADING, iCountCur:0, iClickDone:0},
+              {iCountReq:8,iPos:1, szName:'DocSORT',szURL:JSU_SHORT_URL_DOC_SORT, iCountCur:0, iClickDone:0},
+              {iCountReq:6,iPos:1, szName:'DocIEPOPUP',szURL:JSU_SHORT_URL_DOC_IEPOPUP, iCountCur:0, iClickDone:0},
+              // --------------- random se iPos>=2
+              {iCountReq:6,iPos:2, szName:'Cognos',szURL:JSU_LONG_URL_COGNOS, iCountCur:0, iClickDone:0},
+              {iCountReq:6,iPos:2, szName:'CognosRS',szURL:JSU_LONG_URL_COGNOS_RS, iCountCur:0, iClickDone:0},
+              {iCountReq:6,iPos:2, szName:'CognosCEL',szURL:JSU_LONG_URL_COGNOS_CEL, iCountCur:0, iClickDone:0},
+              {iCountReq:6,iPos:2, szName:'CognosBLOG',szURL:JSU_LONG_URL_COGNOS_BLOG, iCountCur:0, iClickDone:0}
                             
               ];
 
