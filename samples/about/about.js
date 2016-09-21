@@ -610,7 +610,7 @@ function downloadJsu(event){
 	/* Old
   jsuGoToURL(JSU_SHORT_URL_DOWNLOAD_FREE,false);
   */
-	var szTipFrame =	'<iframe width="850" height="560" src="' + JSU_SHORT_URL_DOWNLOAD_FREE + '" ></iframe>'; 
+	var szTipFrame =	'<iframe width="850" height="510" src="' + JSU_SHORT_URL_DOWNLOAD_FREE + '" ></iframe>'; 
 	TipFix(szTipFrame,event,{
 		 iTipWidth: 890,
 		 szTitle:'JSU Download',
@@ -697,8 +697,11 @@ function downloadJsuExecute(event){
 	ga('send', 'pageview');  // Send now the pageview click
 	
 	jslog (JSLOG_DEBUG,Fn + "URL = " + JSU_ZIP);
-	// jsuGoToURL(JSU_ZIP, true);
-	window.location = JSU_ZIP; 
+	if (isIE()){
+		jsuGoToURL(JSU_ZIP, true);
+	}else {
+		window.location = JSU_ZIP; 
+	}
 	jslog (JSLOG_DEBUG,Fn + JSLOG_FUN_END);
 		
 }
@@ -733,9 +736,12 @@ function downloadJsuMinExecute(event){
 	
 	jslog (JSLOG_DEBUG,Fn + "URL = " + JSU_MIN_ZIP);
 	// PROVA
-	// jsuGoToURL(JSU_MIN_ZIP, true);
 	// forse serve aprire un html apposito che si occupa solo di download: gli passo URL da downloadre come parametro, fa download ed esce con widnowClose()
-	window.location = JSU_MIN_ZIP; 
+	if (isIE()){
+		jsuGoToURL(JSU_MIN_ZIP, true);
+	}else {
+		window.location = JSU_MIN_ZIP; 
+	}
 	jslog (JSLOG_DEBUG,Fn + JSLOG_FUN_END);
 		
 }
