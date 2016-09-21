@@ -620,6 +620,9 @@ function downloadJsu(event){
 	});
 
 	UnTip();
+	var bIframe = isInIframe();
+	alert (bIframe);
+	
 	if (isIE() && isInIframe()){
 		// For Wix With Embed IFrame in IE because Download should not work in the other way
 	  jsuGoToURL(JSU_SHORT_URL_DOWNLOAD_FREE,true);
