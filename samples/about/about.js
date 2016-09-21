@@ -23,6 +23,9 @@ var URL_PAR_OPT="opt"; // if 1 we see Optional Columns used to Show/Hide Column 
 var URL_PAR_TEST="test"; // 0= No TEST  1.. Number of Automatic Test to execute with Test Google Button 
 var URL_PAR_PERIOD="period"; // Number of second sin randfom period  default = 60 
 var URL_PAR_POS="pos";  
+var URL_PAR_TYPE="type";
+var URL_PAR_TYPE_COGNOS="cognos";
+var URL_PAR_TYPE_JSU="jsu";
 
 
 var JSU_TIP_PLAY_VIDEO='<div style="width:300px;">Click to Show a <b>YouTube Video of this JSU feature</b>';
@@ -316,6 +319,7 @@ var url_par = {
 	test : 1000,
 	pos: 0, // 0 solo iPos=0  1= iPos=0 piu` quelli con 1 fatti random     2= iPos=0 piu` quelli con 1 e 2 fatti random
 	period: 40,
+	type: PAR_TYPE_JSU, // default
 	opt : undefined
 };
 
@@ -444,14 +448,6 @@ function aboutTipAuthor(event){
 }
 
 
-/**
- * Tip Info for SortTable
- */
-function aboutTipSortInfo(){
-	// DAFARE
-	var szTip ="<b>OK DAFARE</b>";
-	Tip (szTip);
-}
 
 
 
@@ -588,56 +584,6 @@ function onclickLoadingFeature(event, bShowTrySample){
 
 
 
-/* ========================================================================= 
- 						JS CODE SAMPLES DAFARE penso tutto da rimuovere
- ========================================================================= */
-
-var JS_CODE_SORT= "//SORT SAMPLE_1: One JSU call is enough to set the Sort: \n" +
-"// 1) create cSortTable related to Table with id='tbl1' \n" +
-"var cSortTbl1 = new cSortTable('tbl1', \n" +
-" //Describe how to Sort the Table Columns \n" +
-"  [{col: 'Country'},  // Default type: SORT_TYPE.DATETIME \n"+  	
-"   {col: 'Name'},  // Default type: SORT_TYPE.DATETIME \n"+
-"   // For Date we set the FMT_DATETIME_TBL1 = 'NNN dd, yyyy HH:mm:ss' \n"+
-"   {col:'Date', type: SORT_TYPE.DATETIME, fmt: FMT_DATETIME_TBL1},\n"+
-"   // For NUMBER  we use default separator (used creating the table)\n"+
-"   {col: 'Amount', type: SORT_TYPE.NUMBER} ],\n"+  		
-"   // OPTION \n" +
-"     {szSortCol:'Name',   // Current SortCol \n"+
-"     szSortDir:SORT_DIR.ASC, // Current SortDir 	\n"+
-"     bSortApply:false   // Table is already sorted\n"+
-"});\n" +
-"//Now you can Sort the Table by clicking on Colum Header ";
-
-var JS_CODE_VALIDATE= '// 1) Init cValidate with Item constraints, tips and options \n' +
-'function initValidate1(){ \n' + 
-'  cValidateObj1 = new cValidate ({  \n' + 
-'      // Mandatory email   \n' + 
-'      email: {  presence: true,  email: true }, \n' + 
-'      duration: { // Mandatory Integer in range [1..10] with a tip explaining it \n' + 
-'        presence: true, tip: TIP_DURATION,  \n' + 
-'        numericality: { onlyInteger: true,  greaterThanOrEqualTo: 1,  lessThanOrEqualTo: 10 } \n' + 
-'      }, \n' + 
-'      // Optional Birthday in date default format (YYYY-MM-DD) \n' + 
-'      birthdate: { date: {} } \n' + 
-'    }, \n' + 
-'    // OPTION: Id of div to use in case of bOnErrShowSect:true \n' + 
-'    {szErrSectId: "errSect1"} \n' + 
-'  ); \n' + 
-'  // Now the item Validation is managed by cValidate.js \n' + 
-'} \n' + 
-' \n' + 
-' //  2)  At Submit Button Click: we Validate all the items  \n' + 
-'function onclickSubmit1() { \n' + 
-'  var retCode = cValidateObj1.validateApply(); \n' + 
-'} \n';  
-
-var JS_CODE_TIP= '//Define in JS the HTML Tip Msg: \n'+
-'var JSU_TIP_HTML="<b>Simple Tooltip</b> with <i>HTML tags</i><br/>Tip (You can use <u>whatever HTML TAG</u>\');" \n\n' + 
-'//Add onmouseover="Tip()" and onmouseout="UnTip()" \n'+	
-'<input type="text" value="HTML Tip" style="width:60px;" \n' +
-'onmouseover="Tip(JSU_TIP_HTML);" onmouseout="UnTip(event)" />'; 
-
 
 
 function featureNotReady(){
@@ -645,14 +591,6 @@ function featureNotReady(){
 }
 
 
-/**
- * download All JSU
- * 
- */
-function downloadPay(event){
-	UnTip();
-	featureNotReady();
-}
 
 /**
  * The download BTN in all Pages, that Open the DownLOad Page
@@ -660,6 +598,7 @@ function downloadPay(event){
 function downloadJsu(event){
 	var fn = "[about.js downloadJsu()] ";
 	jslog(JSLOG_DEBUG, fn + JSLOG_FUN_START);
+	
 	ga('send', {
 	  hitType: 'event',
 	  eventCategory: 'DownloadFree',
@@ -671,9 +610,9 @@ function downloadJsu(event){
 	/* Old
   jsuGoToURL(JSU_SHORT_URL_DOWNLOAD_FREE,false);
   */
-	var szTipFrame =	'<iframe width="940" height="570" src="' + JSU_SHORT_URL_DOWNLOAD_FREE + '" ></iframe>'; 
+	var szTipFrame =	'<iframe width="850" height="510" src="' + JSU_SHORT_URL_DOWNLOAD_FREE + '" ></iframe>'; 
 	TipFix(szTipFrame,event,{
-		 iTipWidth: 970,
+		 iTipWidth: 890,
 		 szTitle:'JSU Download',
 		 objClass: {Down: 'downloadJsu', Up: 'downloadJsuUp'},  // we pass the Custom Classes used
 		 bCloseBtn : false
@@ -758,9 +697,19 @@ function downloadJsuExecute(event){
 	ga('send', 'pageview');  // Send now the pageview click
 	
 	jslog (JSLOG_DEBUG,Fn + "URL = " + JSU_ZIP);
-	jsuGoToURL(JSU_ZIP, true);
+	// jsuGoToURL(JSU_ZIP, true);
+	window.location = JSU_ZIP; 
 	jslog (JSLOG_DEBUG,Fn + JSLOG_FUN_END);
 		
+}
+
+
+/**
+ * 
+ */
+function windowClose() {
+  window.open('','_parent','');
+  window.close();
 }
 
 /**
@@ -783,7 +732,10 @@ function downloadJsuMinExecute(event){
 	ga('send', 'pageview');  // Send now the pageview click
 	
 	jslog (JSLOG_DEBUG,Fn + "URL = " + JSU_MIN_ZIP);
-	jsuGoToURL(JSU_MIN_ZIP, true);
+	// PROVA
+	// jsuGoToURL(JSU_MIN_ZIP, true);
+	// forse serve aprire un html apposito che si occupa solo di download: gli passo URL da downloadre come parametro, fa download ed esce con widnowClose()
+	window.location = JSU_MIN_ZIP; 
 	jslog (JSLOG_DEBUG,Fn + JSLOG_FUN_END);
 		
 }
@@ -1000,17 +952,20 @@ function initSampleCmn(){
 			
 		}
 		var iParPeriod = urlGetParVal (URL_PAR_PERIOD);
-		// jslog (JSLOG_JSU,fn + "URL:  " + URL_PAR_PERIOD + "=" + iParPeriod );
 		if (iParPeriod != undefined &&  iParPeriod != ""){
 			url_par.period = parseInt(iParPeriod);
+			jslog (JSLOG_DEBUG,fn + "URL:  " + URL_PAR_PERIOD + "=" + iParPeriod );
 		}
 		var iParPos = urlGetParVal (URL_PAR_POS);
-		// jslog (JSLOG_JSU,fn + "URL:  " + URL_PAR_POS + "=" + iParPos );
 		if (iParPos != undefined &&  iParPos != ""){
 			url_par.pos = parseInt(iParPos);
+			jslog (JSLOG_DEBUG,fn + "URL:  " + URL_PAR_POS + "=" + iParPos );
 		}
-		
-		
+		var iParType = urlGetParVal (URL_PAR_TYPE);
+		if (iParType != undefined &&  iParType != ""){
+			url_par.type = parseInt(iParType);
+			jslog (JSLOG_DEBUG,fn + "URL:  " + URL_PAR_TYPE + "=" + iParType );
+		}
 	}catch (e) {
 		jslog (JSLOG_ERR,fn + "Exception: " + e.message);
 	}
@@ -1544,7 +1499,7 @@ function testStart(bFrame){
 		// jslogObj (JSLOG_DEBUG,Fn + "PROVA el",el);
   	if (el.iPos == 0){
 			el.bPresent = true;
-  	}else if (el.iPos >=  url_par.pos){
+  	}else if (el.iPos <=  url_par.pos){
   		var iRandom = Math.floor(Math.random() * 2); // 0..2
   		if (iRandom == 1){
   			el.bPresent = true;
@@ -1563,7 +1518,9 @@ function testStart(bFrame){
 
 
 
-
+/**
+ * Execute the Test
+ */
 function testExecute(){
 	var Fn = "[about.js testExecute()] ";
 	// URL under TEST
@@ -1597,8 +1554,19 @@ function testExecute(){
 	}		
 }
 
+
+var ar_test_cognos = [// --------------- random se iPos>=1
+              {iCountReq:6,iPos:0, szName:'Cognos',szURL:JSU_LONG_URL_COGNOS, iCountCur:0, iClickDone:0},
+              {iCountReq:6,iPos:0, szName:'CognosRS',szURL:JSU_LONG_URL_COGNOS_RS, iCountCur:0, iClickDone:0},
+              {iCountReq:6,iPos:0, szName:'CognosCEL',szURL:JSU_LONG_URL_COGNOS_CEL, iCountCur:0, iClickDone:0},
+              {iCountReq:6,iPos:0, szName:'CognosBLOG',szURL:JSU_LONG_URL_COGNOS_BLOG, iCountCur:0, iClickDone:0}
+                            
+              ];
+
+
+
 // quelli con iPos=0 ci sono sempre. Poi vengono considerato solo quelli con iPos <= par_check, e fatto random
-var ar_test = [{iCountReq:4,iPos:0,szName:'DownloadFree',szURL:JSU_SHORT_URL_DOWNLOAD_FREE, iCountCur:0, iClickDone:0},
+var ar_test_jsu = [{iCountReq:4,iPos:0,szName:'DownloadFree',szURL:JSU_SHORT_URL_DOWNLOAD_FREE, iCountCur:0, iClickDone:0},
                // --------------- random se iPos>=1
               {iCountReq:7,iPos:1,szName:'SampleAll',szURL:JSU_SHORT_URL_SAMPLE_ALL, iCountCur:0, iClickDone:0},
               {iCountReq:7,iPos:1,szName:'SampleTIP',szURL:JSU_SHORT_URL_SAMPLE_TIP, iCountCur:0, iClickDone:0},
@@ -1613,13 +1581,7 @@ var ar_test = [{iCountReq:4,iPos:0,szName:'DownloadFree',szURL:JSU_SHORT_URL_DOW
               {iCountReq:8,iPos:1, szName:'DocGA',szURL:JSU_SHORT_URL_DOC_GA, iCountCur:0, iClickDone:0},
               {iCountReq:7,iPos:1, szName:'DocLOADING',szURL:JSU_SHORT_URL_DOC_LOADING, iCountCur:0, iClickDone:0},
               {iCountReq:8,iPos:1, szName:'DocSORT',szURL:JSU_SHORT_URL_DOC_SORT, iCountCur:0, iClickDone:0},
-              {iCountReq:6,iPos:1, szName:'DocIEPOPUP',szURL:JSU_SHORT_URL_DOC_IEPOPUP, iCountCur:0, iClickDone:0},
-              // --------------- random se iPos>=2
-              {iCountReq:6,iPos:2, szName:'Cognos',szURL:JSU_LONG_URL_COGNOS, iCountCur:0, iClickDone:0},
-              {iCountReq:6,iPos:2, szName:'CognosRS',szURL:JSU_LONG_URL_COGNOS_RS, iCountCur:0, iClickDone:0},
-              {iCountReq:6,iPos:2, szName:'CognosCEL',szURL:JSU_LONG_URL_COGNOS_CEL, iCountCur:0, iClickDone:0},
-              {iCountReq:6,iPos:2, szName:'CognosBLOG',szURL:JSU_LONG_URL_COGNOS_BLOG, iCountCur:0, iClickDone:0}
-                            
+              {iCountReq:6,iPos:1, szName:'DocIEPOPUP',szURL:JSU_SHORT_URL_DOC_IEPOPUP, iCountCur:0, iClickDone:0}
               ];
 
 
@@ -1627,9 +1589,13 @@ var ar_test = [{iCountReq:4,iPos:0,szName:'DownloadFree',szURL:JSU_SHORT_URL_DOW
  * 
  */
 function testGetNext(){
-
 	
 	var fn = "[about.js testGetNext()] ";
+	
+	var ar_test = ar_test_jsu;
+	if (url_par.type == URL_PAR_TYPE_COGNOS) {
+		ar_test = ar_test_cognos;
+	}
 	for (;;){
 		var i = Math.floor(Math.random() * ar_test.length); // get number in range [0..arTestUrl.length]
 		var el = ar_test[i];
