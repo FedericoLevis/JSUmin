@@ -591,6 +591,19 @@ function featureNotReady(){
 }
 
 
+function isInIframe(){
+	try {
+		if (window.frameElement){
+			return true;
+		}else{
+			return false;
+		}
+	}catch(e){
+		return false;
+	}
+	
+}
+
 
 /**
  * The download BTN in all Pages, that Open the DownLOad Page
@@ -607,18 +620,20 @@ function downloadJsu(event){
 	});
 
 	UnTip();
-	/* Old
-  jsuGoToURL(JSU_SHORT_URL_DOWNLOAD_FREE,false);
-  */
-	var iHeight = (isFirefox()) ? 560 : 510;
-	var szTipFrame =	'<iframe width="850" height="' + iHeight + '" src="' + JSU_SHORT_URL_DOWNLOAD_FREE + '" ></iframe>'; 
-	TipFix(szTipFrame,event,{
-		 iTipWidth: 890,
-		 szTitle:'JSU Download',
-		 objClass: {Down: 'downloadJsu', Up: 'downloadJsuUp'},  // we pass the Custom Classes used
-		 bCloseBtn : false
-	 }
-	);
+	if (isIE() && isInIframe()){
+		// For Wix With Embed IFrame in IE because Download should not work in the other way
+	  jsuGoToURL(JSU_SHORT_URL_DOWNLOAD_FREE,true);
+	}else {
+		var iHeight = (isFirefox()) ? 560 : 510;
+		var szTipFrame =	'<iframe width="850" height="' + iHeight + '" src="' + JSU_SHORT_URL_DOWNLOAD_FREE + '" ></iframe>'; 
+		TipFix(szTipFrame,event,{
+			 iTipWidth: 890,
+			 szTitle:'JSU Download',
+			 objClass: {Down: 'downloadJsu', Up: 'downloadJsuUp'},  // we pass the Custom Classes used
+			 bCloseBtn : false
+		 }
+		);
+	}	
 	jslog(JSLOG_DEBUG, fn + JSLOG_FUN_END);
 	
 }
