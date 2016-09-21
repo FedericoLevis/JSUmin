@@ -610,7 +610,7 @@ function downloadJsu(event){
 	/* Old
   jsuGoToURL(JSU_SHORT_URL_DOWNLOAD_FREE,false);
   */
-	var iHeight = (isFirefox()) ? 550 : 510;
+	var iHeight = (isFirefox()) ? 560 : 510;
 	var szTipFrame =	'<iframe width="850" height="' + iHeight + '" src="' + JSU_SHORT_URL_DOWNLOAD_FREE + '" ></iframe>'; 
 	TipFix(szTipFrame,event,{
 		 iTipWidth: 890,
@@ -1497,6 +1497,12 @@ function testStart(bFrame){
 	var Fn = "[about.js  showAllGoogleShort()] ";
 	var_test.iTestCur =0;
 	var_test.bFrame = bFrame;
+	
+	var ar_test = ar_test_jsu;
+	if (url_par.type == URL_PAR_TYPE_COGNOS) {
+		ar_test = ar_test_cognos;
+	}
+	
 	// random enable
   for (i=0; i < ar_test.length; i++){
   	var el = ar_test[i];
