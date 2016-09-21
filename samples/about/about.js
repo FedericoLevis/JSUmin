@@ -593,13 +593,9 @@ function featureNotReady(){
 
 function isInIframe(){
 	try {
-		if (window.frameElement){
-			return true;
-		}else{
-			return false;
-		}
+		return (window.self !== window.top);
 	}catch(e){
-		return false;
+		return true;
 	}
 	
 }
@@ -620,9 +616,6 @@ function downloadJsu(event){
 	});
 
 	UnTip();
-	var bIframe = isInIframe();
-	alert (bIframe);
-	
 	if (isIE() && isInIframe()){
 		// For Wix With Embed IFrame in IE because Download should not work in the other way
 	  jsuGoToURL(JSU_SHORT_URL_DOWNLOAD_FREE,true);
