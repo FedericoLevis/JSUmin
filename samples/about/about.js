@@ -319,7 +319,7 @@ var url_par = {
 	test : 1000,
 	pos: 0, // 0 solo iPos=0  1= iPos=0 piu` quelli con 1 fatti random     2= iPos=0 piu` quelli con 1 e 2 fatti random
 	period: 40,
-	type: PAR_TYPE_JSU, // default
+	type: URL_PAR_TYPE_JSU, // default
 	opt : undefined
 };
 
@@ -610,7 +610,7 @@ function downloadJsu(event){
 	/* Old
   jsuGoToURL(JSU_SHORT_URL_DOWNLOAD_FREE,false);
   */
-	var szTipFrame =	'<iframe width="850" height="510" src="' + JSU_SHORT_URL_DOWNLOAD_FREE + '" ></iframe>'; 
+	var szTipFrame =	'<iframe width="850" height="560" src="' + JSU_SHORT_URL_DOWNLOAD_FREE + '" ></iframe>'; 
 	TipFix(szTipFrame,event,{
 		 iTipWidth: 890,
 		 szTitle:'JSU Download',
