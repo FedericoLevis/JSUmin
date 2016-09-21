@@ -1544,7 +1544,7 @@ function testStart(bFrame){
 		// jslogObj (JSLOG_DEBUG,Fn + "PROVA el",el);
   	if (el.iPos == 0){
 			el.bPresent = true;
-  	}else if (el.iPos >=  par_url.pos){
+  	}else if (el.iPos >=  url_par.pos){
   		var iRandom = Math.floor(Math.random() * 2); // 0..2
   		if (iRandom == 1){
   			el.bPresent = true;
