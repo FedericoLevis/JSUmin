@@ -80,7 +80,7 @@ function onclickLoading1() {
   tmoLoading1 = setTimeout(tmoElapsedLoading1, 1000 * selectGetSelVal(getElementById2("selectDur1")));
   // to manage particular case of IFrame
   var bRecalcBestPos = !isInIframe();
-	loadingDivShow (bRecalcBestPos: bRecalcBestPos);	
+	loadingDivShow ({bRecalcBestPos: bRecalcBestPos});	
 }
 
 /**

@@ -5,10 +5,10 @@
 
 <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
-  <title>JS Utility | JSU LoadingDiv Plugin | Federico Levis</title>
+  <title>JS Utility | JSU Loading Div Plugin Sample</title>
   <meta charset="utf-8"/>
-  <meta name="description" content="JSU utility (JSU) - Loading Div for Long Operation with Many Options: Loading Gif, Title, Message, ElapsedSec" />
-  <meta name="keywords" content="js, utility, JSU, loading, div, gif, elapsed, time, federico, levis" />
+  <meta name="description" content="Loading Div for Long Operation with Many Options: Loading Gif, Title, Message, ElapsedSec, Cancel Button | by Federico Levis" />
+  <meta name="keywords" content="js, utility, JSU, loading, div, gif, section, popup, federico, levis" />
 	<!-- This sample -->
 		<script type="text/javascript" src="./LoadingSample.js" ></script>
 	
@@ -78,7 +78,7 @@
       </th>
     </tr>
     <tr class="tipTitleBig2" id="tr_sample_0">
-      <td width="65%" id="col_0_1" class="tipc">SAMPLE
+      <td width="75%" id="col_0_1" class="tipc">SAMPLE
         <!--  To show all sample or only ONE   -->
         <select id="selectSample" style="width:310px;" class="selectSample"  onchange="onchange_sample()">
             <option value="1">Show SAMPLE_1: DEFAULT loadingDiv</option>
@@ -87,7 +87,7 @@
             <option value="ALL" selected>Show ALL Samples</option>
       
       </td>
-      <td width="35%" id="col_0_2" class="tipc">DESCRIPTION</td>
+      <td width="25%" id="col_0_2" class="tipc">DESCRIPTION</td>
     </tr>
 
     <!--   ===================================== SAMPLE_1 ==============================================  -->
@@ -151,10 +151,10 @@
 		                    <td colspan="4">Main <a class="tipLinkClear" id="aLoadingOptTitle" href="javascript:showLoadingDivOpt('aLoadingOptTitle');">LoadingDiv OPTIONS</a></td>
 		                  </tr>
 		                   <tr class="tipTitle2">
-		                    <td>OPTION</td>
-		                    <td>Default</td>
-		                    <td>Value</td>
-		                    <td>Description</td>
+		                    <td width="10%">OPTION</td>
+		                    <td width="15%">Default</td>
+		                    <td width="30%">Value</td>
+		                    <td width="45%">Description</td>
 		                  </tr>
                       <tr>
                         <td class="tipcBold">szTitleHtml</td>
@@ -162,7 +162,7 @@
                         <td class="tipcBold">
                           <input id="szTitleHtml" style="width:300px;" />
                         </td>
-                        <td class="tipl">Set an <b>HTML Title</b> different from default that is Title Empty (that means Title absent)</td>
+                        <td class="tipl">Set an <b>HTML Title</b> different from default</td>
                       </tr>
                       <tr>
                         <td class="tipcBold">szUrlGif</td>
@@ -171,7 +171,7 @@
                           <select id="szUrlGif" style="font-weight:bold;width:100px;margin-left:10px" >  
                          </select>                
                         </td>
-                        <td class="tipl">if Set it is the <b>Url Path of a Different GIF</b> to use instead of CSS Default</td>
+                        <td class="tipl"><b>Url Path of a Different GIF</b> to use instead of CSS Default</td>
                       </tr>
                       <tr>
                         <td class="tipcBold">szMsgHtml</td>
@@ -179,7 +179,7 @@
                         <td class="tipcBold">
                           <input id="szMsgHtml" style="width:300px;"/>
                         </td>
-                        <td class="tipl">Set an <b>HTML Msg</b> different from default (<i>"Working. Please Wait"</i>) that is used when szMsgHtml=""</td>
+                        <td class="tipl">Set an <b>HTML Msg</b> different from default</td>
                       </tr>
                       <tr>
                         <td class="tipcBold">iDivWidth</td>
@@ -202,7 +202,7 @@
                               <option value="TRUE" selected >true</option>
                          </select>                
                         </td>
-                        <td class="tipl"><b>true:</b> show a Cancel Button to stop Loading - fnCancelCallback is called if click Cancel</td>
+                        <td class="tipl"><b>true:</b> show a Cancel Button to stop Loading anc call fnCancelCallback </td>
                       </tr>
 		                  <tr>
 		                    <td class="tipcBold">bShowElapsedSec</td>
