@@ -106,6 +106,7 @@ var JSU_LONG_URL_SAMPLE_VALIDATE =	"https://rawgit.com/FedericoLevis/JSU/master/
 
 
 // ------------------ JSU SITE
+var JSU_URL_SITE = "http://federicolevis.wixsite.com/jsutility";
 var JSU_URL_SITE_DOWNLOAD = "http://federicolevis.wixsite.com/jsutility/jsu-download";
 
 
@@ -383,8 +384,8 @@ function aboutTipFixJSU(event,bShowAllSample){
   '          <td  align="left" class="jsuAboutTitle" width="27%">' +
   '            <table class="tipNoBorder" width="100%">' +
   '		           <tr><td class="tipl jsuVersion">' + JSU_VERSION +  '</td></tr>' +
-  '		           <tr><td class="tipl"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC +'" target="_blank">JSU Feature documentation</a> </td></tr>' +
-  '		           <tr><td class="tipl"><a class="tipLink" href="'+ JSU_SHORT_URL_API +'" target="_blank">JSU API documentation</a> </td></tr>';
+  '		           <tr><td class="tipl"><a class="tipLink" href="'+ JSU_URL_SITE +'" target="_blank">JSU Web SITE</a> </td></tr>' +
+  '		           <tr><td class="tipl"><a class="tipLink" href="'+ JSU_SHORT_URL_DOC +'" target="_blank">JSU documentation</a> </td></tr>';
 	if (bShowAllSample){
 		szMsg = szMsg +	
 	   '		       <tr><td class="tipl"><a class="tipLink" href="'+ JSU_SHORT_URL_SAMPLE_ALL +'" target="_blank">JSU: All Samples</a> </td></tr>';
@@ -621,7 +622,8 @@ function downloadJsu(event){
 
 	UnTip();
 	if (isIE()){
-		jsuGoToURL(JSU_URL_SITE_DOWNLOAD,true);
+		// To Manage Wix
+		jsuGoToURL(JSU_URL_SITE_DOWNLOAD,false);
 	}else {
 		var iHeight = (isFirefox()) ? 560 : 510;
 		var szTipFrame =	'<iframe width="850" height="' + iHeight + '" src="' + JSU_SHORT_URL_DOWNLOAD_FREE + '" ></iframe>'; 
