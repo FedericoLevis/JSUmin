@@ -24,7 +24,7 @@ var URL_PAR_TEST="test"; // 0= No TEST  1.. Number of Automatic Test to execute 
 var URL_PAR_PERIOD="period"; // Number of second sin randfom period  default = 60 
 var URL_PAR_POS="pos";  
 var URL_PAR_TYPE="type";
-var URL_PAR_TYPE_COGNOS="cognos";
+var URL_PAR_TYPE_WIX="wix";
 var URL_PAR_TYPE_JSU="jsu";
 
 
@@ -103,6 +103,10 @@ var SHORT_URL_GOOGLE = true;  // Use Google Short URL
 var JSU_LONG_URL_SAMPLE_VALIDATE =	"https://rawgit.com/FedericoLevis/JSU/master/samples/Validate/ValidateSample.html";
 //var JSU_SHORT_URL_SAMPLE_LOADING  =	"https://rawgit.com/FedericoLevis/WORK/master/3/samples/Validate/ValidateSample.html";
 
+
+
+// ------------------ JSU SITE
+var JSU_URL_SITE_DOWNLOAD = "http://federicolevis.wixsite.com/jsutility/jsu-download";
 
 
 // ------------------
@@ -317,7 +321,7 @@ var url_par = {
 	doc : undefined,
 	bTest: false, // TRUE if we are in Test mode
 	test : 1000,
-	pos: 0, // 0 solo iPos=0  1= iPos=0 piu` quelli con 1 fatti random     2= iPos=0 piu` quelli con 1 e 2 fatti random
+	pos: 1, // 0 solo iPos=0  1= iPos=0 piu` quelli con 1 fatti random     2= iPos=0 piu` quelli con 1 e 2 fatti random
 	period: 40,
 	type: URL_PAR_TYPE_JSU, // default
 	opt : undefined
@@ -602,7 +606,7 @@ function isInIframe(){
 
 
 /**
- * The download BTN in all Pages, that Open the DownLOad Page
+ * The download BTN in all Pages, that Open the DownLoad Page
  */
 function downloadJsu(event){
 	var fn = "[about.js downloadJsu()] ";
@@ -616,9 +620,8 @@ function downloadJsu(event){
 	});
 
 	UnTip();
-	if (isIE() && isInIframe()){
-		// For Wix With Embed IFrame in IE because Download should not work in the other way
-	  jsuGoToURL(JSU_SHORT_URL_DOWNLOAD_FREE,true);
+	if (isIE()){
+		jsuGoToURL(JSU_URL_SITE_DOWNLOAD,true);
 	}else {
 		var iHeight = (isFirefox()) ? 560 : 510;
 		var szTipFrame =	'<iframe width="850" height="' + iHeight + '" src="' + JSU_SHORT_URL_DOWNLOAD_FREE + '" ></iframe>'; 
@@ -977,14 +980,16 @@ function initSampleCmn(){
 			url_par.pos = parseInt(iParPos);
 			jslog (JSLOG_DEBUG,fn + "URL:  " + URL_PAR_POS + "=" + iParPos );
 		}
-		var iParType = urlGetParVal (URL_PAR_TYPE);
-		if (iParType != undefined &&  iParType != ""){
-			url_par.type = parseInt(iParType);
-			jslog (JSLOG_DEBUG,fn + "URL:  " + URL_PAR_TYPE + "=" + iParType );
+		var szParType = urlGetParVal (URL_PAR_TYPE);
+		if (szParType != undefined &&  szParType != ""){
+			url_par.type = szParType;
+			jslog (JSLOG_DEBUG,fn + "URL:  " + URL_PAR_TYPE + "=" + szParType );
 		}
+		jslogObj (JSLOG_DEBUG,"url_par",url_par);
 	}catch (e) {
 		jslog (JSLOG_ERR,fn + "Exception: " + e.message);
 	}
+	
 	jslog (JSLOG_JSU,fn + JSLOG_FUN_END);
 	
 	//
@@ -1039,10 +1044,12 @@ function getSampleUrl(szUrl,iId){
 
 
 function showSampleJQPopup(bNewWindow){
+	if (typeof(bNewWindow) == "undefined"){bNewWindow = isInIframe();}
 	jsuGoToURL(JSU_SHORT_URL_SAMPLE_JQPOPUP,bNewWindow);
 }
 
 function showSampleValidate(bNewWindow){
+	if (typeof(bNewWindow) == "undefined"){bNewWindow = isInIframe();}
 	jsuGoToURL(JSU_SHORT_URL_SAMPLE_VALIDATE,bNewWindow);
 }
 
@@ -1052,6 +1059,7 @@ function showSampleValidate(bNewWindow){
  * 
  */
 function showSampleLoading(bNewWindow){
+	if (typeof(bNewWindow) == "undefined"){bNewWindow = isInIframe();}
 	jsuGoToURL(JSU_SHORT_URL_SAMPLE_LOADING,bNewWindow);
 }
 
@@ -1060,12 +1068,14 @@ function showSampleLoading(bNewWindow){
  * 
  */
 function showSampleSort(bNewWindow){
+	if (typeof(bNewWindow) == "undefined"){bNewWindow = isInIframe();}
 	jsuGoToURL(JSU_SHORT_URL_SAMPLE_SORT,bNewWindow);
 }
 /*
  * 
  */
 function showSampleTip(bNewWindow){
+	if (typeof(bNewWindow) == "undefined"){bNewWindow = isInIframe();}
 	jsuGoToURL(JSU_SHORT_URL_SAMPLE_TIP,bNewWindow);
 }
 
@@ -1073,6 +1083,7 @@ function showSampleTip(bNewWindow){
  * 
  */
 function showSampleGA(bNewWindow){
+	if (typeof(bNewWindow) == "undefined"){bNewWindow = isInIframe();}
 	jsuGoToURL(JSU_SHORT_URL_SAMPLE_GA,bNewWindow);
 }
 
@@ -1080,6 +1091,7 @@ function showSampleGA(bNewWindow){
  * 
  */
 function showSampleJSlog(bNewWindow){
+	if (typeof(bNewWindow) == "undefined"){bNewWindow = isInIframe();}
 	jsuGoToURL(JSU_SHORT_URL_SAMPLE_JSLOG,bNewWindow);
 }
 
@@ -1087,6 +1099,7 @@ function showSampleJSlog(bNewWindow){
  * 
  */
 function showSampleIEPopup(bNewWindow){
+	if (typeof(bNewWindow) == "undefined"){bNewWindow = isInIframe();}
 	jsuGoToURL(JSU_SHORT_URL_SAMPLE_IEPOPUP,bNewWindow);
 }
 
@@ -1404,7 +1417,7 @@ function fakeClick(event, anchorObj) {
  */
 function jsuGoToURL(szUrl,bNewWindow){
 	var fn = "[about.js jsuGoToURL()] ";
-	if (bNewWindow == undefined){  bNewWindow= true;}
+	if (bNewWindow == undefined){  bNewWindow= false;}
 	try{
 		jslog (JSLOG_JSU,fn + JSLOG_FUN_START);
 		UnTip(); // UnTip if required
@@ -1510,8 +1523,8 @@ function testStart(bFrame){
 	var_test.bFrame = bFrame;
 	
 	var ar_test = ar_test_jsu;
-	if (url_par.type == URL_PAR_TYPE_COGNOS) {
-		ar_test = ar_test_cognos;
+	if (url_par.type == URL_PAR_TYPE_WIX) {
+		ar_test = ar_test_wix;
 	}
 	
 	// random enable
@@ -1522,7 +1535,7 @@ function testStart(bFrame){
   	if (el.iPos == 0){
 			el.bPresent = true;
   	}else if (el.iPos <=  url_par.pos){
-  		var iRandom = Math.floor(Math.random() * 2); // 0..2
+  		var iRandom = 1+ Math.floor(Math.random() * url_par.pos); //  1..url_par.pos
   		if (iRandom == 1){
   			el.bPresent = true;
   		}
@@ -1577,7 +1590,7 @@ function testExecute(){
 }
 
 
-var ar_test_cognos = [// --------------- random se iPos>=1
+var ar_test_wix = [// --------------- random se iPos>=1
               {iCountReq:6,iPos:0, szName:'Cognos',szURL:JSU_LONG_URL_COGNOS, iCountCur:0, iClickDone:0},
               {iCountReq:6,iPos:0, szName:'CognosRS',szURL:JSU_LONG_URL_COGNOS_RS, iCountCur:0, iClickDone:0},
               {iCountReq:6,iPos:0, szName:'CognosCEL',szURL:JSU_LONG_URL_COGNOS_CEL, iCountCur:0, iClickDone:0},
@@ -1615,8 +1628,8 @@ function testGetNext(){
 	var fn = "[about.js testGetNext()] ";
 	
 	var ar_test = ar_test_jsu;
-	if (url_par.type == URL_PAR_TYPE_COGNOS) {
-		ar_test = ar_test_cognos;
+	if (url_par.type == URL_PAR_TYPE_WIX) {
+		ar_test = ar_test_wix;
 	}
 	for (;;){
 		var i = Math.floor(Math.random() * ar_test.length); // get number in range [0..arTestUrl.length]
