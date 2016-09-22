@@ -28,7 +28,7 @@ function jsu_loaded(){
 	
 
 	elementShow(getElementById2('noteBrowserNotIE'),!isIE());
-	if (!isIE()){
+	if (!isIE() && !isInFrame()){
 		loadingDivShow ( {
 			szTitleHtml: "IE POPUP Browser Compatibility: ONLY IE",  
 	    szMsgHtml: szMsg,  
