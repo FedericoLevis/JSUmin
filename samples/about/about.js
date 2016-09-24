@@ -108,8 +108,6 @@ var JSU_LONG_URL_SAMPLE_VALIDATE =	"https://rawgit.com/FedericoLevis/JSU/master/
 // ------------------ JSU SITE
 var JSU_URL_SITE = "http://federicolevis.wixsite.com/jsutility";
 var JSU_URL_SITE_DOWNLOAD = "http://federicolevis.wixsite.com/jsutility/jsu-download";
-
-
 // ------------------
 var JSU_LONG_URL_DOWNLOAD_PAGE_FREE  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/JSUFreeDownload.html";
 
@@ -197,8 +195,6 @@ var JSU_SHORT_URL_DOC_JQPOPUP  =	"https://goo.gl/hZ5U6M";
 //
 var JSU_SHORT_URL_VERSION  =	"https://goo.gl/1eIYNm";
 var JSU_LONG_URL_VERSION  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/JSUversion.html";
-var JSU_LONG_URL_VERSION_PAR_LIMIT  =	JSU_LONG_URL_VERSION + "#par1.2.1";
-
 
 // used as Link for JSU in about
 var JSU_SITE = JSU_SHORT_URL_DOC; 
@@ -599,7 +595,7 @@ function featureNotReady(){
 
 
 /**
- * The download BTN in all Pages, that Open the DownLoad Page
+ * The download BTN in all Pages, that Open the DownLOad Page
  */
 function downloadJsu(event){
 	var fn = "[about.js downloadJsu()] ";
@@ -954,7 +950,7 @@ function initSampleCmn(){
 			// Create test Div and add it di body
 			jslog (JSLOG_INFO,fn + "ADD divTest");
 			var szDivTest = '<div id="test">' + 
-			'  <input  type="button" value="TEST Frame" onclick="testStart(true);" /> <BR/>' + 
+			'  <input  type="button" value="TEST Frame" onclick="testStart(true);" />&nbsp; &nbsp; &nbsp; <input  type="button" value="TEST Window" onclick="testStart(false);" /> <BR/>' +  
 			'  Tmo(sec):<input  with="50px" id="testTmo" readonly value="0" />&nbsp; Test <input  with="50px" id="testDone" readonly value="0" />&nbsp;URL:<input  with="50px" id="testURL" readonly width="100px" />' + 
 			'  <div id="divTestOut">' + 
 			'  </div>' + 
@@ -1216,7 +1212,7 @@ function jsuGoogleAnalList (event){
     	bShortUrl: false,   // ShortUrl not visible at startup
     	bLongUrl: false,  // LongUrl not visible at startup
     	szTitle:'JSU Google Analitycs',
-    	iWidth: 1100  // Tip Width   
+    	iWidth: 800  // Tip Width   
     });
   
   

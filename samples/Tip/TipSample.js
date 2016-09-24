@@ -129,7 +129,7 @@ function sample3a(event){
 	"//Now you can Sort the Table by clicking on Colum Header ";
 	
 	TipFixCode(szCode,event,
-			 {iTipWidth:1000,
+			 {iTipWidth:650,
 		    iTipMaxHeight:600,
 		    szTitle:'Tip Sample with JS Code Hightlighted'
 		   });	
@@ -160,10 +160,11 @@ function sample3b(event){
 	'		for(int i = 2; i <= n; i++)   \n'+
 	'			result *= i;   \n'+
 	'		return result;   \n'+
-	'	} ';
+	'	} \n' +
+	'}';
 
 	TipFixCode(szCode,event,
-			 {iTipWidth:1000,
+			 {iTipWidth:500,
 		    iTipMaxHeight:600,
 		    szTitle:'Tip Sample with Java Code Hightlighted'
 		   });	
@@ -175,7 +176,7 @@ function sample3b(event){
  * @param event
  */
 function sample3c(event){
-	sampleCode2a(event);
+	sampleCode1d(event,"SAMPLE_3 Multicode Sections Highlighted");
 }
 
 
@@ -264,7 +265,7 @@ function sampleCode1b(event){
 	    ],
       event,
       { szTitle:"SAMPLE_1 HTML Tip - Source Code" , 
-		    iTipWidth: 1000
+		    iTipWidth: 900
 		  } );	
 }
 
@@ -273,7 +274,8 @@ function sampleCode1c(event){
 	'//In this example we built an HTML Table that will be shown in the Floating Tip: \'  \n' +
 	'var JSU_TIP_README=\'<table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="550">\'  \n' +
   '  \'  <tr class="tipTitleBig"><td>README EXAMPLE</td></tr>\'  \n' +
-  '  \'  <tr><td class="tipl">With <b>JSU tooltip</b> you can easily implement whatever <b>Floating HTML Tip</b><BR/>\'  \n' +
+  '  \'  <tr><td class="tipl">With <b>JSU tooltip</b> you can easily implement whatever  \n' +
+  '  \'     <b>Floating HTML Tip</b><BR/>\'  \n' +
   '  \'     <BR/>Moreover you can also use many other advanced <b>JSU tooltip Features</b>:\'  \n' +
   '  \'     <ul>\'  \n' +
   '  \'       <li><b>Fixed</b> Tips, with URL, GIF, ...</li>\'  \n' +
@@ -288,7 +290,8 @@ function sampleCode1c(event){
 	'// - onmouseover="Tip(HtmlMsg);" \n'+	
 	'// - onmouseout="UnTip();" \n'+	
 	'// In This example: \n'+
-	'<img type="image" src="https://rawgit.com/FedericoLevis/JSU/master/images/Readme.jpg" align="bottom" \n'+	
+	'<img type="image" src="https://rawgit.com/FedericoLevis/JSU/master/images/Readme.jpg" \n'+	
+	'  align="bottom" \n'+	
   '  onmouseover="Tip(JSU_TIP_README);"  \n'+	
   '  onmouseout="UnTip(event);"/>'; 
 
@@ -300,13 +303,22 @@ function sampleCode1c(event){
       event,
       { 
 		    szTitle:"SAMPLE_1 README Tip - Source Code",
-		    iTipWidth: 1000 
+		    iTipWidth: 800 
 		   } 
 	 );	
 	
 }
 
-function sampleCode1d(event){
+/**
+ * @param event
+ * @param [szTitle] {String}
+ * 
+ */
+function sampleCode1d(event, szTitle){
+	
+	if (typeof(szTitle) == "undefined"){
+		szTitle = "SAMPLE_1 HTML Tip - Tip image jsuInfo";
+	}
 	var JS_CODE_1d_JS = '//Define in JS a constant (e.g. JSU_TIP_HTML) with the MsgHtml to show in the Tip:  \n'+
 	'var JSU_TIP_HTML="...";'; 
 	
@@ -340,8 +352,8 @@ function sampleCode1d(event){
 	    ],
       event,
       {
- 		   szTitle:"SAMPLE_4 HTML Tip - Tip image jsuInfo",
- 		   iTipWidth: 1000 
+ 		   szTitle: szTitle,
+ 		   iTipWidth: 750 
  		   } 
  	 );	
 
@@ -349,7 +361,7 @@ function sampleCode1d(event){
 
 
 
-function sampleCode2a(event){
+function sampleCode3aTmp(event){
 	var JS_CODE_2a_JS = '//Define in JS a constant (e.g. TIP_FIXED_SAMPLE) with the MsgHtml (with GIF, button, link,...) to show in the Tip.  \n'+
 	'var TIP_FIXED_SAMPLE=...; ';
 	
@@ -397,13 +409,34 @@ function sampleCode2a(event){
       event,
       { 
 		    szTitle:"SAMPLE_2 FixedTip with GIF, button, link - Source Code" ,
-		    iTipWidth: 1100} );	
+		    iTipWidth: 800} );	
 }
 
 
+
+function sampleCode2a(event){
+	var szTip = '//Define the MsgHtml with whatever HTML Tag (also JPG, GIF, ...) \n'+
+	  'var szTip = \'... \'; \n'+
+	  '// Show The FixedTip \n'+
+    'TipFix(szTip,event,{ \n'+
+	  '  szTitle:\'Fixed Tip Sample\', \n'+
+	  '  iTipMaxHeight:800 \n'+
+    ' });';
+	// 2 Codes, both contain HTML TAGS
+	TipFixCode(szTip, event,
+      { 
+		    szTitle:"SAMPLE_2 Fixed Tip - Source Code",
+		    iTipWidth: 400 
+		  } 
+	 );	
+}  
+
+
 function sampleCode2b1(event){
-	var JS_CODE_2b1_JS = '//Define in JS a constant (e.g. JSU_TIP_VIDEO) with the MsgHtml containing the <iframe> format  to show the Video in the Tip.  \n'+
-	'// For example to show a youtube video use the relative "embed src" available in its YouTube page: \n'+
+	var JS_CODE_2b1_JS = '/* Define in JS a constant (e.g. JSU_TIP_VIDEO) with the MsgHtml containing the <iframe> format \n'+  
+	' to show the Video in the Tip.  \n'+
+	' For example to show a youtube video use the relative "embed src" available in its YouTube page: \n'+
+	'*/ \n' +
 	'var JSU_TIP_VIDEO=	\'<iframe width="600" height="500" \n'+
 	'     src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" \n'+
 	'     frameborder="0" allowfullscreen></iframe>\';'; 
@@ -434,10 +467,12 @@ function sampleCode2b1(event){
 			'} \n' + 
 			' \n' + 
 			'input.tipFixArrow { /* specific image for tipFixArrow */  \n' + 
-			'    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixArrow.png) no-repeat right center; \n' + 
+			'    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixArrow.png)\n' +
+			'                no-repeat right center; \n' + 
 			'} \n' + 
 			'input.tipFixArrowUp { /* specific image for tipFixArrowUp */ \n' + 
-			'    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixArrowUp.png) no-repeat right center; \n' + 
+			'    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixArrowUp.png)\n' +
+			'                no-repeat right center; \n' + 
 			'}'; 
 				
   // 3 Codes: First 2 with HTML TAGS, CSS without HTML tags
@@ -448,15 +483,19 @@ function sampleCode2b1(event){
 	    ],
       event,
       {
-		   szTitle:"SAMPLE_2 FixedTip with VIDEO - Source Code" ,
-		   iTipWidth: 1100
-		  } );	
+		   szTitle:"FixedTip with VIDEO - Source Code" ,
+		   iTipWidth: 800,
+		   iTipMaxHeight: 600
+		  } 
+	);	
 }
 
 
 function sampleCode2b2(event){
-	var JS_CODE_2b2_JS = '//Define in JS the function the call TipFix, passing the MsgHtml with the <iframe> with the Page URL  \n'+
-	'// For example to show the JSU download page https://goo.gl/HnNqnM : \n'+
+	var JS_CODE_2b2_JS = '/*Define in JS the function the call TipFix, \n'+
+	'  passing the MsgHtml with the <iframe> with the Page URL  \n'+
+	'  For example to show the JSU download page https://goo.gl/HnNqnM \n'+
+	' */ \n ' +
 	'function sample2b2(event){ \n' +
 	' var szTipFrame =	\'<iframe width="1030" height="600" src="https://goo.gl/HnNqnM" ></iframe>\';  \n' +
 	'	TipFix(szTipFrame,event,{ \n' +
@@ -466,10 +505,11 @@ function sampleCode2b2(event){
 	'	 } \n' +
 	'}';
 
-	var JS_CODE_2b2_HTML = '// In This example we add the HTMLPage FixedTip to an <input> "button" with the JSU class "tipFixArrow":  \n'+	 
-	'//  - class="tipFix"  type="button" \n' + 
-	'//  - whatever unique id \n' + 
-	'//  - onclick="sample2b2(event)" \n'+	
+	var JS_CODE_2b2_HTML = '/*In This example we add the HTMLPage FixedTip to an <input> "button" with the JSU class "tipFixArrow":  \n'+	 
+	' - class="tipFix"  type="button" \n' + 
+	' - whatever unique id \n' + 
+	' - onclick="sample2b2(event)" \n'+
+	' */ \n ' +
 	' <input type="button" class="tipFixArrow" value="Show HTML Page" id="tipSample2b2" \n'+	
 	'  onclick="sample2b2(event)" /> ';
 
@@ -502,8 +542,9 @@ function sampleCode2b2(event){
 	    ],
       event,
       { 
-		    szTitle:"SAMPLE_2 FixedTip with HTMLPage - Source Code" , 
-		    iTipWidth: 1100
+		    szTitle:"SAMPLE_2 FixedTip with Embedded HTML Page - Source Code" , 
+		    iTipWidth: 850,
+			  iTipMaxHeight: 600
 		  } );	
 }
 

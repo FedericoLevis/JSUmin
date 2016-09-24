@@ -6,8 +6,8 @@ JSU
 ========
 
 ``JSU`` **JS Utility Plugin**: Tooltip, Validate, Popup, SortTable, JSLog, LoadingDiv, Google Analytics and other features ...  
-All JSU Features can be tried with following sample: [Try JSU Samples]
-
+ - [Try JSU Samples]
+ - [JSU Web Site]
 
 Table of Contents
 -----------------
@@ -226,5 +226,5 @@ MIT
    [JSU Tooltip Loading with require.js jsu.js - TipSample.html]: <https://github.com/FedericoLevis/JSU/blob/master/samples/Tip/TipSample.html>
    [JSU Tooltip Loading with file List - TipSimple.html]: <https://github.com/FedericoLevis/JSU/blob/master/samples/Tip/TipSimple.html>
    [jsu.css]: <https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/index.html>
-   
+   [JSU Web Site]: <http://federicolevis.wixsite.com/jsutility>
    [JSU Download Options]: <https://goo.gl/HnNqnM> 
