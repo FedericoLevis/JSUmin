@@ -646,6 +646,43 @@ function downloadJsu(event){
 }
 
 /**
+ * Tip for button to change Display and set Site
+ */
+function siteDisplayTip(){
+	var szTip = "";
+	var szClassName = getElementById2('siteDisplay').className;
+	if (szClassName == 'siteDisplay'){
+		szTip = '<div style="width:400px">This page is currently displayed in <b>a dedicated Browser Windows</b><BR/><BR/>' +
+	  'Click this button to show this page <b>in the JSU SITE</b>' + 
+	  '</div>';
+	}else {
+		szTip = '<div style="width:400px">This page is currently displayed in <b>JSU SITE</b><BR/><BR/>' +
+		  'Click the button on the left to show this page with<BR/><b>FULL SIZE in a dedicated Browser Window</b>' + 
+		  '</div>';
+	}
+  Tip (szTip);  	
+}
+
+/**
+ * Tip for button to change Display and set Site
+ */
+function browserDisplayTip(){
+	var szTip = "";
+	var szClassName = getElementById2('browserDisplay').className;
+	if (szClassName == 'browserDisplay'){
+		szTip = '<div style="width:400px">This page is currently displayed in <b>JSU SITE</b><BR/><BR/>' +
+	  'Click this button to show this page with<BR/><b>FULL SIZE in a dedicated Browser Window</b>' + 
+	  '</div>';
+	}else {
+		szTip = '<div style="width:400px">This page is currently displayed in <b>a dedicated Browser Windows</b><BR/><BR/>' +
+	  'Click the button on the right to show this page <b>in the JSU SITE</b>' + 
+	  '</div>';
+	}
+  Tip (szTip);  	
+}
+
+
+/**
 * Tip for Button DownloadJsu 
 * 
 * @param event

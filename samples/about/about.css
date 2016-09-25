@@ -457,26 +457,20 @@ input.siteDisplay, input.siteDisplaySel{  /* common for Display Size buttons*/
 }  
 
 input.browserDisplay  {  
-  /* background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserDisplay.png) no-repeat right center; */   
-  background: white url(../../images/about/browserDisplay.png) no-repeat right center; 
+  background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserDisplay.png) no-repeat right center;   
 }
 
 input.browserDisplaySel  {  
-  /* background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserDisplaySel.png) no-repeat right center; */   
-  background: yellow url(../../images/about/browserDisplaySel.png) no-repeat right center; 
+  background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserDisplaySel.png) no-repeat right center;    
 }
 
 input.siteDisplay  {  
-  /* background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/siteDisplay.png) no-repeat right center; */   
-  background: white url(../../images/about/siteDisplay.png) no-repeat right center; 
+  background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/siteDisplay.png) no-repeat right center;   
 }
 
 input.siteDisplaySel  {  
-  /* background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/siteDisplaySel.png) no-repeat right center; */   
-  background: yellow url(../../images/about/siteDisplaySel.png) no-repeat right center; 
+  background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/siteDisplaySel.png) no-repeat right center;   
 }
-
-
 
 .jsuFeatPresent{ /* FREE */
   font-family: Verdana;
