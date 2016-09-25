@@ -25,9 +25,6 @@
   <!-- ONLY FOR About -->
   <link rel="stylesheet" href="../about/about.css" type="text/css">
   <script type="text/javascript" src="../about/about.js" ></script>
-  
-
-
 
 </head>
 <body>
@@ -62,14 +59,18 @@
 </table>   
 
 <hr>
-<h1 class="jsuSample">JSU - JS Utility Plugin  - Tooltip Sample</h1>      
 
+<h1 class="jsuSample">JSU - JS Utility Plugin  - Tooltip Sample</h1>      
 
 <table class="tip" BORDER="2" cellspacing="0" cellpadding="2" width="100%">
     <tr id="tr_title_1" class="tipTitleBig">
       <th class="tipTitleBig" colspan="4">JSU<input type="button" class="tipFix" id="tipJSUTitle" onclick="aboutTipFixJSU(event);" />
         <label class="aboutAuthor">by Federico Levis</label>  <input type="button" class="tipFix" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
-        <label class="jsuHelp">Tooltip Documentation</label>  <input type="button" class="jsuHelp" onclick="jsuDocTip();"  onmouseover="Tip(JSU_TIP_DOC_TIP);" onmouseout="UnTip(event)" /> 
+        <label class="jsuHelp">Tooltip Documentation</label>  <input type="button" class="jsuHelp" onclick="jsuDocTip();"  onmouseover="Tip(JSU_TIP_DOC_TIP);" onmouseout="UnTip(event)" />
+        <span class="displayTypeContainer">
+                <input id="browserDisplay" type="button" class="browserDisplaySel" onclick="onclickBrowserDisplay(JSU_ID_SAMPLE_TIP);"  onmouseover="browserDisplayTip();" onmouseout="UnTip(event)" /> 
+                <input id="siteDisplay" type="button" class="siteDisplay" onclick="onclickSiteDisplay(JSU_ID_SAMPLE_TIP);"  onmouseover="siteDisplayTip();" onmouseout="UnTip(event)" /> 
+        </span>
         <!--  ONLY for developers: displayed when URL PAR opt=1 -->     
         <select id="selectShowCol" class="parOption" onchange="onchangeShowCol()">
             <option value="1">Show SAMPLE</option>

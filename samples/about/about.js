@@ -107,7 +107,15 @@ var JSU_LONG_URL_SAMPLE_VALIDATE =	"https://rawgit.com/FedericoLevis/JSU/master/
 
 // ------------------ JSU SITE
 var JSU_URL_SITE = "http://federicolevis.wixsite.com/jsutility";
-var JSU_URL_SITE_DOWNLOAD = "http://federicolevis.wixsite.com/jsutility/jsu-download";
+var JSU_URL_SITE_SAMPLE_TIP = JSU_URL_SITE + "/tooltip";
+var JSU_URL_SITE_SAMPLE_VALIDATE = JSU_URL_SITE + "/validate";
+var JSU_URL_SITE_SAMPLE_LOADING = JSU_URL_SITE + "/loading";
+var JSU_URL_SITE_SAMPLE_GA = JSU_URL_SITE + "/ga";
+var JSU_URL_SITE_SAMPLE_SORT = JSU_URL_SITE + "/sort";
+var JSU_URL_SITE_SAMPLE_JSLOG = JSU_URL_SITE + "/jslog";
+var JSU_URL_SITE_SAMPLE_IEPOPUP = JSU_URL_SITE + "/iepopup";
+var JSU_URL_SITE_SAMPLE_JQPOPUP = JSU_URL_SITE + "/jqpopup";
+var JSU_URL_SITE_DOWNLOAD = JSU_URL_SITE + "/jsu-download";
 // ------------------
 var JSU_LONG_URL_DOWNLOAD_PAGE_FREE  =	"https://rawgit.com/FedericoLevis/JSU/master/samples/JSUFreeDownload.html";
 
@@ -165,6 +173,16 @@ var JSU_SHORT_URL_API_JQPOPUP  =	"https://goo.gl/iPqUqL";
 */
 
 
+var	JSU_ID_SAMPLE_TIP=1;	
+var	JSU_ID_SAMPLE_VALIDATE=2;	
+var	JSU_ID_SAMPLE_LOADING=3;	
+var	JSU_ID_SAMPLE_GA=4;	
+var	JSU_ID_SAMPLE_SORT=5;	
+var	JSU_ID_SAMPLE_JSLOG=6;	
+var	JSU_ID_SAMPLE_IEPOPUP=7;	
+var	JSU_ID_SAMPLE_JQPOPUP=8;	
+	
+	
 //----------------------- FEATURE DOC
 var JSU_LONG_URL_DOC  =	"https://rawgit.com/FedericoLevis/JSU/master/README.html";
 var JSU_LONG_URL_DOC_SORT  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/SortTable.html";
@@ -917,6 +935,11 @@ function initSampleCmn(){
 	var fn = "[about.js initSampleCmn()] ";
 	jslog (JSLOG_JSU,fn + JSLOG_FUN_START);
 
+	if (isInIframe()){
+		// WE are in iframe (we are in SITE). Switch Current display selected
+		getElementById2('browserDisplay').className = 'browserDisplay';
+		getElementById2('siteDisplay').className = 'siteDisplaySel';
+	}
 	try{
 
 		//-----------------------------------------------------------
@@ -1004,31 +1027,47 @@ function isJsuSample(){
 }
 
 
-
-/*===================================================================================
- *  FOR SAMPLES NOT FREE
-===================================================================================*/
-
-
-/*
- * 
- * @param szUrl e.g: "https://rawgit.com/FedericoLevis/JSU/master/samples/Validate/ValidateSample.html"
- * @param iId   1 ,3, 5, 7
- * 
- * @return e.g:  https://rawgit.com/FedericoLevis/WORK/master/3/samples/Validate/ValidateSample.html 
+/**
+ * Click on Buutton browserDisplay
+ * @param iSampleId JSU_ID_SAMPLE_TIP,....
  */
-function getSampleUrl(szUrl,iId){
-	if (SHORT_URL_GOOGLE){
-    if (iId == JSU_ID_SAMPLE_VALIDATE){
-   	  return "https://goAALl/F3r4lP".replace ("AAL","o.g");
-    }else if (iId == JSU_ID_SAMPLE_JQPOPUP){
-   	  return "https://goAALl/09zCLG".replace ("AAL","o.g");
-    }		
-	}else{
-	  return szUrl.replace("JSU/master",URL_1 + URL_SEP + URL_2 + URL_SEP + 
-         (iId + ((((Math.floor((Math.random() * 100) + 7) > 5) ? 0 : 1) == 0) ? "" : "3")));
+function onclickBrowserDisplay (iSampleId){
+	var elBrowserDisplay = getElementById2('browserDisplay');
+	var szClassName = elBrowserDisplay.className;
+	if (szClassName == 'browserDisplaySel'){
+		return; //Nothing To Do: already Selected
+	}else {
+		// SWITCH. Display Browser
+		var szUrl = "";
+		switch (iSampleId){
+		  case JSU_ID_SAMPLE_TIP:
+		  	szUrl = JSU_SHORT_URL_SAMPLE_TIP;
+			  break;
+		}
+		jsuGoToURL(szUrl,true);
+		
 	}
-  
+}
+
+/**
+ * Click on Button browserDisplay
+ * @param iSampleId JSU_ID_SAMPLE_TIP,....
+ */
+function onclickSiteDisplay (iSampleId){
+	var elSiteDisplay = getElementById2('siteDisplay');
+	var szClassName = elSiteDisplay.className;
+	if (szClassName == 'siteDisplaySel'){
+		return; //Nothing To Do: already Selected
+	}else {
+		// SWITCH. Display Site
+		var szUrl = "";
+		switch (iSampleId){
+		  case JSU_ID_SAMPLE_TIP:
+		  	szUrl = JSU_URL_SITE_SAMPLE_TIP;
+			  break;
+		}
+		jsuGoToURL(szUrl,true);
+	}
 }
 
 

@@ -413,11 +413,68 @@ input.downloadJsu, input.downloadJsuUp, input.downloadJsuExecute ,input.download
     border-style: ridge;
 } 
 
-input.downloadJsu:hover, input.downloadJsuExecute:hover,input.downloadJsuMinExecute:hover, input.downloadJsuUp:hover 
+input.downloadJsu:hover, input.downloadJsuExecute:hover,input.downloadJsuMinExecute:hover, input.downloadJsuUp:hover
 {
     border: 2px solid #e0e0e0;
     border-style: ridge;
 } 
+
+
+input.browserDisplay, input.browserDisplaySel, input.siteDisplay, input.siteDisplaySel
+{
+    border: 1px solid black;
+}
+
+input.browserDisplay:hover, input.browserDisplaySel:hover, input.siteDisplay:hover, input.siteDisplaySel:hover 
+{
+    border: 1px solid gray;
+} 
+
+span.displayTypeContainer{  /* container of input.browserDisplay and input.siteDisplay buttons */
+  margin-left: 50px;  
+  margin-right: 50px;
+  background-color: white;  
+}
+
+input.browserDisplay, input.browserDisplaySel{  /* common for Display buttons*/
+  width: 26px;
+  height: 18px;
+  cursor: pointer;
+  margin-left: 1px;  
+  margin-right: 0px;  
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+input.siteDisplay, input.siteDisplaySel{  /* common for Display Size buttons*/
+  width: 26px;
+  height: 18px;
+  cursor: pointer;
+  margin-left:0px;
+  margin-right: 1px;  
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}  
+
+input.browserDisplay  {  
+  /* background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserDisplay.png) no-repeat right center; */   
+  background: white url(../../images/about/browserDisplay.png) no-repeat right center; 
+}
+
+input.browserDisplaySel  {  
+  /* background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserDisplaySel.png) no-repeat right center; */   
+  background: yellow url(../../images/about/browserDisplaySel.png) no-repeat right center; 
+}
+
+input.siteDisplay  {  
+  /* background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/siteDisplay.png) no-repeat right center; */   
+  background: white url(../../images/about/siteDisplay.png) no-repeat right center; 
+}
+
+input.siteDisplaySel  {  
+  /* background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/siteDisplaySel.png) no-repeat right center; */   
+  background: yellow url(../../images/about/siteDisplaySel.png) no-repeat right center; 
+}
 
 
 
