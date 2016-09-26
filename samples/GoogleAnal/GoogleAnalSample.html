@@ -5,10 +5,10 @@
 
 <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
-  <title>JS Utility | JSU Google Analytics Plugin Sample | Federico Levis</title>
+  <title>JS Utility | JSU Google Analytics Plugin Sample</title>
   <meta charset="utf-8"/>
-  <meta name="description" content="JSU utility (JSU) - API to access to Google Analytics pages created with goo.gl url shortener"/>
-  <meta name="keywords" content="js, utility, google, analytics, goo.gl, shortener, JSU, tooltip, tip, statistics, federico, levis" />
+  <meta name="description" content="API to display Google Analytics pages created with goo.gl url shortener | by Federico Levis"/>
+  <meta name="keywords" content="js, utility, google, analytics, goo.gl, shortener, JSU, federico, levis" />
 	<!-- This sample -->
   <script type="text/javascript" src="./GoogleAnalSample.js" ></script>
 
@@ -69,6 +69,10 @@
       <th class="tipTitleBig" colspan="4">JSU<input type="button" class="tipFix" id="tipJSUTitle" onclick="aboutTipFixJSU(event);" />
         <label class="aboutAuthor">by Federico Levis</label>  <input type="button" class="tipFix" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
         <label class="jsuHelp">Google Analytics Documentation</label>  <input type="button" class="jsuHelp" onclick="jsuDocGA();"  onmouseover="Tip(JSU_TIP_DOC_GA);" onmouseout="UnTip(event)" /> 
+        <span class="displayTypeContainer">
+                <input id="browserDisplay" type="button" class="browserDisplaySel" onclick="onclickBrowserDisplay(JSU_ID_SAMPLE_GA);"  onmouseover="browserDisplayTip();" onmouseout="UnTip(event)" /> 
+                <input id="siteDisplay" type="button" class="siteDisplay" onclick="onclickSiteDisplay(JSU_ID_SAMPLE_GA);"  onmouseover="siteDisplayTip();" onmouseout="UnTip(event)" /> 
+        </span>
         <!--  ONLY for developers: displayed when URL PAR opt=1 -->     
         <select id="selectShowCol" class="parOption" onchange="onchangeShowCol()">
             <option value="1">Show SAMPLE</option>

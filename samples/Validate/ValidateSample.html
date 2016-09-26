@@ -79,7 +79,11 @@
       <th class="tipTitleBig" colspan="4">JSU<input type="button" class="tipFix" id="tipJSUTitle" onclick="aboutTipFixJSU(event);" />
         <label class="aboutAuthor">by Federico Levis</label> <input type="button" class="tipFix" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
         <label class="jsuHelp">Validate Documentation</label>  <input type="button" class="jsuHelp" onclick="jsuDocValidate();"  onmouseover="Tip(JSU_TIP_DOC_VALIDATE);" onmouseout="UnTip(event)" /> 
-        
+         <span class="displayTypeContainer">
+                <input id="browserDisplay" type="button" class="browserDisplaySel" onclick="onclickBrowserDisplay(JSU_ID_SAMPLE_VALIDATE);"  onmouseover="browserDisplayTip();" onmouseout="UnTip(event)" /> 
+                <input id="siteDisplay" type="button" class="siteDisplay" onclick="onclickSiteDisplay(JSU_ID_SAMPLE_VALIDATE);"  onmouseover="siteDisplayTip();" onmouseout="UnTip(event)" /> 
+        </span>
+       
         <!--  ONLY for developers: displayed when URL PAR opt=1 -->     
         <select id="selectShowCol" class="parOption" onchange="onchangeShowCol()">
             <option value="1">Show SAMPLE</option>

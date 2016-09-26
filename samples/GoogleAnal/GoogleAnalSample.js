@@ -509,7 +509,7 @@ function sampleCode1(event){
 	'    	bLongUrl: opt_ga_list.bLongUrl  // LongUrl visible or not at startup \n' +
 	'    });'  ;
 	TipFixCode(szTip,event,{
-  	 szTitle:"JS Code of SAMPLE 1: Google Analytics List",iTipWidth:1000,iTipMaxHeight:500
+  	 szTitle:"JS Code of SAMPLE 1: Google Analytics List",iTipWidth:900,iTipMaxHeight:500
   	 });
 }
 
@@ -526,6 +526,6 @@ function sampleCode2(event){
 			'   });';
 			
 	TipFixCode(szTip,event,{
-  	 szTitle:"JS Code of SAMPLE 2: Google Analytics Page",iTipWidth:1000,iTipMaxHeight:500
+  	 szTitle:"JS Code of SAMPLE 2: Google Analytics Page",iTipWidth:500,iTipMaxHeight:500
   	 });
 }

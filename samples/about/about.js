@@ -107,6 +107,7 @@ var JSU_LONG_URL_SAMPLE_VALIDATE =	"https://rawgit.com/FedericoLevis/JSU/master/
 
 // ------------------ JSU SITE
 var JSU_URL_SITE = "http://federicolevis.wixsite.com/jsutility";
+var JSU_URL_SITE_SAMPLE_ALL = JSU_URL_SITE + "/sample-all";
 var JSU_URL_SITE_SAMPLE_TIP = JSU_URL_SITE + "/tooltip";
 var JSU_URL_SITE_SAMPLE_VALIDATE = JSU_URL_SITE + "/validate";
 var JSU_URL_SITE_SAMPLE_LOADING = JSU_URL_SITE + "/loading";
@@ -1079,6 +1080,21 @@ function onclickBrowserDisplay (iSampleId){
 		switch (iSampleId){
 		  case JSU_ID_SAMPLE_TIP:
 		  	szUrl = JSU_SHORT_URL_SAMPLE_TIP;
+			  break;
+		  case JSU_ID_SAMPLE_VALIDATE:
+		  	szUrl = JSU_SHORT_URL_SAMPLE_VALIDATE;
+			  break;
+		  case JSU_ID_SAMPLE_LOADING:
+		  	szUrl = JSU_SHORT_URL_SAMPLE_LOADING;
+			  break;
+		  case JSU_ID_SAMPLE_GA:
+		  	szUrl = JSU_SHORT_URL_SAMPLE_GA;
+			  break;
+		  case JSU_ID_SAMPLE_SORT:
+		  	szUrl = JSU_SHORT_URL_SAMPLE_SORT;
+			  break;
+		  case JSU_ID_SAMPLE_JQPOPUP:
+		  	szUrl = JSU_SHORT_URL_SAMPLE_JQPOPUP;
 			  break;
 		}
 		jsuGoToURL(szUrl,true);
