@@ -174,6 +174,7 @@ var JSU_SHORT_URL_API_JQPOPUP  =	"https://goo.gl/iPqUqL";
 */
 
 
+var	JSU_ID_SAMPLE_ALL=0;	
 var	JSU_ID_SAMPLE_TIP=1;	
 var	JSU_ID_SAMPLE_VALIDATE=2;	
 var	JSU_ID_SAMPLE_LOADING=3;	
@@ -267,7 +268,7 @@ var JSU_TIP_SECT2_FEAT =  '<table class="tip" BORDER="2" cellspacing="0" cellpad
 '	  </tr>' +
 '	  <tr >' + 
 '		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocLoading(true);">Loading Div</a> </td>' +
-'		  <td class="tipl"><b>Loading Div</b> to display during Long Operation.</td> ' +
+'		  <td class="tipl"><b>Loading Div</b> displayed during Long Operation.</td> ' +
 '     <td class="tipc"><a href="javascript:jsuVideoLoading()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of LoadingDiv Feature"/></a></td> ' +  
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleLoading();">LoadingDiv Sample</a></td>' +
 '	  </tr>' +
@@ -358,26 +359,26 @@ var tmo_resize = null;
  */
 function showJsuPopupAbout(){
 
-	var szMsg = '<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="950px">' +
-  '  <tr width="350px" class="jsuAbout jsuAboutHea">' +
-  '    <td><table class="tipNoBorder" width="100%"><tr>' +
-  '      <td width="250px" align="center" class="jsuAboutTitle"> <img class="jsuAboutTitle" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> ' +
-  '      <td width="350px"><table class="tipNoBorder" width="100%"><tr>' +
-  '        <td align="right" width="33%"><img class="jsuAboutJust" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutJust.gif"/></td>' +
-  '        <td align="center" width="33%"><img class="jsuAboutSimple" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutSimple.gif"/></td>' +
-  '        <td align="left" width="33%"><img class="jsuAboutUse" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutUse.gif"/></td>' +
-  '      </tr></table></td> ' +
-  '    </tr></table></td>' +
-  '  </tr>' +
-  '  <tr class="jsuAboutMsg"><td class="tipl" >' + JSU_TIP_SECT2 + '</td></tr> ' +
-  '</table>';
-  Popup(POPUP_TYPE.INFO, szMsg,	{ bShowImg: false, szTitle: "JSU ABOUT", iWidth: 9600, position: {at: "top"}});
+		var szMsg = '<table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="950px">' +
+	  '  <tr width="350px" class="jsuAbout jsuAboutHea">' +
+	  '    <td><table class="tipNoBorder" width="100%"><tr>' +
+	  '      <td width="250px" align="center" class="jsuAboutTitle"> <img class="jsuAboutTitle" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> ' +
+	  '      <td width="350px"><table class="tipNoBorder" width="100%"><tr>' +
+	  '        <td align="right" width="33%"><img class="jsuAboutJust" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutJust.gif"/></td>' +
+	  '        <td align="center" width="33%"><img class="jsuAboutSimple" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutSimple.gif"/></td>' +
+	  '        <td align="left" width="33%"><img class="jsuAboutUse" src="'  + JSU_PATH_ABOUT_IMG + 'jsuAboutUse.gif"/></td>' +
+	  '      </tr></table></td> ' +
+	  '    </tr></table></td>' +
+	  '  </tr>' +
+	  '  <tr class="jsuAboutMsg"><td class="tipl" >' + JSU_TIP_SECT2 + '</td></tr> ' +
+	  '</table>';
+  Popup(POPUP_TYPE.INFO, szMsg,	{ bShowImg: false, szTitle: "JSU ABOUT", iWidth: 960, position: {at: "top"}});
 }
 
 
 
 /**
- * Show the Big Tip for all JSU Feature 
+ * Show the TipFix for all JSU Feature 
  * @param event
  * @param [bShowAllSample] {Boolean} def true
  */
@@ -423,7 +424,7 @@ function aboutTipFixJSU(event,bShowAllSample){
   '  <tr class="jsuAboutMsg"><td class="tipl">' + JSU_TIP_SECT2  + '</td></tr> ' +
   '  <tr class="jsuAbout jsuAboutFooter" >' +
   ' </tr></table>';
-	TipFix (szMsg,event,{iTipWidth:960, szTitle: "JSU: JS Utility FEATURES"});	
+	TipFix (szMsg,event,{iTipWidth:920, szTitle: "JSU: JS Utility FEATURES"});	
 }
 
 /**
@@ -1078,6 +1079,9 @@ function onclickBrowserDisplay (iSampleId){
 		// SWITCH. Display Browser
 		var szUrl = "";
 		switch (iSampleId){
+	    case JSU_ID_SAMPLE_ALL:
+	  	  szUrl = JSU_SHORT_URL_SAMPLE_ALL;
+		    break;
 		  case JSU_ID_SAMPLE_TIP:
 		  	szUrl = JSU_SHORT_URL_SAMPLE_TIP;
 			  break;
@@ -1095,7 +1099,9 @@ function onclickBrowserDisplay (iSampleId){
 			  break;
 		  case JSU_ID_SAMPLE_JQPOPUP:
 		  	szUrl = JSU_SHORT_URL_SAMPLE_JQPOPUP;
-			  break;
+			break;
+          default:
+            return;          
 		}
 		jsuGoToURL(szUrl,true);
 		
@@ -1115,9 +1121,29 @@ function onclickSiteDisplay (iSampleId){
 		// SWITCH. Display Site
 		var szUrl = "";
 		switch (iSampleId){
+	    case JSU_ID_SAMPLE_ALL:
+	  	  szUrl = JSU_URL_SITE_SAMPLE_ALL;
+		    break;
 		  case JSU_ID_SAMPLE_TIP:
 		  	szUrl = JSU_URL_SITE_SAMPLE_TIP;
 			  break;
+		  case JSU_ID_SAMPLE_VALIDATE:
+		  	szUrl = JSU_URL_SITE_SAMPLE_VALIDATE;
+			  break;
+		  case JSU_ID_SAMPLE_LOADING:
+		  	szUrl = JSU_URL_SITE_SAMPLE_LOADING;
+			  break;
+		  case JSU_ID_SAMPLE_GA:
+		  	szUrl = JSU_URL_SITE_SAMPLE_GA;
+			  break;
+		  case JSU_ID_SAMPLE_SORT:
+		  	szUrl = JSU_URL_SITE_SAMPLE_SORT;
+			  break;
+		  case JSU_ID_SAMPLE_JQPOPUP:
+		  	szUrl = JSU_URL_SITE_SAMPLE_JQPOPUP;
+			break;
+          default:
+            return;          
 		}
 		jsuGoToURL(szUrl,true);
 	}

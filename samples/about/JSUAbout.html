@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JS Utility | JSU About | by Federico Levis</title>
+<meta charset="utf-8"/>
+<meta name="description" content="JSU | JS Utility | About" />
+<meta name="keywords" content="js, utility, JSU, download, free, tooltip, popup, sort, table, google, analytics, validate, loading, federico, levis" />
+
+  <!--  This sample  -->
+  <link rel="stylesheet" href="../Sample.css" type="text/css">
+
+  <!--  ***************************   JSU   ****************************** -->
+  <!-- OPTIONAL Settings ONLY for Development phase ----->
+  <script>
+     // var JSU_GA_TRACKING_ID = 'UA-83225633-1'; // DO NOT Enable standard GoogleAnalitycs for this page because we want to send pageview only when user click the button to download  
+     var JSU_PATH_BASE = '../..'; // Path of JSU, relative to this HTML. To use Local File instead of Default defined in jsu.js: JSU_PATH_BASE="https://rawgit.com/FedericoLevis/JSU/master"
+  </script>
+  <!--   STANDARD JSU LOAD -->
+  <link rel="stylesheet" href="../../core/jsu.css" type="text/css">
+  <script  data-main="../../plugin/jsu.js" src="../../core/require.js"></script>
+
+
+<!-- About -->
+<link rel="stylesheet" href="./about.css" type="text/css">
+<script type="text/javascript" src="./about.js" ></script>
+
+
+<script>
+  // only ga_create of this specific ID used to monitior the Click on Download Button
+  jsuGACreate('UA-83225633-2');
+</script> 
+
+</head>
+<body>
+
+<script>
+// var JSU_GA_TRACKING_ID = 'UA-83225633-2';  // GA Tracking ID of Download Page 
+var TIP_JSU_ZIP='<div style="width:250px;" align="left">Click to Download <b>JSU-master.zip</b><BR/>with <b>JSU FULL Development Version:</b>' +
+  '<ul>' +
+  '  <li>JS sources plenty of comments </li>' +
+  '  <li>JSU Samples plenty of comments</li>' +
+  '</ul> ' +
+  '</div>';
+
+var TIP_JSU_MIN_ZIP='<div style="width:250px;" align="left">Click to Download <b>JSUmin-master.zip</b><BR/> with <b>JSU Minified Version:</b>' +
+  '<ul>' +
+  '  <li>JS minified</li>' +
+  '  <li>JSU Samples minified</li>' +
+  '</ul> ' +
+  '</div>';
+</script>
+
+
+<div style="background-color:white;" width="100%" align="center">
+<table class="det" BORDER="1" cellspacing="0" cellpadding="0" width="100%" style="border-spacing: 0px; border-collapse:separate;">
+  <tr width="500px" class="jsuAbout jsuAboutHea">
+    <td><table class="tipNoBorder" width="100%"><tr>
+      <td width="600px" align="center" class="jsuAboutTitle"> <img class="jsuAboutTitle" style="height:150px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/jsuAboutTitle.png"/></td> 
+    </tr></table></td>
+  </tr>
+</table>  
+<table class="det" BORDER="1" cellspacing="0" cellpadding="0" width="100%" style="border-spacing: 0px; border-collapse:separate;">
+  <tr class="jsuAboutMsg">
+  <td class="tipl" > 
+    <table class="jsuAboutMsg" width="100%" style="margin-top:15px;margin-bottom:15px;">
+    <tr>
+      <td width="100%" class="tipl"  style="padding-left:5px;padding-right:5px;font-size:11px;"> 
+        <a class="tipLink" href="https://goo.gl/JzIXW0" target="_blank">JSU</a> is a <b>JavaScript Utility</b>  library very Lightweight, powerful and simply to use:
+        <ul type="square">
+        <li><b>Easy to Install/Test</b>: download JSU ZIP and try samples in jsu/samples</li> 
+        <li><b>Simple to include in your project</b> with only one JS load instruction: <b>requires.js loads plugin/jsu.js </b></li> 
+        <li><b>No dependencies</b> for all the JSU Features (<b>Pure JS code</b>) with the only exception of JQ Popup (requiring jquuery, jquery-ui)</li> 
+        <li><b>All modern browsers are supported</b>: IE9+, Firefox 3+, Chrome,... </li> 
+        <li><b>Many Examples provided</b> for each JSU feature, with all the <b> relative JSU code calls explained in Fixed Tips</b></li> 
+        <li><b>Feature Documentation and JSDoc API</b> for each feature</li> 
+        <li><b>Very Powerful and Simple to use</b>: only 1 or maximum 2 JS instructions are required for each JSU features </li> 
+        <li><b>Localization support</b>: all the messages are isolated in local/<b><i>LAN</i></b>/locale-core.js  </li>
+        <li><b>CSS support (jsu.css)</b> with powerful CSSDoc with graphical CSS preview</li>
+        </ul>  
+      </td>
+    </tr>
+    </table>  
+  </td>
+  </tr>
+</table>  
+  
+<table class="det" BORDER="1" cellspacing="0" cellpadding="0" width="100%" style="border-spacing: 0px; border-collapse:separate;">
+     <tr>
+        <td class="tipNote">
+           <table  class="tipNote" align="left" width="100%">
+                <tr> 
+                  <td width="5%" align="right">
+                     <input class="tipNote">
+                  </td>
+                  <td  class="tipNote" width="70%" align="left">
+                  JSU is a <b>FREE NO-Profit project</b>.<BR/>
+                  If it was useful for your job, <b>You can Contribute to JSU Evolution with your Donation</b><BR/>
+                  Thanks
+                  </td> 
+                  
+                  <td width="25%" align="right">
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="2HF4Z8X989Q4Y">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"
+                            onmouseover="donateDownalodTip(event);" onmouseout="UnTip(event)">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+
+                  </td>      
+                  </tr> 
+          </table> 
+       </td>
+    </tr>
+ </table>       
+  
+
+<table class="det" BORDER="2" cellspacing="0" cellpadding="0" width="100%" style="border-spacing: 0px; border-collapse:separate;">
+   <tr>
+     <td>
+           <table class="detNoborder" align="center" cellspacing="0" cellpadding="0" style="border-spacing: 0px;border-collapse:separate;">   
+                </tr>
+                <tr>
+                  <td align="center" class="jsuAboutTitle" width="100%" height="160px">  
+                      <table class="tipNoBorder" width="100%">
+                       <tr>
+                        <td align="center" width="33%"><img class="jsuAboutJust" style="height:160px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/big/jsuAboutJust.gif"/></td>
+                        <td align="center" width="34%"><img class="jsuAboutSimple" style="height:160px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/big/jsuAboutSimple.gif"/></td>
+                        <td align="center" width="33%"><img class="jsuAboutUse" style="height:160px;" src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/big/jsuAboutUse.gif"/></td>
+                       </tr>
+                      </table>
+                  </td> 
+                </tr>
+           </table>   
+     </td>
+   </tr>
+</table>
+
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -68,6 +68,11 @@
             JSU<input type="button" class="tipFix" id="tipJSUTitle" onclick="aboutTipFixJSU(event,false);" />
             <label class="aboutAuthor">by Federico Levis</label><input type="button" class="tipFix" id="tipJSUAuthor" onclick="aboutTipAuthor(event);" />
             <label class="jsuHelp">JSU Documentation</label>  <input type="button" class="jsuHelp" onclick="jsuDoc();"  onmouseover="Tip(JSU_TIP_DOC);" onmouseout="UnTip(event)" /> 
+            <span class="displayTypeContainer">
+                <input id="browserDisplay" type="button" class="browserDisplaySel" onclick="onclickBrowserDisplay(JSU_ID_SAMPLE_ALL);"  onmouseover="browserDisplayTip();" onmouseout="UnTip(event)" /> 
+                <input id="siteDisplay" type="button" class="siteDisplay" onclick="onclickSiteDisplay(JSU_ID_SAMPLE_ALL);"  onmouseover="siteDisplayTip();" onmouseout="UnTip(event)" /> 
+            </span>
+            
       </tr>
       
       
@@ -96,7 +101,7 @@
   </tr>
   <tr>
     <td class="tipc"><a class="tipLink" href="javascript:jsuDocLoading();">LoadingDiv</a></td>
-    <td class="tipl"><b>Loading Div</b> to display during Long Operation. Many Options: <b>Loading Gif, Title, Message, ElapsedSec...</b></td> 
+    <td class="tipl"><b>Loading Div</b> displayed during Long Operation. Many Options: <b>Loading Gif, Title, Message, ElapsedSec...</b></td> 
     <td class="tipc"><input type="button"  class="browserAll" onmouseover="jsuTipBrowserAll(event);" onmouseout="UnTip(event)"/> </td>
     <td class="tipc"><a href="javascript:jsuVideoLoading()"> <input type="button"  class="playVideoSmall" onmouseover="jsuTipPlayVideo(event);" onmouseout="UnTip(event)"/></a> </td>  
     <td class="tipc"><a class="tipLink" href="javascript:showSampleLoading();">LoadingDiv Sample</a></td>
