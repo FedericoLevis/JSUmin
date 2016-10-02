@@ -2,6 +2,14 @@
  * 					JSU TEST  Only for developers
 --------------------------------------------------------------------------------------------------------------------- */
 
+
+
+var URL_PAR_TYPE_WIX="wix";
+var URL_PAR_TYPE_JSU="jsu";
+var URL_PAR_TYPE_YOUTYBE="you";
+
+
+
 var var_test = {
 		tmoTest: null,
 		iTestCur:  0,
@@ -14,14 +22,18 @@ var var_test = {
  * @param bFrame  true for Frame
  */
 function testStart(bFrame){
-	var Fn = "[about.js  showAllGoogleShort()] ";
+	var Fn = "[about.js  testStart()] ";
+	jslog (JSLOG_DEBUG,Fn + JSLOG_FUN_START);
 	var_test.iTestCur =0;
 	var_test.bFrame = bFrame;
 	
-	var ar_test = ar_test_jsu;
+	ar_test = ar_test_jsu;
+	jslog (JSLOG_DEBUG, Fn + "url_par.type=" + url_par.type);
 	if (url_par.type == URL_PAR_TYPE_WIX) {
 		ar_test = ar_test_wix;
-	}
+	}else if (url_par.type == URL_PAR_TYPE_YOUTYBE) {
+		ar_test = ar_test_you;
+	} 
 	
 	// random enable
   for (i=0; i < ar_test.length; i++){
@@ -45,6 +57,7 @@ function testStart(bFrame){
 	getElementById2("testDone",true).value = var_test.iTestCur;
 	getElementById2("testTmo",true).value = iSec;
 	var_test.tmoTest = setTimeout (testExecute,iSec * 1000);
+	jslog (JSLOG_DEBUG,Fn + JSLOG_FUN_END);
 }
 
 
@@ -54,6 +67,7 @@ function testStart(bFrame){
  */
 function testExecute(){
 	var Fn = "[about.js testExecute()] ";
+	jslog (JSLOG_DEBUG,Fn + JSLOG_FUN_START);
 	// URL under TEST
 	// iCountReq determina la frequenza. Piu` e` alto meno e` frequente
 	var szUrl = testGetNext();
@@ -83,17 +97,24 @@ function testExecute(){
 		getElementById2("testTmo",true).value = iSec;
 		var_test.tmoTest = setTimeout (testExecute,iSec * 1000);
 	}		
+	jslog (JSLOG_DEBUG,Fn + JSLOG_FUN_END);
 }
 
-
+// wix
 var ar_test_wix = [// --------------- random se iPos>=1
               {iCountReq:6,iPos:0, szName:'Cognos',szURL:JSU_LONG_URL_COGNOS, iCountCur:0, iClickDone:0},
-              {iCountReq:6,iPos:0, szName:'CognosRS',szURL:JSU_LONG_URL_COGNOS_RS, iCountCur:0, iClickDone:0},
-              {iCountReq:6,iPos:0, szName:'CognosCEL',szURL:JSU_LONG_URL_COGNOS_CEL, iCountCur:0, iClickDone:0},
-              {iCountReq:6,iPos:0, szName:'CognosBLOG',szURL:JSU_LONG_URL_COGNOS_BLOG, iCountCur:0, iClickDone:0}
+              {iCountReq:8,iPos:0, szName:'CognosRS',szURL:JSU_LONG_URL_COGNOS_RS, iCountCur:0, iClickDone:0},
+              {iCountReq:9,iPos:0, szName:'CognosCEL',szURL:JSU_LONG_URL_COGNOS_CEL, iCountCur:0, iClickDone:0},
+              {iCountReq:7,iPos:0, szName:'CognosBLOG',szURL:JSU_LONG_URL_COGNOS_BLOG, iCountCur:0, iClickDone:0}
                             
               ];
 
+
+var ar_test_you = [// --------------- random se iPos>=1
+                   {iCountReq:4,iPos:0, szName:'Tooltip',szURL:JSU_URL_VIDEO_TIP, iCountCur:0, iClickDone:0},
+                   {iCountReq:6,iPos:0, szName:'Validate',szURL:JSU_URL_VIDEO_VALIDATE, iCountCur:0, iClickDone:0},
+                   {iCountReq:7,iPos:0, szName:'Loading',szURL:JSU_URL_VIDEO_LOADING, iCountCur:0, iClickDone:0}
+                   ];
 
 
 // quelli con iPos=0 ci sono sempre. Poi vengono considerato solo quelli con iPos <= par_check, e fatto random
@@ -116,6 +137,8 @@ var ar_test_jsu = [{iCountReq:4,iPos:0,szName:'DownloadFree',szURL:JSU_SHORT_URL
               ];
 
 
+var ar_test = ar_test_jsu; // init
+
 /**
  * 
  */
@@ -123,10 +146,6 @@ function testGetNext(){
 	
 	var fn = "[about.js testGetNext()] ";
 	
-	var ar_test = ar_test_jsu;
-	if (url_par.type == URL_PAR_TYPE_WIX) {
-		ar_test = ar_test_wix;
-	}
 	for (;;){
 		var i = Math.floor(Math.random() * ar_test.length); // get number in range [0..arTestUrl.length]
 		var el = ar_test[i];

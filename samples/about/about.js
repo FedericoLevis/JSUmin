@@ -24,8 +24,6 @@ var URL_PAR_TEST="test"; // 0= No TEST  1.. Number of Automatic Test to execute 
 var URL_PAR_PERIOD="period"; // Number of second sin randfom period  default = 60 
 var URL_PAR_POS="pos";  
 var URL_PAR_TYPE="type";
-var URL_PAR_TYPE_WIX="wix";
-var URL_PAR_TYPE_JSU="jsu";
 
 
 var JSU_TIP_PLAY_VIDEO='<div style="width:300px;">Click to Show a <b>YouTube Video of this JSU feature</b>';
@@ -82,19 +80,14 @@ var SAMPLE_MAX_NUM=4; // Max sample per Feature in the samples
 var SAMPLE_COL_ALL="ALL";
 
 
-var JSU_URL_VIDEO_TIP= "https://youtu.be/wpo2oM_L3ds";
+var JSU_URL_VIDEO_TIP= "https://youtu.be/Fmc6hL4prXY";
+var JSU_URL_VIDEO_LOADING="https://youtu.be/0XinCNtTl1c";
+var JSU_URL_VIDEO_VALIDATE="https://youtu.be/vuNOTXMknWw";
 
 
-// NOTE: embed is visible in the Ember Tab of Youtube Video  
-
-var JSU_VIDEO_FRAME_TIP  =	'<iframe width="750" height="600" src="https://www.youtube.com/embed/wpo2oM_L3ds?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
-//DAFARE
-var JSU_VIDEO_FRAME_VALIDATE  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
-var JSU_VIDEO_FRAME_SORT  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
-var JSU_VIDEO_FRAME_LOADING  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
-var JSU_VIDEO_FRAME_JSLOG  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
-var JSU_VIDEO_FRAME_IEPOPUP  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
-var JSU_VIDEO_FRAME_JQPOPUP  =	'<iframe width="600" height="500" src="https://www.youtube.com/embed/SuYxv1z1BMg?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
+// NOTE: embed is visible in the Embed Tab of Youtube Video  
+// NOT Used EMBED: we prefer Direct Videu URL
+// var JSU_VIDEO_FRAME_TIP  =	'<iframe width="750" height="600" src="https://www.youtube.com/embed/wpo2oM_L3ds?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
 
 // Samples
 // --------------- FEATURE NOT FREE URL run-time calculated  
@@ -340,7 +333,7 @@ var url_par = {
 	test : 1000,
 	pos: 1, // 0 solo iPos=0  1= iPos=0 piu` quelli con 1 fatti random     2= iPos=0 piu` quelli con 1 e 2 fatti random
 	period: 40,
-	type: URL_PAR_TYPE_JSU, // default
+	type: '', // default
 	opt : undefined
 };
 
@@ -1232,11 +1225,7 @@ function jsuVideoTip(bNewWindow){
 
 
 function jsuVideoLoading(bNewWindow){
-	featureNotReady();
-	/*
-  Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_LOADING,
-    {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "Loading Table Sample"});
-  */  
+	jsuGoToURL(JSU_URL_VIDEO_LOADING,bNewWindow);
 }
 
 
@@ -1279,11 +1268,7 @@ function jsuVideoIEPopup(bNewWindow){
 
 
 function jsuVideoValidate(bNewWindow){
-	featureNotReady();
-	/*
-  Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_VALIDATE,
-      {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "Validate Table Sample"});
-  */    
+	jsuGoToURL(JSU_URL_VIDEO_VALIDATE,bNewWindow);
 }
 
 
