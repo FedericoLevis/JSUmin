@@ -254,8 +254,9 @@ function sample1Err(){
 
 
 function sample1Alarm(){
-  var szMsg =  '<label class="PopupError">The CPU temperature is critically hight!!!</label>' +  
-        '<img src="' +  JSU_PATH_ABOUT_IMG +  'ComputerFire.gif" width="70" height="70"  />';
+  var szMsg =  'This is an <u>example of Alarm Popup</u>, using also <i>animated</i> <b>GIF</b>.<BR/><BR/>' +  
+        '<table><tr><td><label class="PopupError">The CPU temperature is critically hight!!!</label></td>' +
+        '<td><img src="' +  JSU_PATH_ABOUT_IMG +  'ComputerFire.gif" width="70" height="70" /></td></tr></table>';
   Popup(POPUP_TYPE.ALARM,szMsg );
 }
 
@@ -585,17 +586,18 @@ function sample3Video(){
   
 }
 
+
 /*
  * Popup with a Embedded Page  
  */
 function sample3Page(){
-	var szMsg =	'<iframe width="1060" height="600" align="center" src="' + JSU_LONG_URL_DOWNLOAD_PAGE_FREE +'" ></iframe>';
+	var szMsg =	'<iframe width="900" height="530" align="center" src="' + JSU_LONG_URL_DOWNLOAD_PAGE_FREE +'" ></iframe>';
   // Show Popup with Page   
   Popup(POPUP_TYPE.INFO, szMsg,
       // objOpt
       {bShowImg:false,
-  	   iWidth:1100,
-  	   iHeight: 650,
+  	   iWidth:950,
+  	   iHeight: 580,
   	   bShowBtnSect : false,  // Do Not show Button section on the Bottom of the Popup
   	   position:{at: "top"}, 
   	   szTitle: "Popup with Embedded HTML Page"
@@ -644,15 +646,20 @@ var JS1_QUESTION= '// 1) Show Popup, using whatever HTML Tag in szMsg \n' +
 '  ...';
 
 
-var JS1_PROMPT= '// 1) Show Popup, using whatever HTML Tag in szMsg \n' +
+var JS1_PROMPT= '// 1 JSU API Popup() is enough to show the Popup: \n' +
+'// Show Popup, using whatever HTML Tag in szMsg and set Prompt Obptions (Constraints,...) \n' +
 'Popup (POPUP_TYPE.PROMPT, \n' +
 '  "Please insert a <b>NUMBER</b>", \n' +
 '  // objOpt Option: PromptLabel, validate \n' +
 '  { szPromptLabel: "VOTE [1..10]: ", \n' +
 '     // Validate Option: NUMBER must be in range [1..10] \n' +
 '     szPromptType: PROMPT_TYPE.NUMBER,  iPromptMin:1,  iPromptMax: 10,iPromptWidth:50, \n' +
-'   }); \n' +
-'  // Example of objRet, if user insert 9 and click OK: objRet= {"retBtn": "CONFIRM", "promptValue": "9"} \n' +
+'     fnCallback:callbackPrompt \n' +
+'   }); \n\n' +
+' ---------------------------------------------- callback EXAMPLE ---\n' +
+'// You can use the callback to manage the Popup answer, returned into objRet \n' +
+'  // Example of objRet, if user insert  and click OK: \n' +
+'  //   objRet= {"retBtn": "CONFIRM", "promptValue": "9"} \n' +
 '  var retBtn   = objRet.retBtn; \n' +
 '  if (retBtn   == POPUP_BTN.CONFIRM){  // Popup Closed clicking OK \n' + 
 '  }else if (retBtn   == POPUP_BTN.CANCEL){  // Popup Closed clicking CANCEL \n' + 
@@ -660,7 +667,9 @@ var JS1_PROMPT= '// 1) Show Popup, using whatever HTML Tag in szMsg \n' +
 '  ...';
 
 
-var JS1_CHOICE= '// 1) Show Popup, using whatever HTML Tag in szMsg. In this example item10 is pre-selected \n' +
+var JS1_CHOICE= '// 1 JSU API Popup() is enough to show the Popup: \n' +
+'Show Popup, using whatever HTML Tag in szMsg and set Choice Obptions (Items,...), \n' + 
+'In this example item10 is pre-selected \n' +
 'var objRet = PopupChoice ( //Messages \n' +
 '  "Example of <b>Single Selection Choice</b>......",  "<b>Select only one field</b>", \n' +
 '  // arChoice: \n' +
@@ -668,18 +677,20 @@ var JS1_CHOICE= '// 1) Show Popup, using whatever HTML Tag in szMsg. In this exa
 '     {value:2, szText:"This is an example of the Item2",  bSel:false}, \n' +
 '     ....... \n' +
 '     {value:10, szText:"This is an example of the Item10",  bSel:true}, \n' +
-'     ....... \n' +
-'  ]); \n' +
-'  // Example of objRet, if user select Item2 and click OK: \n' +
-'  // objRet={\n' +
-'  //   "retBtn":"CONFIRM",\n' +
-'  //   "choiceValue":"2",\n' +
-'  //   "choiceText":"This is an example of the Item2",\n' +
-'  //   "arChoice":[{"value":"1","szText":"This is an example of the Item1","bSel":false},\n' +
-'  //               {"value":"2","szText":"This is an example of the Item2","bSel":true},\n' +
-'  //               ..........................................'
-'  //               .......................................... }]}\n' +  
-'// 2) manage the Popup answer, returned into objRet \n' + 
+'     fnCallback:callbackChoice\n' +
+'  ]); \n\n' +
+' ---------------------------------------------- callbackChoice(objRet) EXAMPLE ---\n' +
+'// You can use the callback to manage the Popup answer, returned into objRet \n' + 
+' function callbackChoice(objRet){ \n' +
+'// Example of objRet, if user select Item2 and click OK: \n' +
+'// objRet={\n' +
+'//   "retBtn":"CONFIRM",\n' +
+'//   "choiceValue":"2",\n' +
+'//   "choiceText":"This is an example of the Item2",\n' +
+'//   "arChoice":[{"value":"1","szText":"This is an example of the Item1","bSel":false},\n' +
+'//               {"value":"2","szText":"This is an example of the Item2","bSel":true},\n' +
+'//               ..........................................'
+'//               .......................................... }]}\n' +  
 '  var retBtn   = objRet.retBtn; \n' +
 '  if (retBtn   == POPUP_BTN.CONFIRM){  // Popup Closed clicking OK \n' + 
 '  }else if (retBtn   == POPUP_BTN.CANCEL){  // Popup Closed clicking CANCEL \n' + 
@@ -749,7 +760,7 @@ var JS3_PAGE= '// Prepare the HTML Msg with the Embedded Page \n' +
 
 
 /**
- * Show JS Code for Sample2 (in a TextBox because it has HTML tags)
+ * Show JS Code for Sample1 (in a TextBox because it has HTML tags)
  * @param event
  * @returns
  */
@@ -757,7 +768,7 @@ function sample1Code(event){
   // Get the szAlertType set by User 
   var szAlertType =  selectGetSelVal(getElementById2('popupType1Desc'));
   var szTip="";
-  
+  var iRowNum = 24;
   if (szAlertType == POPUP_TYPE.CHOICE){
     szTip = JS1_CHOICE;
   }else if (szAlertType == POPUP_TYPE.PROMPT){
@@ -765,11 +776,35 @@ function sample1Code(event){
   }else if (szAlertType == POPUP_TYPE.QUESTION || szAlertType == POPUP_TYPE.QUESTION_3){
     szTip = JS1_QUESTION;
   }else {
-    szTip = JS1_NOTIFY;
+  	var szPopupType = "";
+  	switch (szAlertType){
+  	  case POPUP_TYPE.INFO:
+  	  	szPopupType = "POPUP_TYPE.INFO"; 
+  	  	break;
+  	  case POPUP_TYPE.WARN:
+  	  	szPopupType = "POPUP_TYPE.WARN"; 
+  	  	break;
+  	  case POPUP_TYPE.ERR:
+  	  	szPopupType = "POPUP_TYPE.ERR"; 
+  	  	break;
+  	  case POPUP_TYPE.ALARM:
+  	  	szPopupType = "POPUP_TYPE.ALARM"; 
+  	  	break;
+  	  case POPUP_TYPE.CONFIRM:
+  	  	szPopupType = "POPUP_TYPE.CONFIRM"; 
+  	  	break;
+  	} 
+  	iRowNum = 5;
+    var szTip = '// 1 JSU API is enough: we can show a szMsg with whatever HTML TAG:\n' +
+    'Popup (' + szPopupType  +', \n' +
+    '"This is an Message with <b>some part bold</b>, <i>some part Italic</i>,... "); ';
+    
   }  
-  TipFixTextArea(szTip,event,{iColNum:130, iRowNum:20,szTitle:"JS Source Code - POPUP_TYPE=" + szAlertType});
+  TipFixTextArea(szTip,event,{iColNum:120, iRowNum:iRowNum,szTitle:"JS Source Code - POPUP_TYPE=" + szAlertType});
   
 }
+
+
 
 
 

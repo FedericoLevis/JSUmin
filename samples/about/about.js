@@ -84,6 +84,9 @@ var JSU_URL_VIDEO_TIP= "https://youtu.be/Fmc6hL4prXY";
 var JSU_URL_VIDEO_LOADING="https://youtu.be/0XinCNtTl1c";
 var JSU_URL_VIDEO_VALIDATE="https://youtu.be/vuNOTXMknWw";
 
+var JSU_URL_VIDEO_GA="https://youtu.be/vuNOTXMknWw";
+var JSU_URL_VIDEO_GASTEPS="https://youtu.be/vuNOTXMknWw";
+
 
 // NOTE: embed is visible in the Embed Tab of Youtube Video  
 // NOT Used EMBED: we prefer Direct Videu URL
@@ -1215,21 +1218,33 @@ function showSampleIEPopup(bNewWindow){
  */
 function jsuVideo(szVideoFrame,szTitle,iWidth){
 	Popup(POPUP_TYPE.INFO, szVideoFrame, {bShowImg:false,iWidth:iWidth,position:{at: "top"}, szTitle: szTitle});
-  // jsuGoToURL ("https://youtu.be/wpo2oM_L3ds");
 
 }
 
 function jsuVideoTip(bNewWindow){
+	if (typeof(bNewWindow) == "undefined") {bNewWindow= true;}
 	jsuGoToURL(JSU_URL_VIDEO_TIP,bNewWindow);
 }
 
 
 function jsuVideoLoading(bNewWindow){
+	if (typeof(bNewWindow) == "undefined") {bNewWindow= true;}
 	jsuGoToURL(JSU_URL_VIDEO_LOADING,bNewWindow);
+}
+
+function jsuVideoGA(bNewWindow){
+	if (typeof(bNewWindow) == "undefined") {bNewWindow= true;}
+	jsuGoToURL(JSU_URL_VIDEO_GA,bNewWindow);
+}
+
+function jsuVideoGASteps(bNewWindow){
+	if (typeof(bNewWindow) == "undefined") {bNewWindow= true;}
+	jsuGoToURL(JSU_URL_VIDEO_GASTEPS,bNewWindow);
 }
 
 
 function jsuVideoSort(bNewWindow){
+	if (typeof(bNewWindow) == "undefined") {bNewWindow= true;}
 	featureNotReady();
 	/*
   Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_SORT,
@@ -1241,6 +1256,7 @@ function jsuVideoSort(bNewWindow){
 
 
 function jsuVideojslog(bNewWindow){
+	if (typeof(bNewWindow) == "undefined") {bNewWindow= true;}
 	featureNotReady();
 	/*
   Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_JSLOG,
@@ -1251,6 +1267,7 @@ function jsuVideojslog(bNewWindow){
 
 
 function jsuVideoJQPopup(bNewWindow){
+	if (typeof(bNewWindow) == "undefined") {bNewWindow= true;}
 	featureNotReady();
 	/*
   Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_JQPOPUP,
@@ -1259,6 +1276,7 @@ function jsuVideoJQPopup(bNewWindow){
 }
 
 function jsuVideoIEPopup(bNewWindow){
+	if (typeof(bNewWindow) == "undefined") {bNewWindow= true;}
 	featureNotReady();
 	/*
   Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_IEPOPUP,
@@ -1268,6 +1286,7 @@ function jsuVideoIEPopup(bNewWindow){
 
 
 function jsuVideoValidate(bNewWindow){
+	if (typeof(bNewWindow) == "undefined") {bNewWindow= true;}
 	jsuGoToURL(JSU_URL_VIDEO_VALIDATE,bNewWindow);
 }
 
