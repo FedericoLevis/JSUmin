@@ -64,17 +64,23 @@ function showGAList(event){
   <tr >
     <td class="tipl" width="50%">
 	   <!--  GOOGLE_ANAL Modification  STEP 4b)  ADD googleAnalList for the List of GoogleAnalytics URLs   -->
-        <input type="button"  class="googleAnalList" id="googleAnalList"  onclick="showGAList(event);"  onmouseover="Tip('Show a Box with an <b>User Friendly List of URLs to Google Analytics</b>');" onmouseout="UnTip(event)"/> 
+        <input type="button"  class="googleAnalList" id="googleAnalList"  onclick="showGAList(event);"  
+        onmouseover="Tip('Show a Box with an <b>User Friendly List of URLs to Google Analytics</b>');" onmouseout="UnTip(event)"/> 
     </td>
     <td class="tipr" width="50%">
      <table valign="bottom" align="right">
         <tr>
             <td valign="bottom"> <input type="button" 
-			  style="  width: 146px; height: 27px; cursor: pointer; background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/downloadFree.png) no-repeat right center;"
+			  style="  width: 146px; height: 27px; cursor: pointer; background: gray url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/downloadFree.png) 
+              no-repeat right center;"
 			  onclick="window.location=JSU_URL_DOWNLOAD;"/> </td>
 	        <!--  GOOGLE_ANAL Modification  STEP 3)  ADD googleAnal Button to show the Page of LastMonth GoogleAnalytics of JSU_URL_DOWNLOAD   -->
-            <td valign="bottom"> <input type="button"  class="googleAnal" id="googleAnalFree"  onclick="gaShortUrlPage (JSU_URL_DOWNLOAD, {  bNewWindow: true,  szParTime: GA_PAR_TIME.month });"
-            		onmouseover="Tip('Show the Page of <b>Last Month GoogleAnalytics</b> of <i>FREE JSU Download Page</i>');" onmouseout="UnTip(event)"	/> </td>
+            <td valign="bottom"> 
+               <input type="button"  class="googleAnal" id="googleAnalFree"  
+                onclick="gaShortUrlPage (JSU_URL_DOWNLOAD, {  bNewWindow: true,  szParTime: GA_PAR_TIME.month });"
+                onmouseover="Tip('Show the Page of <b>Last Month GoogleAnalytics</b> of <i>FREE JSU Download Page</i>');" 
+                onmouseout="UnTip(event)"	/> 
+            </td>
         </tr>
       </table>  
     </td>
