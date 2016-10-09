@@ -41,19 +41,19 @@ Table of Contents
 <span id="11-jsu-core-features"></span>
 ## 1.1) JSU CORE Features 
 ``Pure JQ Plugins, No Requirement``  
-  - [Tooltip]: Many **HTML Tooltips** options: **Floating/Fixed Tips** with GIF, Video, Code Highlight (JS, CSS, Java, Shell,...) <a href="https://youtu.be/wpo2oM_L3ds" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
-  - [Validate]: **Validate Items** with many constraints/options. Show Validate Errors in Red Items or Section, Popup ... <a href="javascript:null" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
-  - [LoadingDiv]:  **Loading Div** to be displayed during Long Operation. Many Options provided: Loading Gif, Title, Message, ElapsedSec... <a href="javascript:null" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
-  - [Google Analytics]:  JSU API to build in few minutes a **User Friendly List of Links to Google Analytics**  <a href="javascript:null" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
-  - [JSLog]: **Log** from JS Code into an optional Window: log Text, Object, JSON, Time Elapsed ... <a href="javascript:null" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
-  - [SortTable]:  **Sort HTML Table** by clicking column header <a href="javascript:null" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
+  - [Tooltip]: Many **HTML Tooltips** options: **Floating/Fixed Tips** with GIF, Video, Code Highlight (JS, CSS, Java, Shell,...) <a href="https://youtu.be/Fmc6hL4prXY" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
+  - [Validate]: **Validate Items** with many constraints/options. Show Validate Errors in Red Items or Section, Popup ... <a href="https://youtu.be/vuNOTXMknWw" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
+  - [LoadingDiv]:  **Loading Div** to be displayed during Long Operation. Many Options provided: Loading Gif, Title, Message, ElapsedSec... <a href="https://youtu.be/0XinCNtTl1c" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
+  - [Google Analytics]:  JSU API to build in few minutes a **User Friendly List of Links to Google Analytics**  <a href="https://youtu.be/XKwPot0aDWk" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
+  - [JSLog]: **Log** from JS Code into an optional Window: log Text, Object, JSON, Time Elapsed ... <a href="https://youtu.be/nmonU5wnJjI" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
+  - [SortTable]:  **Sort HTML Table** by clicking column header <a href="https://youtu.be/cLfEFYIhFDc" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
   - [IE Popup]: **HTML Modal Popup** designed only for **IE** (the feature is based on *IE ShowModalDialog API*). This feature can be useful if you need **Blocking Code implementation** (like alert) and if only IE is the browser required. 
-   In other browser (Firefox, Chrome,...) **IE Popup API** will simply dispaly the messages in Alert instead of an HTML Popup.  <a href="javascript:null" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
+   In other browser (Firefox, Chrome,...) **IE Popup API** will simply dispaly the messages in Alert instead of an HTML Popup.  <a href="https://youtu.be/yDTPt1sGOOc" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
   
 ## 1.2) JSU jquery Features
 ``JQ Popup (required: jquery, jquery-ui)``  
 JSU JQUERY Features are not *Pure JS plugin* like previous one, but they require **jquery and jquery-ui** (provided in the JSU.ZIP):
-  - [JQ Popup]: **HTML Modal Popup API working in all Browser** - Popup Buttons (YES, NO,..) use **callback implementation**  <a href="javascript:null" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
+  - [JQ Popup]: **HTML Modal Popup API working in all Browser** - Popup Buttons (YES, NO,..) use **callback implementation**  <a href="https://youtu.be/yerZchQnP7c" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
 
   
 ## 1.3) JSU Popup Plugin Choice
@@ -83,14 +83,14 @@ JSU CONTENT        | LINK
   
 Sample              |Feature Documentation |   API Documentation    | VIDEO of the FEATURE
 --------------------|---------------|-------------------------------|---------------------
-[Tooltip Sample]    | [Tooltip]    |  [Tooltip API] |  <a href="https://youtu.be/wpo2oM_L3ds" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
-[Validate Sample]  | [Validate]    |  [Validate API] |  <a href="javascript:null" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
-[Google Analytics Sample]  | [Google Analytics]    |  [Google Analytics API] |  <a href="javascript:null" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
-[LoadingDiv Sample]  | [LoadingDiv]    |  [LoadingDiv API] |  <a href="javascript:null" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
-[JSLog Sample]  |[JSlog]    |  [JSlog API] |  <a href="javascript:null" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
-[SortTable Sample] |  [SortTable]  | [SortTable API] |  <a href="javascript:null" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
-[IE Popup Sample] | [IE Popup] | [IE Popup API] |  <a href="javascript:null" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
-[JQ Popup Sample]  | [JQ Popup]    |  [JQ Popup API] |  <a href="javascript:null" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
+[Tooltip Sample]    | [Tooltip]    |  [Tooltip API] |  <a href="https://youtu.be/Fmc6hL4prXY" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
+[Validate Sample]  | [Validate]    |  [Validate API] |  <a href="https://youtu.be/vuNOTXMknWw" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
+[LoadingDiv Sample]  | [LoadingDiv]    |  [LoadingDiv API] |  <a href="https://youtu.be/0XinCNtTl1c" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
+[Google Analytics Sample]  | [Google Analytics]    |  [Google Analytics API] |  <a href="https://youtu.be/XKwPot0aDWk" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
+[JSLog Sample]  |[JSlog]    |  [JSlog API] |  <a href="https://youtu.be/nmonU5wnJjI" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
+[SortTable Sample] |  [SortTable]  | [SortTable API] |  <a href="https://youtu.be/cLfEFYIhFDc" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
+[IE Popup Sample] | [IE Popup] | [IE Popup API] |  <a href="https://youtu.be/yDTPt1sGOOc" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
+[JQ Popup Sample]  | [JQ Popup]    |  [JQ Popup API] |  <a href="https://youtu.be/yerZchQnP7c" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
 
 Each of the previous link can be reached by the [Main JSU Samples] or by the specific samples 
 
@@ -141,8 +141,8 @@ You can **easily modify jsu.js or jsu-jq.js** to automatically modify the langua
 ```javascript
 ...
 // decomment only jsuVersion the version that you want to use
-// var jsuVersion ="";       // JSU with Comment (or Obfuscated in the Free version)
-var jsuVersion = "/Minify"      // JSU Minified
+var jsuVersion ="";       // JSU with Comment 
+// var jsuVersion = "/Minify"      // JSU Minified
 requirejs.config({
     baseUrl: JSU_PATH_BASE,
 	// Path relative to baseUrl
@@ -198,7 +198,7 @@ MIT
    [JSLog Sample]: <https://goo.gl/aAtyxG>  
    [IE Popup Sample]: <https://goo.gl/u2zTRz>  
    [Validate Sample]: <https://goo.gl/SboNsD>  
-   [JQ Popup Sample]: <https://goo.gl/aAtyxG>  
+   [jquery Popup Sample]: <https://goo.gl/aAtyxG>  
      
    [JSU API Documentation]: <https://goo.gl/0PGnZl>
    [JSU CSS Documentation]: <https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/index.html>
@@ -209,7 +209,7 @@ MIT
    [Tooltip]: <https://goo.gl/AGKlpQ>
    [Validate]: <https://goo.gl/M7LT4v>
    [Google Analytics]: <http://goo.gl/UYJ5Zv>
-   [JQ Popup]: <https://goo.gl/iPqUqL>  
+   [jquery Popup]: <https://goo.gl/iPqUqL>  
    [SortTable]: <https://goo.gl/aKR7b2>
    [LoadingDiv]: <https://goo.gl/0tIOIJ>
    [JSLog]: <https://goo.gl/Iobg3a>
@@ -222,7 +222,7 @@ MIT
    [LoadingDiv API]: <https://rawgit.com/FedericoLevis/JSUDoc/master/loadingDiv.js/index.html>
    [JSLog API]: <https://rawgit.com/FedericoLevis/JSUDoc/master/jslog.js/index.html>
    [IE Popup API]: <https://rawgit.com/FedericoLevis/JSUDoc/master/IEPopup.js/index.html>
-   [JQ Popup API]: <https://rawgit.com/FedericoLevis/JSUDoc/master/JSPopup.js/index.html>  
+   [jquery Popup API]: <https://rawgit.com/FedericoLevis/JSUDoc/master/JSPopup.js/index.html>  
    [JSU Tooltip Loading with require.js jsu.js - TipSample.html]: <https://github.com/FedericoLevis/JSU/blob/master/samples/Tip/TipSample.html>
    [JSU Tooltip Loading with file List - TipSimple.html]: <https://github.com/FedericoLevis/JSU/blob/master/samples/Tip/TipSimple.html>
    [jsu.css]: <https://rawgit.com/FedericoLevis/JSUDoc/master/CSSDoc/index.html>
