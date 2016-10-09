@@ -88,6 +88,9 @@ var JSU_URL_VIDEO_GA="https://youtu.be/XKwPot0aDWk";
 var JSU_URL_VIDEO_GASTEPS="https://youtu.be/lTPYlw7HQIg";
 var JSU_URL_VIDEO_JQPOPUP="https://youtu.be/yerZchQnP7c";
 var JSU_URL_VIDEO_IEPOPUP="https://youtu.be/yDTPt1sGOOc";
+var JSU_URL_VIDEO_SORT="https://youtu.be/cLfEFYIhFDc";
+var JSU_URL_VIDEO_JSLOG="https://youtu.be/nmonU5wnJjI";
+
 
 
 // NOTE: embed is visible in the Embed Tab of Youtube Video  
@@ -295,10 +298,10 @@ var JSU_TIP_SECT2_FEAT =  '<table class="tip" BORDER="2" cellspacing="0" cellpad
 '		  <td class="tipc"><a class="tipLink" href="javascript:showSampleIEPopup();">IE Popup Sample</a></td>' +
 '	  </tr>' +
 '	  <tr>' +
-'		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocJQPopup(true);" target="_blank">JQ Popup</a> </td>' +
+'		  <td class="tipc"><a class="tipLink" href="javascript:jsuDocJQPopup(true);" target="_blank">jquery Popup</a> </td>' +
 '		  <td class="tipl"><b>Modal Popup for whatever Browser</b><BR/><b>Not Blocking code</b> with callback function</td>' + 
-'     <td class="tipc"><a href="javascript:jsuVideoJQPopup()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of JQ Popup Feature"/></a></td> ' +  
-'		  <td class="tipc"><a class="tipLink" href="javascript:showSampleJQPopup();">JQ Popup Sample</a></td>' +
+'     <td class="tipc"><a href="javascript:jsuVideoJQPopup()"> <input type="button" class="playVideoSmall" title="Click to Show a YouTube Video of jquery Popup Feature"/></a></td> ' +  
+'		  <td class="tipc"><a class="tipLink" href="javascript:showSampleJQPopup();">jquery Popup Sample</a></td>' +
 '	  </tr>' +
 '</table>';
 
@@ -307,7 +310,7 @@ var JSU_TIP_SECT2_MSG = '<a class="tipLink" href="'+ JSU_SITE +'" target="_blank
 '<ul type="square">' +
 '<li><b>Easy to Install/Test</b>: download JSU ZIP and try samples in jsu/samples</li>'+ 
 '<li><b>Simple to include in your project</b> with only one JS load instruction: <b>requires.js loads plugin/jsu.js </b></li>'+ 
-'<li><b>No dependencies</b> for all the JSU Features (<b>Pure JS code</b>) with the only exception of JQ Popup (requiring jquuery, jquery-ui)</li>'+ 
+'<li><b>No dependencies</b> for all the JSU Features (<b>Pure JS code</b>) with the only exception of jquery Popup (requiring jquuery, jquery-ui)</li>'+ 
 '<li><b>All modern browsers are supported</b>: IE9+, Firefox 3+, Chrome,... </li>'+ 
 '<li><b>Many Examples provided</b> for each JSU feature, with all the <b> relative JSU code calls explained in Fixed Tips</b></li>'+ 
 '<li><b>Feature Documentation and JSDoc API</b> for each feature</li>'+ 
@@ -1247,11 +1250,7 @@ function jsuVideoGASteps(bNewWindow){
 
 function jsuVideoSort(bNewWindow){
 	if (typeof(bNewWindow) == "undefined") {bNewWindow= true;}
-	featureNotReady();
-	/*
-  Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_SORT,
-      {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "Sort Table Sample"});
-  */    
+	jsuGoToURL(JSU_URL_VIDEO_SORT,bNewWindow);
 }
 
 
@@ -1259,11 +1258,7 @@ function jsuVideoSort(bNewWindow){
 
 function jsuVideojslog(bNewWindow){
 	if (typeof(bNewWindow) == "undefined") {bNewWindow= true;}
-	featureNotReady();
-	/*
-  Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_JSLOG,
-      {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "JSLog Sample"});
-  */    
+	jsuGoToURL(JSU_URL_VIDEO_JSLOG,bNewWindow);
 }
 
 
@@ -1310,7 +1305,7 @@ function jsuGoogleAnalList (event){
        {shortUrl: JSU_SHORT_URL_SAMPLE_JSLOG, longUrl: JSU_LONG_URL_SAMPLE_JSLOG, cat:GA_CAT_SAMPLE,desc:'JSLog Sample'},
        {shortUrl: JSU_SHORT_URL_SAMPLE_SORT, longUrl: JSU_LONG_URL_SAMPLE_SORT, cat:GA_CAT_SAMPLE, desc:'SortTable Sample'},
        {shortUrl: JSU_SHORT_URL_SAMPLE_IEPOPUP, longUrl: JSU_LONG_URL_SAMPLE_IEPOPUP, cat:GA_CAT_SAMPLE,desc:'IE Popup Sample'},
-       {shortUrl: JSU_SHORT_URL_SAMPLE_JQPOPUP, longUrl: JSU_LONG_URL_SAMPLE_JQPOPUP, cat:GA_CAT_SAMPLE,desc:'JQ Popup Sample'},
+       {shortUrl: JSU_SHORT_URL_SAMPLE_JQPOPUP, longUrl: JSU_LONG_URL_SAMPLE_JQPOPUP, cat:GA_CAT_SAMPLE,desc:'jquery Popup Sample'},
        // --------------------------
        {shortUrl: JSU_SHORT_URL_DOC, longUrl: JSU_LONG_URL_DOC, cat:GA_CAT_DOC,desc:'JSU Documentation'},
        {shortUrl: JSU_SHORT_URL_DOC_TIP, longUrl: JSU_LONG_URL_DOC_TIP, cat:GA_CAT_DOC,desc:'JSU Tooltip Documentation'},
@@ -1320,7 +1315,7 @@ function jsuGoogleAnalList (event){
        {shortUrl: JSU_SHORT_URL_DOC_JSLOG, longUrl: JSU_LONG_URL_DOC_JSLOG, cat:GA_CAT_DOC,desc:'JSU JSLog Doc'},
        {shortUrl: JSU_SHORT_URL_DOC_SORT, longUrl: JSU_LONG_URL_DOC_SORT, cat:GA_CAT_DOC,desc:'JSU SortTable Documentation'},
        {shortUrl: JSU_SHORT_URL_DOC_IEPOPUP, longUrl: JSU_LONG_URL_DOC_IEPOPUP, cat:GA_CAT_DOC,desc:'JSU IE Popup Doc'},
-       {shortUrl: JSU_SHORT_URL_DOC_JQPOPUP, longUrl: JSU_LONG_URL_DOC_JQPOPUP, cat:GA_CAT_DOC,desc:'JSU JQ Popup Doc'}
+       {shortUrl: JSU_SHORT_URL_DOC_JQPOPUP, longUrl: JSU_LONG_URL_DOC_JQPOPUP, cat:GA_CAT_DOC,desc:'JSU jquery Popup Doc'}
        
      ];
   // show the TipFix with the List of Link
