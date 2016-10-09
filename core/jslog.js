@@ -7,7 +7,7 @@
 <b>Description:</b>        jslog API:   jslog*    <BR/>   
 <b>REQUIRE:</b>           JSU: dom-drag.js    <BR/>
 <b>First Version:</b>     ver 1.0 - Nov 2008  <BR/>
-<b>Current Version:</b>   JSU v. 1.8 &nbsp;&nbsp;&nbsp;2016-Sep-29  <BR/>
+<b>Current Version:</b>   JSU v. 1.8 &nbsp;&nbsp;&nbsp;2016-Oct-09  <BR/>
 <BR/>-----------------------------------------------------------------------------------<BR/>
 <b>DISCLAIMER</b>  <BR/>
 Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" target="_self">JSU</a> <BR/> 

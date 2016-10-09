@@ -111,9 +111,13 @@ var ar_test_wix = [// --------------- random se iPos>=1
 
 
 var ar_test_you = [// --------------- random se iPos>=1
-                   {iCountReq:4,iPos:0, szName:'Tooltip',szURL:JSU_URL_VIDEO_TIP, iCountCur:0, iClickDone:0},
-                   {iCountReq:6,iPos:0, szName:'Validate',szURL:JSU_URL_VIDEO_VALIDATE, iCountCur:0, iClickDone:0},
-                   {iCountReq:7,iPos:0, szName:'Loading',szURL:JSU_URL_VIDEO_LOADING, iCountCur:0, iClickDone:0}
+                   {iCountReq:4,iPos:1, szName:'Tooltip',szURL:JSU_URL_VIDEO_TIP, iCountCur:0, iClickDone:0},
+                   {iCountReq:6,iPos:1, szName:'Validate',szURL:JSU_URL_VIDEO_VALIDATE, iCountCur:0, iClickDone:0},
+                   {iCountReq:7,iPos:1, szName:'Loading',szURL:JSU_URL_VIDEO_LOADING, iCountCur:0, iClickDone:0}
+                   {iCountReq:3,iPos:1, szName:'GA',szURL:JSU_URL_VIDEO_GA, iCountCur:0, iClickDone:0},
+                   {iCountReq:3,iPos:1, szName:'GASteps',szURL:JSU_URL_VIDEO_GASTEPS, iCountCur:0, iClickDone:0},
+                   {iCountReq:3,iPos:1, szName:'IEPopup',szURL:JSU_URL_VIDEO_IEPOPUP, iCountCur:0, iClickDone:0},
+                   {iCountReq:2,iPos:1, szName:'JQPopup',szURL:JSU_URL_VIDEO_JQPOPUP, iCountCur:0, iClickDone:0}
                    ];
 
 

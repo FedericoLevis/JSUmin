@@ -86,9 +86,9 @@
     <tr class="tipTitleBig2" id="tr_sample_0" >
       <td id="col_0_1" width="45%" class="tipc">SAMPLE
         <!--  To show all sample or only ONE   -->
-        <select id="selectSample" class="selectSample"  onchange="onchange_sample()">
-            <option value="1">Show SAMPLE_1: Table with Standard Format</option>
-            <option value="2">Show SAMPLE_2: Table with a CUSTOM FORMAT</option>
+        <select id="selectSample" style="width:340px;" class="selectSample"  onchange="onchange_sample()">
+            <option value="1">Show SAMPLE_1: Standard Table Format</option>
+            <option value="2">Show SAMPLE_2: Custom Table Format</option>
             <option value="3">Show SAMPLE_3: Other cSortTable API</option>
             <option value="ALL" selected>Show ALL SAMPLES</option>
       
@@ -99,7 +99,7 @@
     <!--   ===================================== SAMPLE_1 ==============================================  -->
     <tr  id="tr_sample_1">
       <td class="sample"  id="col_1_1"  valign="top">
-        <label class="sampleTitle">SAMPLE_1 - Sort a Table with a Standard Format </label>
+        <label class="sampleTitle">SAMPLE_1 - Standard Table Format </label>
  	     	<table style="margin-left:10px;margin-top:5px">
 			          <tr>
 			            <td align="left">
@@ -116,8 +116,8 @@
 			        <tr>
 			          <td>
 			            <!--  div containing the table to sort  -->
-							    <div id="divTbl1" class="sampleSort det" style="width:500px;max-height:180px" >
-							       <div class="jsuLoading" style="height:180px"></div>
+							    <div id="divTbl1" class="sampleSort det" style="width:600px;max-height:250px" >
+							       <div class="jsuLoading" style="height:200px"></div>
 							    </div>
 			          </td>
 			        </tr>
@@ -149,7 +149,7 @@
     <!--   ===================================== TBL2 ==============================================  -->
     <tr id="tr_sample_2">
       <td class="sample"  id="col_2_1" valign="top">
-        <label class="sampleTitle">SAMPLE_2 - Sort a Table with a CUSTOM FORMAT </label>
+        <label class="sampleTitle">SAMPLE_2 - Custom Table Format </label>
         <!--     TABLE tbl2 to SORT -->
 				<table class="sampleSort" style="margin-top:5px;margin-left:10px"  id="tbl2" border="1" width="500px">  
 				   <thead>    

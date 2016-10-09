@@ -71,8 +71,8 @@
         </select> 
       </th>
     </tr>
-    <tr class="tipTitleBig2">
-      <td width="65%" class="tipc">SAMPLE
+    <tr class="tipTitleBig2" id="tr_sample_0">
+      <td id="col_0_1" width="65%" class="tipc">SAMPLE
         <!--  To show all sample or only ONE   -->
         <select id="selectSample" class="selectSample"  onchange="onchange_sample()">
             <option value="1">Show Sample_1: Main JSLog APIs</option>
@@ -80,14 +80,16 @@
             <option value="ALL" selected>Show ALL Samples</option>
       
       </td>
-      <td width="35%" class="tipc">DESCRIPTION</td>
+      <td id="col_0_2" width="35%" class="tipc">DESCRIPTION</td>
     </tr>
 
     <!--   ===================================== SAMPLE_1 ==============================================  -->
     <tr  id="tr_sample_1" style="vertical-align:top;">
        <td class="sample"  id="col_1_1">
+         <div>
          <label class="sampleTitle">SAMPLE_1 - Main JSLog APIs </label>
-         <table class="sampleNote"><tr>
+         <table class="sampleNote">
+             <tr>
                 <td class="sampleNote"><input class="sampleNote"></td>
                 <td>
                  <ul class="sampleNote">
@@ -165,7 +167,7 @@
 		    <li><input type="button" class="jsuButton" value="Stop jslog" onclick="jslog_end()">
 			</li>
 		 </ul>
-					
+		</div>			
       </td>
   
       <!--    SAMPLE_1 DESCRIPTION -->
@@ -236,16 +238,9 @@
                         https://rawgit.com/FedericoLevis/JSU/master/samples/GoogleAnal/GoogleAnalSample.html?jslog=31</a> 
                     </li>
 				</ul>
-                <BR/>
-                  <b>Jslog sample in WEB Application:</b>
-                    <input style="margin-left:10px" class="jsuButton" type="button" value="JSlog Video Sample" onclick="sample2_web(event)" /> 
                 </td>
-              </td>
-			</tr>
+ 		</tr>
        </table>
-  
- 
-					
       </td>
   
       <!--    SAMPLE_2 DESCRIPTION -->

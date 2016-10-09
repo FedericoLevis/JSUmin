@@ -84,8 +84,10 @@ var JSU_URL_VIDEO_TIP= "https://youtu.be/Fmc6hL4prXY";
 var JSU_URL_VIDEO_LOADING="https://youtu.be/0XinCNtTl1c";
 var JSU_URL_VIDEO_VALIDATE="https://youtu.be/vuNOTXMknWw";
 
-var JSU_URL_VIDEO_GA="https://youtu.be/vuNOTXMknWw";
-var JSU_URL_VIDEO_GASTEPS="https://youtu.be/vuNOTXMknWw";
+var JSU_URL_VIDEO_GA="https://youtu.be/XKwPot0aDWk";
+var JSU_URL_VIDEO_GASTEPS="https://youtu.be/lTPYlw7HQIg";
+var JSU_URL_VIDEO_JQPOPUP="https://youtu.be/yerZchQnP7c";
+var JSU_URL_VIDEO_IEPOPUP="https://youtu.be/yDTPt1sGOOc";
 
 
 // NOTE: embed is visible in the Embed Tab of Youtube Video  
@@ -1268,20 +1270,12 @@ function jsuVideojslog(bNewWindow){
 
 function jsuVideoJQPopup(bNewWindow){
 	if (typeof(bNewWindow) == "undefined") {bNewWindow= true;}
-	featureNotReady();
-	/*
-  Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_JQPOPUP,
-      {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "JQ Popup Sample"});
-  */    
+	jsuGoToURL(JSU_URL_VIDEO_JQPOPUP,bNewWindow);
 }
 
 function jsuVideoIEPopup(bNewWindow){
 	if (typeof(bNewWindow) == "undefined") {bNewWindow= true;}
-	featureNotReady();
-	/*
-  Popup(POPUP_TYPE.INFO, JSU_VIDEO_FRAME_IEPOPUP,
-      {bShowImg:false,iWidth:650,position:{at: "top"}, szTitle: "IE Popup Sample"});
-  */    
+	jsuGoToURL(JSU_URL_VIDEO_IEPOPUP,bNewWindow);
 }
 
 
