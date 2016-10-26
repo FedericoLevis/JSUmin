@@ -81,15 +81,15 @@ var SAMPLE_COL_ALL="ALL";
 
 
 var JSU_URL_VIDEO_TIP= "https://youtu.be/Fmc6hL4prXY";
-var JSU_URL_VIDEO_LOADING="https://youtu.be/0XinCNtTl1c";
 var JSU_URL_VIDEO_VALIDATE="https://youtu.be/vuNOTXMknWw";
+var JSU_URL_VIDEO_LOADING="https://youtu.be/0XinCNtTl1c";
 
 var JSU_URL_VIDEO_GA="https://youtu.be/XKwPot0aDWk";
 var JSU_URL_VIDEO_GASTEPS="https://youtu.be/lTPYlw7HQIg";
-var JSU_URL_VIDEO_JQPOPUP="https://youtu.be/yerZchQnP7c";
-var JSU_URL_VIDEO_IEPOPUP="https://youtu.be/yDTPt1sGOOc";
-var JSU_URL_VIDEO_SORT="https://youtu.be/cLfEFYIhFDc";
 var JSU_URL_VIDEO_JSLOG="https://youtu.be/nmonU5wnJjI";
+var JSU_URL_VIDEO_SORT="https://youtu.be/cLfEFYIhFDc";
+var JSU_URL_VIDEO_IEPOPUP="https://youtu.be/yDTPt1sGOOc";
+var JSU_URL_VIDEO_JQPOPUP="https://youtu.be/yerZchQnP7c";
 
 
 
