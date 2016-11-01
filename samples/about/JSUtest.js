@@ -7,6 +7,7 @@
 var URL_PAR_TYPE_WIX="wix";
 var URL_PAR_TYPE_JSU="jsu";
 var URL_PAR_TYPE_YOUTYBE="you";
+var URL_PAR_TYPE_CEL="cel";
 
 
 var JSU_URL_VIDEO_CEL_1="https://youtu.be/Qg4CmxDdWJQ";
@@ -43,6 +44,8 @@ function testStart(bFrame){
 		ar_test = ar_test_wix;
 	}else if (url_par.type == URL_PAR_TYPE_YOUTYBE) {
 		ar_test = ar_test_you;
+	}else if (url_par.type == URL_PAR_TYPE_CEL) {
+		ar_test = ar_test_cel;
 	} 
 	
 	// random enable
@@ -129,15 +132,22 @@ var ar_test_you = [// --------------- random se iPos>=1
                    {iCountReq:3,iPos:1, szName:'Sort',szURL:JSU_URL_VIDEO_SORT, iCountCur:0, iClickDone:0},
                    {iCountReq:5,iPos:1, szName:'JSLog',szURL:JSU_URL_VIDEO_JSLOG, iCountCur:0, iClickDone:0},
                    {iCountReq:6,iPos:1, szName:'IEPopup',szURL:JSU_URL_VIDEO_IEPOPUP, iCountCur:0, iClickDone:0},
-                   {iCountReq:2,iPos:1, szName:'JQPopup',szURL:JSU_URL_VIDEO_JQPOPUP, iCountCur:0, iClickDone:0},
-                   {iCountReq:6,iPos:1, szName:'JSU_URL_VIDEO_CEL_1',szURL:JSU_URL_VIDEO_CEL_1, iCountCur:0, iClickDone:0},
-                   {iCountReq:8,iPos:1, szName:'JSU_URL_VIDEO_CEL_2',szURL:JSU_URL_VIDEO_CEL_2, iCountCur:0, iClickDone:0},
-                   {iCountReq:5,iPos:1, szName:'JSU_URL_VIDEO_CEL_3',szURL:JSU_URL_VIDEO_CEL_3, iCountCur:0, iClickDone:0},
-                   {iCountReq:7,iPos:1, szName:'JSU_URL_VIDEO_CEL_4',szURL:JSU_URL_VIDEO_CEL_4, iCountCur:0, iClickDone:0},
-                   {iCountReq:8,iPos:1, szName:'JSU_URL_VIDEO_CEL_5',szURL:JSU_URL_VIDEO_CEL_5, iCountCur:0, iClickDone:0},
-                   {iCountReq:4,iPos:1, szName:'JSU_URL_VIDEO_CEL_6',szURL:JSU_URL_VIDEO_CEL_6, iCountCur:0, iClickDone:0},
-                   {iCountReq:3,iPos:1, szName:'JSU_URL_VIDEO_CEL_7',szURL:JSU_URL_VIDEO_CEL_7, iCountCur:0, iClickDone:0}
+                   {iCountReq:2,iPos:1, szName:'JQPopup',szURL:JSU_URL_VIDEO_JQPOPUP, iCountCur:0, iClickDone:0}
                    ];
+
+
+
+var ar_test_cel = [// --------------- random se iPos>=1
+                   {iCountReq:6,iPos:1, szName:'JSU_URL_VIDEO_CEL_1',szURL:JSU_URL_VIDEO_CEL_1, iCountCur:0, iClickDone:0},
+                   {iCountReq:7,iPos:1, szName:'JSU_URL_VIDEO_CEL_2',szURL:JSU_URL_VIDEO_CEL_2, iCountCur:0, iClickDone:0},
+                   {iCountReq:5,iPos:1, szName:'JSU_URL_VIDEO_CEL_3',szURL:JSU_URL_VIDEO_CEL_3, iCountCur:0, iClickDone:0},
+                   {iCountReq:6,iPos:1, szName:'JSU_URL_VIDEO_CEL_4',szURL:JSU_URL_VIDEO_CEL_4, iCountCur:0, iClickDone:0},
+                   {iCountReq:7,iPos:1, szName:'JSU_URL_VIDEO_CEL_5',szURL:JSU_URL_VIDEO_CEL_5, iCountCur:0, iClickDone:0},
+                   {iCountReq:4,iPos:1, szName:'JSU_URL_VIDEO_CEL_6',szURL:JSU_URL_VIDEO_CEL_6, iCountCur:0, iClickDone:0},
+                   {iCountReq:4,iPos:1, szName:'JSU_URL_VIDEO_CEL_7',szURL:JSU_URL_VIDEO_CEL_7, iCountCur:0, iClickDone:0}
+                   ];
+
+
 
 
 // quelli con iPos=0 ci sono sempre. Poi vengono considerato solo quelli con iPos <= par_check, e fatto random
