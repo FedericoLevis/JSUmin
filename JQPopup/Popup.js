@@ -20,7 +20,7 @@ This file may be freely distributed under the MIT license.   <BR/>
 ========================================================================================= <BR/> 
 */
 function pp_Show(t,e,o){var P="[Popup.js pp_Show] "
-jsu_log(P+JSU_LOG_FUN_START),jsu_log(P+"IN: szPopupType="+t),jsu_logObj(P+"IN: objOpt=",o),jsu_logHtml(P+"IN: szMsgHtml=",e),pp_Init(),e=strReplaceAll(e,"\n","<BR/>")
+jsu_log(P+JSU_LOG_FUN_START),jsu_log(P+"IN: szPopupType="+t),jsu_logObj(P+"IN: objOpt=",o),jsu_logHtml(P+"IN: szMsgHtml=",e),pp_Init(),e=jsu_strReplaceAll(e,"\n","<BR/>")
 var p=POPUP_DEF_WIDTH,i="auto",l=POPUP_DEF_MODAL,_=POPUP_DEF_RESIZE,s=POPUP_DEF_SHOW_IMG,u=POPUP_DEF_CLOSE_ON_ESCAPE,n=POPUP_DEF_POSITION,r=jslogGetLogLev()>0
 r&&(_=!0)
 var a=jQuery("#PopupDiv")

@@ -13,6 +13,7 @@ Copyright by Federico Levis - <a href="https://github.com/JSUtility/JSU" target=
 This file may be freely distributed under the MIT license.   <BR/>
 ========================================================================================= <BR/> 
 */
-function jsu_log(t){"function"==typeof jslog&&jslog(JSLOG_JSU,t)}function jsu_logObj(t,n){"function"==typeof jslogObj&&jslogObj(JSLOG_JSU,t,n)}function jsu_logHtml(t,n){"function"==typeof jslogHtml&&jslogHtml(JSLOG_JSU,t,n)}function jsu_getElementById2(t,n){void 0==n&&(n=!1)
-var o=document.getElementById(t)
-return null==o?(n&&alert("SW ERROR [jsu_getElementById2] NOT FOUND Id="+t),0):o}function jsu_elementShow(t,n,o){0!=t&&void 0!=t&&(void 0==o&&(o="block"),n?(t.style.visibility="visible",t.style.display=o):(t.style.visibility="hidden",t.style.display="none"))}function jsu_err(t){"undefined"!=typeof Popup?Popup(POPUP_TYPE.ERR,t):alert(t)}var JSU_VERSION="JSU v. 1.8 &nbsp;&nbsp;&nbsp;2016-Oct-26",JSU_LOG_FUN_START="------------------------ START",JSU_LOG_FUN_END="------------------------ END"
+function jsu_log(n){"function"==typeof jslog&&jslog(JSLOG_JSU,n)}function jsu_logObj(n,t){"function"==typeof jslogObj&&jslogObj(JSLOG_JSU,n,t)}function jsu_logHtml(n,t){"function"==typeof jslogHtml&&jslogHtml(JSLOG_JSU,n,t)}function jsu_getElementById2(n,t){void 0==t&&(t=!1)
+var e=document.getElementById(n)
+return null==e?(t&&alert("SW ERROR [jsu_getElementById2] NOT FOUND Id="+n),0):e}function jsu_elementShow(n,t,e){0!=n&&void 0!=n&&(void 0==e&&(e="block"),t?(n.style.visibility="visible",n.style.display=e):(n.style.visibility="hidden",n.style.display="none"))}function jsu_err(n){"undefined"!=typeof Popup?Popup(POPUP_TYPE.ERR,n):alert(n)}function jsu_strReplaceAll(n,t,e){for(var l=n;l.indexOf(t)>=0;)l=l.replace(t,e)
+return l}var JSU_VERSION="JSU v. 1.8 &nbsp;&nbsp;&nbsp;2016-Oct-26",JSU_LOG_FUN_START="------------------------ START",JSU_LOG_FUN_END="------------------------ END"

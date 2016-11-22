@@ -40,7 +40,7 @@ Table of Contents
   
 <span id="11-jsu-core-features"></span>
 ## 1.1) JSU CORE Features 
-``Pure JQ Plugins, No Requirement``  
+``Pure JS Plugins, No Requirement``  
   - [Tooltip]: Many **HTML Tooltips** options: **Floating/Fixed Tips** with GIF, Video, Code Highlight (JS, CSS, Java, Shell,...) <a href="https://youtu.be/Fmc6hL4prXY" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
   - [Validate]: **Validate Items** with many constraints/options. Show Validate Errors in Red Items or Section, Popup ... <a href="https://youtu.be/vuNOTXMknWw" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
   - [LoadingDiv]:  **Loading Div** to be displayed during Long Operation. Many Options provided: Loading Gif, Title, Message, ElapsedSec... <a href="https://youtu.be/0XinCNtTl1c" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
@@ -213,7 +213,7 @@ MIT
    [SortTable]: <https://goo.gl/aKR7b2>
    [LoadingDiv]: <https://goo.gl/0tIOIJ>
    [JSLog]: <https://goo.gl/Iobg3a>
-   [IE Popup]: <https://goo.gl/iWW5cz>
+   [IE Popup]: <https://goo.gl/ZJBCrl>
 
    [Tooltip API]: <https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/tooltip.js/index.html>
    [Google Analytics API]: <https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/googleAnal.js/index.html>
