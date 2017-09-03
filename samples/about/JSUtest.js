@@ -15,7 +15,7 @@ var URL_PAR_TYPE_WIX="wix";
 var URL_PAR_TYPE_JSU="jsu";    
 var URL_PAR_TYPE_YOUTYBE="you";   // VIDEO YOU TUBE JSU
 var URL_PAR_TYPE_CEL="cel";       // VIDEO CEL 
-var URL_PAR_TYPE_YOUTYBE="video";   // VIDEO JSU e CEL
+var URL_PAR_TYPE_VIDEO="video";   // VIDEO JSU e CEL
 
 
 var JSU_URL_VIDEO_CEL_SHOW_HIDE_FILTER="https://youtu.be/Qg4CmxDdWJQ";   // SHOW_HIDE_FILTER
