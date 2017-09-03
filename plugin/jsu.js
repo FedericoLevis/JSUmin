@@ -17,7 +17,7 @@
                          
 <b>REQUIRED:</b>        JSU with jquery, jquery-ui <BR/>
 <b>First Version:</b>     ver 1.0 - Jul 2007  <BR/>
-<b>Current Version:</b>   JSU v. 1.8 &nbsp;&nbsp;&nbsp;2016-Oct-26  <BR/>
+<b>Current Version:</b>   JSU v. 1.9 &nbsp;&nbsp;&nbsp;2017-Sep-01  <BR/>
 <BR/>-----------------------------------------------------------------------------------<BR/>
 <b>DISCLAIMER</b>  <BR/>
 Copyright by Federico Levis - <a href="https://github.com/JSUtility/JSU" target="_blank">JSU</a> <BR/> 
@@ -49,6 +49,8 @@ var JSU_PATH_IMG =   JSU_PATH_BASE + "/images/";
 var JSU_PATH_POPUP_HTML = JSU_PATH_BASE +  "/core/IEPopup/";
 //----------------------------------- FIXED 
 var JSU_PATH_ABOUT_IMG = "https://rawgit.com/FedericoLevis/images/master/jsuAbout/";
+// var JSU_PATH_ABOUT_IMG = "../images/about/";  // FOR Local TEST with images only in LOCAL
+
 var JSU_PATH_DOC = "https://rawgit.com/FedericoLevis/JSUDoc/master/";
 
 

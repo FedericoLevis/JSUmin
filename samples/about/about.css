@@ -17,7 +17,7 @@ input.browserAll {  /* Compatibility All */
     height: 40px;
     width: 130px;
     border: 0px ;
-    background: white url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserAll.png) no-repeat center center;
+    background: white url(https://rawgit.com/FedericoLevis/images/master/jsuAbout/browserAll.png) no-repeat center center; 
 }
 
 input.browserAllSmall {  /* Compatibility All - About */

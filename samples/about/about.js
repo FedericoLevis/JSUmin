@@ -1039,6 +1039,8 @@ function initSampleCmn(){
 			jslog (JSLOG_DEBUG,fn + "URL:  " + URL_PAR_TYPE + "=" + szParType );
 		}
 		jslogObj (JSLOG_DEBUG,"url_par",url_par);
+		// if Automatic TEST start it
+		testCheckAuto();
 	}catch (e) {
 		jslog (JSLOG_ERR,fn + "Exception: " + e.message);
 	}

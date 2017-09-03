@@ -35,7 +35,7 @@ Table of Contents
   - **Localization support**: all the displayed messages are isolated in local/LAN/locale-core.js. You can easily select the desired language simply including the proper locale file (see par 2 ). Default JSU locale is English (local/EN/locale-core.js)  
   - **CSS support** : if required you can easily customize presentation modifying JSU CSS files ([jsu.css])
   - **All modern browsers are supported**: IE9+, Firefox 3+, Chrome, Safari, Opera... 
-  **NOTE**: [IE Popup] is the only exception, because it is specifically designed only for IE; instead of [IE Popup] you should use [JQ Popup] when it is required Cross Browser compatibility.
+  **NOTE**: [IE Popup] is the only exception, because it is specifically designed only for IE; instead of [IE Popup] you should use [jquery Popup] when it is required Cross Browser compatibility.
   
   
 <span id="11-jsu-core-features"></span>
@@ -51,19 +51,19 @@ Table of Contents
    In other browser (Firefox, Chrome,...) **IE Popup API** will simply dispaly the messages in Alert instead of an HTML Popup.  <a href="https://youtu.be/yDTPt1sGOOc" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
   
 ## 1.2) JSU jquery Features
-``JQ Popup (required: jquery, jquery-ui)``  
+``jquery Popup (required: jquery, jquery-ui)``  
 JSU JQUERY Features are not *Pure JS plugin* like previous one, but they require **jquery and jquery-ui** (provided in the JSU.ZIP):
-  - [JQ Popup]: **HTML Modal Popup API working in all Browser** - Popup Buttons (YES, NO,..) use **callback implementation**  <a href="https://youtu.be/yerZchQnP7c" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
+  - [jquery Popup]: **HTML Modal Popup API working in all Browser** - Popup Buttons (YES, NO,..) use **callback implementation**  <a href="https://youtu.be/yerZchQnP7c" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
 
   
 ## 1.3) JSU Popup Plugin Choice
-``Choice between [IE Popup] (PURE JS) or [JQ Popup] (required: jquery, jquery-ui)``  
-Id you want to use **JSU Popup API**, the generic solution of [JQ Popup] is recommended for Cross Browser compatibility. 
+``Choice between [IE Popup] (PURE JS) or [jquery Popup] (required: jquery, jquery-ui)``  
+Id you want to use **JSU Popup API**, the generic solution of [jquery Popup] is recommended for Cross Browser compatibility. 
 However in some cases you could prefer [IE Popup] features:
   - If only IE Browser is required or if your JS code is based on CODE Blocking and you want to replace your existing alert with Popup
   - If you do not want to load jquery and jquery-ui  
-Whatever is your choice (IE Popup or JQ Popup), we underline that you can easily switch from one choice to the other: you simply have to  change one line in JSU configuration (see <a href="#4-jsu-configuration">4) JSU CONFIGURATION</a>). You do not need changing your  **API Popup** calls because they have exactly the same interface   
-(See [IE Popup API] and [JQ Popup API] )
+Whatever is your choice (IE Popup or jquery Popup), we underline that you can easily switch from one choice to the other: you simply have to  change one line in JSU configuration (see <a href="#4-jsu-configuration">4) JSU CONFIGURATION</a>). You do not need changing your  **API Popup** calls because they have exactly the same interface   
+(See [IE Popup API] and [jquery Popup API] )
   
 
 
@@ -90,7 +90,7 @@ Sample              |Feature Documentation |   API Documentation    | VIDEO of t
 [JSLog Sample]  |[JSlog]    |  [JSlog API] |  <a href="https://youtu.be/nmonU5wnJjI" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
 [SortTable Sample] |  [SortTable]  | [SortTable API] |  <a href="https://youtu.be/cLfEFYIhFDc" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
 [IE Popup Sample] | [IE Popup] | [IE Popup API] |  <a href="https://youtu.be/yDTPt1sGOOc" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
-[JQ Popup Sample]  | [JQ Popup]    |  [JQ Popup API] |  <a href="https://youtu.be/yerZchQnP7c" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
+[jquery Popup Sample]  | [jquery Popup]    |  [jquery Popup API] |  <a href="https://youtu.be/yerZchQnP7c" target="_blank"> <img src="https://rawgit.com/FedericoLevis/images/master/jsuAbout/PlayVideo.png" alt="Click to See the Video" width="100" height="20" border="2" /></a>  
 
 Each of the previous link can be reached by the [Main JSU Samples] or by the specific samples 
 
