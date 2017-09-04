@@ -71,7 +71,9 @@ function testStart(bFrame){
 	var type = (url_par.type != null) ? url_par.type : "";
 	type = type.toLowerCase();
 	jslog (JSLOG_DEBUG, Fn + "type=" + type);
-	if (type == URL_PAR_TYPE_WIX) {
+	if (type == URL_PAR_TYPE_JSU) {
+		ar_test = ar_test_jsu;
+	}else if (type == URL_PAR_TYPE_WIX) {
 		ar_test = ar_test_wix;
 	}else if (type == URL_PAR_TYPE_YOUTYBE) {
 		ar_test = ar_test_you;
