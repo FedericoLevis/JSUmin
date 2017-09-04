@@ -68,16 +68,20 @@ function testStart(bFrame){
 	var_test.bFrame = bFrame;
 	
 	ar_test = ar_test_jsu;
-	jslog (JSLOG_DEBUG, Fn + "url_par.type=" + url_par.type);
-	if (url_par.type == URL_PAR_TYPE_WIX) {
+	var type = (url_par.type != null) ? url_par.type : "";
+	type = type.toLowerCase();
+	jslog (JSLOG_DEBUG, Fn + "type=" + type);
+	if (type == URL_PAR_TYPE_WIX) {
 		ar_test = ar_test_wix;
-	}else if (url_par.type == URL_PAR_TYPE_YOUTYBE) {
+	}else if (type == URL_PAR_TYPE_YOUTYBE) {
 		ar_test = ar_test_you;
-	}else if (url_par.type == URL_PAR_TYPE_CEL) {
+	}else if (type == URL_PAR_TYPE_CEL) {
 		ar_test = ar_test_cel;
-	}else if (url_par.type == URL_PAR_TYPE_VIDEO) {
+	}else if (type == URL_PAR_TYPE_VIDEO) {
 		ar_test = ar_test_video;
-	} 
+	} else {
+		alert ("UNKNOWN type =" + type);
+	}
 	
 	// random enable
   for (i=0; i < ar_test.length; i++){
