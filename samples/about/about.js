@@ -93,6 +93,8 @@ var JSU_URL_VIDEO_JQPOPUP="https://youtu.be/yerZchQnP7c";
 
 
 
+
+
 // NOTE: embed is visible in the Embed Tab of Youtube Video  
 // NOT Used EMBED: we prefer Direct Videu URL
 // var JSU_VIDEO_FRAME_TIP  =	'<iframe width="750" height="600" src="https://www.youtube.com/embed/wpo2oM_L3ds?version=3&vq=hd720&autoplay=1" frameborder="0" allowfullscreen></iframe>'; 
@@ -187,6 +189,8 @@ var	JSU_ID_SAMPLE_JQPOPUP=8;
 	
 	
 //----------------------- FEATURE DOC
+var JSU_LONG_URL_JSU_GITHUB  =	"https://github.com/FedericoLevis/JSU";
+
 var JSU_LONG_URL_DOC  =	"https://rawgit.com/FedericoLevis/JSU/master/README.html";
 var JSU_LONG_URL_DOC_SORT  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/SortTable.html";
 var JSU_LONG_URL_DOC_VALIDATE  =	"https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/Validate.html";
@@ -432,33 +436,45 @@ function aboutTipFixJSU(event,bShowAllSample){
  * Tip for Author(title)
  */
 function aboutTipAuthor(event){
-	var szTip = '<div style="width=800px"><table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="100%">' +
+	var szTip = '<div style="width=1200px"><table class="tip" BORDER="1" cellspacing="0" cellpadding="2" width="100%">' +
   '  <tr>' +
-  '    <td width="230px" align="left"> <img width="230px" src="'  + JSU_PATH_ABOUT_IMG + 'FedericoLevis.jpg"/></td> ' +
-  '    <td ><table class="tipNoBorder" width="100%">' +
+  '    <td width="270px" align="left"> <img width="270px" src="'  + JSU_PATH_ABOUT_IMG + 'FedericoLevis.jpg"/></td> ' +
+  '    <td width="930px"><table class="tipNoBorder" width="100%">' +
   '      <tr><td align="left"><label class="tipTitleBig">Federico Levis</label></td><tr/>' +
   '      <tr><td align="left">SW Engineer - Developer, Architect & Team Leader specialist in:<BR/>' +
   '              Java, JS, DB, SQL, PL/SQL, Cognos, C++, Perl & Unix Script</td><tr/>' +
   '      <tr><td ><table class="tipNoBorder" width="100%">' +
   '        <tr>' +
-  '          <td width="180px" class="tipl"><label class="tipTitle">Linkedin CV: </label></td>'+
+  '          <td width="350px" class="tipl"><label class="tipTitle">Linkedin CV: </label></td>'+
   '          <td class="tipl"><a class="tipLink" href="' +  JSU_SHORT_URL_LINKEDIN  + '" target="_blank">' + JSU_LONG_URL_LINKEDIN +  '</a> </td>'+
+  '        <tr/>' +
+  '        <tr>' +
+  '          <td class="tipl"><label class="tipTitle">JSU (JS Utility Plugin) Samples: </label></td>'+
+  '          <td class="tipl"><a class="tipLink" href="' +  JSU_SHORT_URL_SAMPLE_ALL  + '" target="_blank">' + JSU_LONG_URL_SAMPLE_ALL +  '</a> </td>'+
+  '        <tr/>' +
+  '        <tr>' +
+  '          <td class="tipl"><label class="tipTitle">JSU Git Hub SITE: </label></td>'+
+  '          <td class="tipl"><a class="tipLink" href="' +  JSU_LONG_URL_JSU_GITHUB  + '" target="_blank">' + JSU_LONG_URL_JSU_GITHUB +  '</a> </td>'+
+  '        <tr/>' +
+  '        <tr>' +
+  '          <td class="tipl"><label class="tipTitle">JSU Web SITE: </label></td>'+
+  '          <td class="tipl"><a class="tipLink" href="' +  JSU_URL_SITE  + '" target="_blank">' + JSU_URL_SITE +  '</a> </td>'+
+  '        <tr/>' +
+  '        <tr>' +
+  '          <td class="tipl"><label class="tipTitle">JSU Documentation: </label></td>'+
+  '          <td class="tipl"><a class="tipLink" href="' +  JSU_SHORT_URL_DOC  + '" target="_blank">' + JSU_LONG_URL_DOC +  '</a> </td>'+
+  '        <tr/>' +
+  '        <tr>' +
+  '          <td class="tipl"><label class="tipTitle">Cognos CEL Plugin (Cognos Extension Library): </label></td>'+
+  '          <td class="tipl"><a class="tipLink" href="' +  JSU_SHORT_URL_COGNOS  + '" target="_blank">' + JSU_LONG_URL_COGNOS +  '</a> </td>'+
+  '        <tr/>' +
+  '        <tr>' +
+  '          <td class="tipl"><label class="tipTitle">PL/SQL LOG&Utility Package : </label></td>'+
+  '          <td class="tipl"><a class="tipLink" href=" 	' +  JSU_SHORT_URL_PLSQL  + '" target="_blank">' + JSU_LONG_URL_PLSQL +  '</a> </td>'+
   '        <tr/>' +
   '        <tr>' +
   '          <td class="tipl"><label class="tipTitle">Email: </label></td>'+
   '          <td class="tipl"><a class="tipLink" href="mailto:' +  JSU_EMAIL  + '" target="_blank">' + JSU_EMAIL +  '</a> </td>'+
-  '        <tr/>' +
-  '        <tr>' +
-  '          <td class="tipl"><label class="tipTitle">JSU: </label></td>'+
-  '          <td class="tipl"><a class="tipLink" href="' +  JSU_SHORT_URL_DOC  + '" target="_blank">' + JSU_LONG_URL_DOC +  '</a> </td>'+
-  '        <tr/>' +
-  '        <tr>' +
-  '          <td class="tipl"><label class="tipTitle">Cognos CEL Plugin: </label></td>'+
-  '          <td class="tipl"><a class="tipLink" href="' +  JSU_SHORT_URL_COGNOS  + '" target="_blank">' + JSU_LONG_URL_COGNOS +  '</a> </td>'+
-  '        <tr/>' +
-  '        <tr>' +
-  '          <td class="tipl"><label class="tipTitle">PL/SQL LOG Package: </label></td>'+
-  '          <td class="tipl"><a class="tipLink" href=" 	' +  JSU_SHORT_URL_PLSQL  + '" target="_blank">' + JSU_LONG_URL_PLSQL +  '</a> </td>'+
   '        <tr/>' +
   '      </table></td></tr>' +
   '    </table></td> ' +
@@ -466,7 +482,7 @@ function aboutTipAuthor(event){
   '  </table></div> ';
 	
 	
-	TipFix (szTip,event,{szTitle:'JSU AUTHOR',iTipWidth:830});	
+	TipFix (szTip,event,{szTitle:'JSU AUTHOR',iTipWidth:1200});	
 }
 
 

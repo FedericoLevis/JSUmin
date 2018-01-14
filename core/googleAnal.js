@@ -1,20 +1,3 @@
-/** @fileOverview 
-========================================================================================= <BR/> 
-<b>File:</b> 			core/googleAnal.js <BR/>
-<b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_self">Federico Levis</a> <BR/>
-<b>Google Analytics Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/GoogleAnalytics.html" target="_self">JSU GoogleAnalytics Documentation</a> <BR/>
-<b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_self">JSU API Documentation</a> <BR/>
-<b>Description:</b>     JSU Google Analytics API <BR/>   
-<b>REQUIRED:</b>        JSU:  jsu.css locale-core.js jsuCmn.js tooltip.js <BR/>
-<b>OPTIONAL:</b>        JSU:  jslog.js dom-drag.js if you want to use jslog <BR/> 
-<b>First Version:</b>     ver 1.0 - Feb 2014  <BR/>
-<b>Current Version:</b>   JSU v. 1.8 &nbsp;&nbsp;&nbsp;2016-Oct-26  <BR/>
-<BR/>-----------------------------------------------------------------------------------<BR/>
-<b>DISCLAIMER</b>  <BR/>
-Copyright by Federico Levis - <a href="https://github.com/FedericoLevis/JSU" target="_self">JSU</a> <BR/> 
-This file may be freely distributed under the MIT license.   <BR/>
-========================================================================================= <BR/> 
-*/
 function gaShortUrlList(a,t,l){var e="[googleAnal.js gaShortUrlList()] "
 jsu_log(e+GALOG_FUN_START),jsu_logObj(e+"IN arObjGaList",a),jsu_logObj(e+"IN objOpt",l)
 var i={iTipWidth:GA_DEF.WIDTH,iWidth:GA_DEF.WIDTH,bJQPopup:GA_DEF.JSPOPUP,szTitle:GA_LABEL.DEF_TITLE,bAllBtn:GA_DEF.ALL_LINK,szHeaderTxt:GA_LABEL.DEF_HEADER,szFooterTxt:GA_LABEL.DEF_FOOTER,bShowCbShortUrl:GA_DEF.SHOW_CB_SHORT_URL,bShowCbLongUrl:GA_DEF.SHOW_CB_LONG_URL,bShortUrl:GA_DEF.SHORT_URL,bLongUrl:GA_DEF.LONG_URL,bShortUrl:GA_DEF.SHORT_URL,bLongUrl:GA_DEF.LONG_URL,iTblMaxHeight:GA_DEF.TBL_MAX_HEIGHT,szParTime:GA_DEF.PAR_TIME}
@@ -26,19 +9,14 @@ r.push(GA_LABEL.FILTER_CAT_ALL)
 for(var o=0;o<a.length;o++){for(var _=a[o].cat,g=!1,s=0;s<r.length&&!g;s++)r[s]==_&&(g=!0)
 jsu_log(e+"szCat="+_+"  bPresent="+g),g||r.push(_)}jsu_logObj(e+"arCat=",r),ga_var.bJQPopup=i.bJQPopup,ga_var.arFilterCat=r,ga_var.iSelFilterCat=0
 var n='<table class="detNoBorder">',d="",L=""
-if(jsu_log("Prepare CB Short URL - bShowCbShortUrl="+i.bShowCbShortUrl),i.bShowCbShortUrl){var c=ga_var.bShortUrl?"checked":""
-d='<input type="checkbox" id="cbShortUrl" '+c+' onclick="ga_onclickShortUrl();"/>Show ShortUrl '}if(jsu_log("Prepare CB Short URL - bShowCbLongUrl="+i.bShowCbLongUrl),i.bShowCbLongUrl){var A=ga_var.bLongUrl?"checked":""
-L='<input style="margin-left:20px" type="checkbox" id="cbLongUrl" '+A+' onclick="ga_onclickLongUrl();" />Show LongUrl'}if(n+='<tr style="padding-top:5px;"><td class="tiplBold" width="300px" style="padding-bottom:10px">'+d+L+'</td><td class="tipr" style="padding-right:10px;padding-bottom:10px">'+i.szHeaderTxt+"</td></tr>",n+='<tr><td colspan="2"> <div id="divTblGA" style="width:'+ga_var.iTblWidth+"px;max-height:"+ga_var.iTblMaxHeight+'px;overflow:auto;border: 1px solid;"></div></td></tr><tr><td colspan="2"> <div id="divAllGA" align="left" width="100%" style="width:100%;margin-top:10px;"></div></td></tr>',""!=i.szFooterTxt){var v='<table class="note gaFooter"><tr>   <td><input class="note"></td>   <td> '+i.szFooterTxt+"</td>  </tr></table> "
-n+='<tr style="padding-top:7px;padding-bottom:7px;"><td colspan="2" class="tipl">'+v+"</td></tr>"}n+="</table>",i.bJQPopup?Popup(POPUP_TYPE.INFO,n,{bShowImg:!1,szTitle:i.szTitle,iWidth:parseInt(i.iWidth)+30}):TipFix(n,t,i),ga_varTblShow(),jsu_log(e+GALOG_FUN_END)}function gaShortUrlPage(a,t){var l="[googleAnal.js gaShortUrlPage()] "
-jsu_log(l+GALOG_FUN_START),jsu_log(l+"IN szShortUrl",a),jsu_logObj(l+"IN objOpt",t),void 0==t&&(t=new Object),void 0==t.szParTime&&(t.szParTime=GA_DEF.PAR_TIME),void 0==t.bNewWindow&&(t.bNewWindow=GA_DEF.NEW_WINDOW)
-var e=a.replace("goo.gl","goo.gl/#analytics/goo.gl")+"/"+t.szParTime
-ga_GoToURL(e,t.bNewWindow),jsu_log(l+GALOG_FUN_END)}function ga_varTblShow(){var a="[googleAnal.js ga_varTblShow()] "
+if(jsu_log("Prepare CB Short URL - bShowCbShortUrl="+i.bShowCbShortUrl),i.bShowCbShortUrl){d='<input type="checkbox" id="cbShortUrl" '+(ga_var.bShortUrl?"checked":"")+' onclick="ga_onclickShortUrl();"/>Show ShortUrl '}if(jsu_log("Prepare CB Short URL - bShowCbLongUrl="+i.bShowCbLongUrl),i.bShowCbLongUrl){L='<input style="margin-left:20px" type="checkbox" id="cbLongUrl" '+(ga_var.bLongUrl?"checked":"")+' onclick="ga_onclickLongUrl();" />Show LongUrl'}if(n+='<tr style="padding-top:5px;"><td class="tiplBold" width="300px" style="padding-bottom:10px">'+d+L+'</td><td class="tipr" style="padding-right:10px;padding-bottom:10px">'+i.szHeaderTxt+"</td></tr>",n+='<tr><td colspan="2"> <div id="divTblGA" style="width:'+ga_var.iTblWidth+"px;max-height:"+ga_var.iTblMaxHeight+'px;overflow:auto;border: 1px solid;"></div></td></tr><tr><td colspan="2"> <div id="divAllGA" align="left" width="100%" style="width:100%;margin-top:10px;"></div></td></tr>',""!=i.szFooterTxt){n+='<tr style="padding-top:7px;padding-bottom:7px;"><td colspan="2" class="tipl">'+('<table class="note gaFooter"><tr>   <td><input class="note"></td>   <td> '+i.szFooterTxt+"</td>  </tr></table> ")+"</td></tr>"}n+="</table>",i.bJQPopup?Popup(POPUP_TYPE.INFO,n,{bShowImg:!1,szTitle:i.szTitle,iWidth:parseInt(i.iWidth)+30}):TipFix(n,t,i),ga_varTblShow(),jsu_log(e+GALOG_FUN_END)}function gaShortUrlPage(a,t){var l="[googleAnal.js gaShortUrlPage()] "
+jsu_log(l+GALOG_FUN_START),jsu_log(l+"IN szShortUrl",a),jsu_logObj(l+"IN objOpt",t),void 0==t&&(t=new Object),void 0==t.szParTime&&(t.szParTime=GA_DEF.PAR_TIME),void 0==t.bNewWindow&&(t.bNewWindow=GA_DEF.NEW_WINDOW),ga_GoToURL(a.replace("goo.gl","goo.gl/#analytics/goo.gl")+"/"+t.szParTime,t.bNewWindow),jsu_log(l+GALOG_FUN_END)}function ga_varTblShow(){var a="[googleAnal.js ga_varTblShow()] "
 jsu_log(a+GALOG_FUN_START)
 var t="undefined"!=typeof cSortTable,l='<table id="tblGoogle" class="det" BORDER="2" cellspacing="0" cellpadding="5" width="100%">',e='<tr class="detTitle" >'
 ga_var.bShortUrl&&(e+='<td class="tipc detTitle" width="15%">'+GA_LABEL.SHORT_URL+"</td> "),ga_var.bLongUrl&&(e+='<td class="tipc detTitle" width="30%">'+GA_LABEL.LONG_URL+"</td> "),e+='<td class="tipc detTitle" width="16%">'+GA_LABEL.CAT+'</td> <td class="tipc detTitle" width="21%">'+GA_LABEL.DESC+'</td> <td class="tipc detTitle" width="14%">'+GA_LABEL.ANAL+"</td> </tr>",l+=e,iRowHeader=2
 for(var i='<select class="detFilter" id="gaCat" title="'+GA_LABEL.FILTER_CAT_TITLE+'"  style="width:100%;" onchange="ga_onchangeCat();">',r=ga_var.arFilterCat,o=0;o<r.length;o++){var _=r[o],g=o==ga_var.iSelFilterCat?"selected":"",s='\n<option class="detFilter"  value="'+_+'" '+g+" >"+_+"</option>"
 i+=s}i+="\n</select>"
-for(var n='<select class="detFilter" id="gaFilterTime" title="'+GA_LABEL.PAR_TIME_TITLE+'"  style="width:100%;"  onchange="ga_onchangeTime();" > ',d=[{value:GA_PAR_TIME.all_time,text:GA_LABEL.PAR_TIME_ALL},{value:GA_PAR_TIME.month,text:GA_LABEL.PAR_TIME_MONTH},{value:GA_PAR_TIME.week,text:GA_LABEL.PAR_TIME_WEEK},{value:GA_PAR_TIME.day,text:GA_LABEL.PAR_TIME_DAY},{value:GA_PAR_TIME.two_hours,text:GA_LABEL.PAR_TIME_2HOURS}],o=0;o<d.length;o++){var L=d[o],g=L.value==ga_var.szParTime?"selected":"",s='\n<option class="detFilter" 	value="'+L.value+'" '+g+" >"+L.text+"</option> "
+for(var n='<select class="detFilter" id="gaFilterTime" title="'+GA_LABEL.PAR_TIME_TITLE+'"  style="width:100%;"  onchange="ga_onchangeTime();" > ',d=[{value:GA_PAR_TIME.all_time,text:GA_LABEL.PAR_TIME_ALL},{value:GA_PAR_TIME.month,text:GA_LABEL.PAR_TIME_MONTH},{value:GA_PAR_TIME.week,text:GA_LABEL.PAR_TIME_WEEK},{value:GA_PAR_TIME.day,text:GA_LABEL.PAR_TIME_DAY},{value:GA_PAR_TIME.two_hours,text:GA_LABEL.PAR_TIME_2HOURS}],o=0;o<d.length;o++){var L=d[o],g=L.value==ga_var.szParTime?"selected":"",s='\n<option class="detFilter" \tvalue="'+L.value+'" '+g+" >"+L.text+"</option> "
 n+=s}n+="\n</select>"
 var c=0
 ga_var.bShortUrl&&c++,ga_var.bLongUrl&&c++
@@ -47,7 +25,7 @@ c>0&&(A+='<td class="detFilter" colSpan="'+c+'" align="right" style="font-weight
 var v=ga_var.arObjGaList,T=ga_var.arFilterCat[ga_var.iSelFilterCat]
 jsu_logObj(a+"szCatSel="+T+" arFilterCat=",ga_var.arFilterCat)
 for(var o=0;o<v.length;o++){var h=v[o],_=h.cat,b=0==ga_var.iSelFilterCat||_==T
-if(jsu_log(a+"FilterSel="+T+"  Cur cat="+_+" --> bShow="+b),b){var u="a_ga"+ga_var.iVisibleLink
+if(jsu_log(a+"FilterSel="+T+"  Cur cat="+_+" --\x3e bShow="+b),b){var u="a_ga"+ga_var.iVisibleLink
 ga_var.arszIdVis[ga_var.iVisibleLink]=u
 var E=h.shortUrl.replace("goo.gl","goo.gl/#analytics/goo.gl")+"/"+ga_var.szParTime,A="<tr>"
 ga_var.bShortUrl&&(A+='<td class="tipc">'+h.shortUrl+"</td> "),ga_var.bLongUrl&&(A+='<td class="tipl">'+h.longUrl+"</td> "),A+='<td class="tipcBold">'+h.cat+'</td> <td class="tiplBold">'+h.desc+'</td> <td class="tipc"><a id="'+u+'" class="tipLink" href="'+E+'" target="_blank" >'+GA_LABEL.ANAL+GA_LINK_SEP+ga_var.szParTime+"</a></td> </tr>",l+=A,ga_var.iVisibleLink++}}l+="</table></td></tr>"
@@ -86,4 +64,4 @@ if(void 0==e&&(jsu_log(l+"add "+GA_HREF_HIDDEN_ID+" HIDDEN div and anchor to doc
 else if(jsu_log(l+"aEl.click is NOT defined in this Browser"),document.createEvent){jsu_log(l+"document.createEvent is defined in this Browser. We create the event to simulate the click")
 var i=document.createEvent("MouseEvents")
 i.initMouseEvent("click",!0,!0,window,0,0,0,0,0,!1,!1,!1,!1,0,null)
-e.dispatchEvent(i)}jsu_log(l+GALOG_FUN_END)}catch(r){jsu_err(l+"EXCEPTION: "+r.message)}}var GA_PAR_TIME={all_time:"all_time",month:"month",week:"week",day:"day",two_hours:"two_hours"},GA_DEF={JSPOPUP:!1,ALL_LINK:!0,WIDTH:700,TBL_MAX_HEIGHT:300,SHOW_CB_SHORT_URL:!0,SHOW_CB_LONG_URL:!0,SHORT_URL:!1,LONG_URL:!1,PAR_TIME:GA_PAR_TIME.all_time,NEW_WINDOW:!0},TMO_GA_CLICK_SIMUL_MS=200,ga_var={arObjGaList:null,bShortUrl:!1,bLongUrl:!1,iTipWidth:700,iVisibleLink:0,arszIdVis:new Array,iSelFilterCat:0,szParTime:GA_PAR_TIME.all_time,iLinkClickCur:0,tmoClick:null},GA_LINK_SEP="&nbsp;&nbsp;&nbsp;",GALOG_FUN_START=" ------------- START",GALOG_FUN_END=" ------------- END",GA_DIV_HIDDEN_ID="jsuDivHidden",GA_HREF_HIDDEN_ID="jsuHrefHidden",GA_HREF_HIDDEN='<a id="'+GA_HREF_HIDDEN_ID+'" target="_self" style="display:none" href="https://goo.gl/HnNqnM" >HIDDEN</a>'
+e.dispatchEvent(i)}jsu_log(l+GALOG_FUN_END)}catch(a){jsu_err(l+"EXCEPTION: "+a.message)}}var GA_PAR_TIME={all_time:"all_time",month:"month",week:"week",day:"day",two_hours:"two_hours"},GA_DEF={JSPOPUP:!1,ALL_LINK:!0,WIDTH:700,TBL_MAX_HEIGHT:300,SHOW_CB_SHORT_URL:!0,SHOW_CB_LONG_URL:!0,SHORT_URL:!1,LONG_URL:!1,PAR_TIME:GA_PAR_TIME.all_time,NEW_WINDOW:!0},TMO_GA_CLICK_SIMUL_MS=200,ga_var={arObjGaList:null,bShortUrl:!1,bLongUrl:!1,iTipWidth:700,iVisibleLink:0,arszIdVis:new Array,iSelFilterCat:0,szParTime:GA_PAR_TIME.all_time,iLinkClickCur:0,tmoClick:null},GA_LINK_SEP="&nbsp;&nbsp;&nbsp;",GALOG_FUN_START=" ------------- START",GALOG_FUN_END=" ------------- END",GA_DIV_HIDDEN_ID="jsuDivHidden",GA_HREF_HIDDEN_ID="jsuHrefHidden",GA_HREF_HIDDEN='<a id="'+GA_HREF_HIDDEN_ID+'" target="_self" style="display:none" href="https://goo.gl/HnNqnM" >HIDDEN</a>'

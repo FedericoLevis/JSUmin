@@ -45,6 +45,25 @@ input.jsuInfo{ /* Info img  */
 
 
 /*---
+Tooltip: Tip with Small Question Mark on The Top
+---
+<b>CSS:</b> ``img.jsuTip``   used with JSU Tooltip API Tip() UnTip()  
+   - <b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html">JSU Tooltip API Doc</a>
+```
+
+*/
+img.jsuTipSmall{
+  height: 15px;
+  width: 15px;
+  margin-left: 2px; 
+  margin-bottom: 6px; 
+  cursor: pointer;
+}
+
+
+
+
+/*---
 Tooltip: Tip with info Question Mark
 ---
 <b>CSS:</b> ``img.jsuTip`` ``input.jsuTip``  usually used with JSU Tooltip API Tip() UnTip()  
@@ -60,7 +79,7 @@ img.jsuTip, input.jsuTip{
   background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tip.png') no-repeat center center;
   height: 20x;
   width: 20x;
-  marging-left: 5px;
+  margin-left: 5px;
 }
 
 
@@ -111,7 +130,8 @@ input.tipFix, input.tipFixUp{  /* Fields Common for input.tipFix and input.tipFi
     cursor: pointer;
 }
 input.tipFix{ /* Specific filed of input.tipFix */
-    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFix.png) no-repeat center center;
+     background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFix.png) no-repeat center center; 
+    /* background: #E0E0E0 url(../images/tipFix.png) no-repeat center center;  */
 }
 input.tipFixUp{ /* Specific filed of input.tipFixUp : different image */
     background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixUp.png) no-repeat center center;

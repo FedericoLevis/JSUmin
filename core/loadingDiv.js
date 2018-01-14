@@ -1,20 +1,3 @@
-/** @fileOverview
-========================================================================================= <BR/> 
-<b>File:</b> 			core/loadingDiv.js <BR/>
-<b>Author:</b>     		<a href="https://www.linkedin.com/in/federicolevis" target="_self">Federico Levis</a> <BR/>
-<b>LoadingDiv Doc:</b>   <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/HTML/LoadingDiv.html" target="_self">JSU LoadingDiv Documentation</a> <BR/>
-<b>JSU API Doc:</b> <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/JSUAPI.html" target="_self">JSU API Documentation</a> <BR/>
-<b>Description:</b>    JSU LoadingDiv API:  loadingDivShow loadingDivHide <BR/>
-<b>REQUIRED:</b>        JSU:  jsu.css locale-core.js jsuCmn.js <BR/>
-<b>OPTIONAL:</b>        JSU: jslog.js, dom-drag.js to use also jslog <BR/>
-<b>First Version:</b>     ver 1.0 - Jul 2007  <BR/>
-<b>Current Version:</b>   JSU v. 1.8 &nbsp;&nbsp;&nbsp;2016-Oct-26  <BR/>
-<BR/>-----------------------------------------------------------------------------------<BR/>
-<b>DISCLAIMER</b>  <BR/>
-Copyright by Federico Levis - <a href="https://github.com/JSUtility/JSU" target="_self">JSU</a> <BR/> 
-This file may be freely distributed under the MIT license.   <BR/>
-========================================================================================= <BR/> 
-*/
 function ld_getScrollEl(){var l="[loadingDiv.js ld_getScrollEl()] "
 return"undefined"!=typeof InstallTrigger||navigator.appName==LOADING_APP_NAME_IE||navigator.appName==LOADING_APP_NAME_IE_11&&null!=new RegExp("Trident/.*rv:([0-9]{1,}[.0-9]{0,})").exec(navigator.userAgent)?(jsu_log(l+"Firefox/IE"),document.documentElement):(jsu_log(l+"NOT Firefox/IE (e.g CHROME)"),document.body)}function loadingDivCancel(){loadingDivHide(),void 0!=var_ld_div.fnCancelCallback&&var_ld_div.fnCancelCallback()}function loadingDivTmo(){var l=new Date,e=Math.round((l.getTime()-var_ld_div.iStartTime)/1e3)
 var_ld_div.elFooter.innerHTML=LOADING_DIV_MSG.startTime+var_ld_div.szStartTime+LOADING_DIV_MSG.elapsed+e+LOADING_DIV_MSG.sec}function loadingDivShow(l){var e="[loadingDiv.js loadingDivStart()] "
@@ -30,18 +13,17 @@ jsu_elementShow(d,t,""),t&&(d.innerHTML=l.szTitleHtml)
 var a=jsu_getElementById2("loadingDivMsg",!1)
 if(a){var n=LOADING_DIV_MSG.working
 l.szMsgHtml&&""!=l.szMsgHtml&&(n=l.szMsgHtml),a.innerHTML=n
-var s=jsu_getElementById2("loadingDivBtn")
-s.value=l.szCancelLabel,jsu_elementShow(jsu_getElementById2("loadingDivBtnTd"),l.bShowCancel,"")
-var r=jsu_getElementById2("loadingDivGif")
-void 0!=l.szUrlGif&&""!=l.szUrlGif&&(r.style.backgroundImage="url('"+l.szUrlGif+"')"),null!=l.iDivWidth&&(r.style.width=l.iGifWidth+"px"),jsu_elementShow(jsu_getElementById2("loadingDivTdGif"),l.bShowGif,""),l.szBackgroundColor&&""!=l.szBackgroundColor&&(o.style.backgroundColor=l.szBackgroundColor,jsu_getElementById2("loadingDivMsg").style.backgroundColor=l.szBackgroundColor,jsu_getElementById2("loadingDivTdGif").style.backgroundColor=l.szBackgroundColor,jsu_getElementById2("loadingDivBtnTd").style.backgroundColor=l.szBackgroundColor)
-var v=void 0!=l.bShowElapsedSec&&l.bShowElapsedSec
-if(jsu_elementShow(d,t,""),var_ld_div.elFooter=jsu_getElementById2("loadingDivFooter"),jsu_elementShow(var_ld_div.elFooter,v,""),v){if(l.bResetElapsedSec){jsu_log(e+"Start Timeout for Elapsedsec")
-var _=new Date
-var_ld_div.iStartTime=_.getTime(),var_ld_div.szStartTime=num2StrPad(_.getHours(),"0",2)+":"+num2StrPad(_.getMinutes(),"0",2)+":"+num2StrPad(_.getSeconds(),"0",2)}loadingDivTmo(),var_ld_div.tmoElapsedSec=setInterval(loadingDivTmo,1e3)}if(l.bRecalcBestPos){jsu_log(e+"Recalculate Best Postion")
-var c=jsu_getElementById2("loadingDivContainer",!0),D=ld_getScrollEl(),g=D.scrollHeight,u=D.scrollWidth,E=D.scrollLeft,I=D.scrollTop,m=window.innerWidth,S=window.innerHeight
-jsu_log(e+"scroll: xScroll="+E+" yScroll="+I+" wScroll="+u+" hScroll="+g),jsu_log(e+"Client: wClient="+m+" hClient="+S),c.style.height=g+100+"px",c.style.width=u+100+"px"
-var p=(100+u-m)/2,f=(100+g-S)/2
-jsu_log(e+"SET NEW SCROLL ="+p+" y="+f),p>0?(var_ld_div.prev.scrollLeft=D.scrollLeft,D.scrollLeft=p):var_ld_div.prev.scrollLeft=-1,f>0?(var_ld_div.prev.scrollTop=D.scrollTop,D.scrollTop=f):var_ld_div.prev.scrollTop=-1,var_ld_div.prev.scroll=D.scroll,D.scroll="no",void 0!=document.documentElement?(var_ld_div.prev.overflow=document.documentElement.style.overflow,document.documentElement.style.overflow="hidden"):var_ld_div.prev.overflow=null}jsu_elementShow(i,!0),jsu_elementShow(o,!0),jsu_log(e+JSU_LOG_FUN_END)}}function loadingDivHide(){var l="[loadingDiv.js loadingDivHide()] "
+jsu_getElementById2("loadingDivBtn").value=l.szCancelLabel,jsu_elementShow(jsu_getElementById2("loadingDivBtnTd"),l.bShowCancel,"")
+var s=jsu_getElementById2("loadingDivGif")
+void 0!=l.szUrlGif&&""!=l.szUrlGif&&(s.style.backgroundImage="url('"+l.szUrlGif+"')"),null!=l.iDivWidth&&(s.style.width=l.iGifWidth+"px"),jsu_elementShow(jsu_getElementById2("loadingDivTdGif"),l.bShowGif,""),l.szBackgroundColor&&""!=l.szBackgroundColor&&(o.style.backgroundColor=l.szBackgroundColor,jsu_getElementById2("loadingDivMsg").style.backgroundColor=l.szBackgroundColor,jsu_getElementById2("loadingDivTdGif").style.backgroundColor=l.szBackgroundColor,jsu_getElementById2("loadingDivBtnTd").style.backgroundColor=l.szBackgroundColor)
+var r=void 0!=l.bShowElapsedSec&&l.bShowElapsedSec
+if(jsu_elementShow(d,t,""),var_ld_div.elFooter=jsu_getElementById2("loadingDivFooter"),jsu_elementShow(var_ld_div.elFooter,r,""),r){if(l.bResetElapsedSec){jsu_log(e+"Start Timeout for Elapsedsec")
+var v=new Date
+var_ld_div.iStartTime=v.getTime(),var_ld_div.szStartTime=num2StrPad(v.getHours(),"0",2)+":"+num2StrPad(v.getMinutes(),"0",2)+":"+num2StrPad(v.getSeconds(),"0",2)}loadingDivTmo(),var_ld_div.tmoElapsedSec=setInterval(loadingDivTmo,1e3)}if(l.bRecalcBestPos){jsu_log(e+"Recalculate Best Postion")
+var _=jsu_getElementById2("loadingDivContainer",!0),c=ld_getScrollEl(),D=c.scrollHeight,g=c.scrollWidth,u=c.scrollLeft,E=c.scrollTop,I=window.innerWidth,m=window.innerHeight
+jsu_log(e+"scroll: xScroll="+u+" yScroll="+E+" wScroll="+g+" hScroll="+D),jsu_log(e+"Client: wClient="+I+" hClient="+m),_.style.height=D+100+"px",_.style.width=g+100+"px"
+var S=(100+g-I)/2,p=(100+D-m)/2
+jsu_log(e+"SET NEW SCROLL ="+S+" y="+p),S>0?(var_ld_div.prev.scrollLeft=c.scrollLeft,c.scrollLeft=S):var_ld_div.prev.scrollLeft=-1,p>0?(var_ld_div.prev.scrollTop=c.scrollTop,c.scrollTop=p):var_ld_div.prev.scrollTop=-1,var_ld_div.prev.scroll=c.scroll,c.scroll="no",void 0!=document.documentElement?(var_ld_div.prev.overflow=document.documentElement.style.overflow,document.documentElement.style.overflow="hidden"):var_ld_div.prev.overflow=null}jsu_elementShow(i,!0),jsu_elementShow(o,!0),jsu_log(e+JSU_LOG_FUN_END)}}function loadingDivHide(){var l="[loadingDiv.js loadingDivHide()] "
 jsu_log(l+JSU_LOG_FUN_START),var_ld_div.tmoElapsedSec&&clearTimeout(var_ld_div.tmoElapsedSec)
 var e=ld_getScrollEl();-1!=var_ld_div.prev.scrollLeft&&(jsu_log(l+"RESTORE scrollLeft="+var_ld_div.prev.scrollLeft),e.scrollLeft=var_ld_div.prev.scrollLeft),-1!=var_ld_div.prev.scrollTop&&(jsu_log(l+"RESTORE scrollTop="+var_ld_div.prev.scrollTop),e.scrollTop=var_ld_div.prev.scrollTop),e.scroll=var_ld_div.prev.scroll,null!=var_ld_div.prev.overflow&&void 0!=document.documentElement&&(document.documentElement.style.overflow=var_ld_div.prev.overflow)
 var i=jsu_getElementById2("loadingDivContainer",!1)

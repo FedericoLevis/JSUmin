@@ -102,24 +102,30 @@
 		    <td class="sampleNote"><input class="sampleNote"></td>
 		    <td class="tipl">Put the mouse over the DOM Elements, to see  the <b>Floating Tip</b></td>
 		 </tr></table>
-         <table class="sampleNoBorder">
+         <table width="100%" class="sampleNoBorder">
               <tr>
-                  <td width="25%">
+                  <td width="20%">
                      <input type="button" value="Text Tip"
                         onmouseover="Tip('Simple Tooltip without HTML tags.\nNewline is working');"
                          onmouseout="UnTip(event);" />
                    </td>
-                  <td width="25%">
+                  <td width="20%">
                       <input type="text" value="HTML Tip" style="width:60px;"
                         onmouseover="Tip(JSU_TIP_HTML);" onmouseout="UnTip(event);" /> 
                   </td>
-                  <td width="25%">       
+                  <td width="20%">       
                   <img type="image" src="https://rawgit.com/FedericoLevis/images/master/samples/Readme.jpg" align="bottom"
                         onmouseover="Tip(JSU_TIP_README);"    onmouseout="UnTip(event);"/></td>
-                  <td width="25%"> 
-                  Tip image <b>jsuInfo</b>      
-                  <input type="button" class="jsuInfo"
-                        onmouseover="sample1d(event);"    onmouseout="UnTip(event);"/></td>                        
+                  <td width="20%"> 
+	                  Tip <b>jsuInfo</b>      
+	                  <input type="button" class="jsuInfo"
+	                        onmouseover="sample1d(event);"    onmouseout="UnTip(event);"/>
+					</td>                        
+                  <td width="20%"> 
+					  Tip <b>jsuTipSmall</b> 
+					<img type="image" src="../../images/tipSmall.png" 
+					    class="jsuTipSmall"	onmouseover="sample1d(event);"    onmouseout="UnTip(event);"/>
+				  </td>                        
               </tr>           
           </table>
       </td>

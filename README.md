@@ -173,8 +173,8 @@ For example see [JSU Tooltip Loading with file List - TipSimple.html]
 # 5) JSU Version
 ----
 
-JSU v 1.9 
-Last Update: 2017-Sep-01
+JSU v 1.10 
+Last Update: 2018-Jan-14
 
 
 # 6) License
