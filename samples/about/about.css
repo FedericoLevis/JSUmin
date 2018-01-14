@@ -11,6 +11,16 @@ All rights reserved: UNAUTHORIZED COPYING, REPRODUCTION, REPUBLISHING, UPLOADING
 */
 
 
+table.sampleToolbar { /* the Toolbar below the Header (download buttons,... */
+  background-color: #F5F5F5;
+} 
+
+label.download { /* the label 'More than xxx download' */
+	margin-left: 10px;
+	margin-right: 3px;
+	font-weight: bold; 
+  	font-size: 13px;		
+}
 
 
 input.browserAll {  /* Compatibility All */
@@ -545,9 +555,6 @@ td.jsuOptAbsent{ /* Option absent in FREE Version*/
 
 
 
-table.sampleToolbar { /* the Toolbar below the Header (download buttons,... */
-  background-color: #F5F5F5;
-} 
 
 hr { /* separator between header ad App */
   border: 1px solid black;

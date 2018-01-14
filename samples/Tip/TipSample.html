@@ -37,14 +37,14 @@
 <!--  TOOLBAR Table: GoogleAnalytics and download -  common for all the JSU HTML -->
 <table class="sampleToolbar" valign="top" width="100%" >
   <tr >
-    <td class="tipl" valign="middle" width="50%">
+    <td class="tipl" valign="middle" >
         <input type="button"  class="googleAnalList" id="googleAnalList"  onclick="jsuGoogleAnalList(event)"  onmouseover="jsuGoogleAnalListTip(event);" onmouseout="UnTip(event)"/> 
     </td>
-    <td class="tipr" width="50%">
+    <td class="tipr" >
      <table valign="middle" align="right">
         <tr>
             <td valign="middle"> <input type="button" class="downloadJsu" id="downloadJsu" onclick="downloadJsu(event);" onmouseover="downloadJsuTip(event);" onmouseout="UnTip(event)"  /> </td>
-            <td valign="middle"> <input type="button"  class="googleAnal jsuDownloadGA" id="googleAnalFree"  onclick="jsuGoogleAnalFree();"  onmouseover="jsuGoogleAnalFreeTip(event);" onmouseout="UnTip(event)"/> </td>
+            <td valign="middle"> <label class="download">More than 340.000 download:</label><input type="button"  class="googleAnal jsuDownloadGA" id="googleAnalFree"  onclick="jsuGoogleAnalFree();"  onmouseover="jsuGoogleAnalFreeTip(event);" onmouseout="UnTip(event)"/> </td>
             <td class="donate" valign="top">
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
                 <input type="hidden" name="cmd" value="_s-xclick">
@@ -59,7 +59,6 @@
     </td> 
   </tr>
 </table>   
-
 <hr>
 
 <h1 class="jsuSample">JSU - JS Utility Plugin  - Tooltip Sample</h1>      
