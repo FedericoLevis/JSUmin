@@ -34,6 +34,7 @@ Tooltip: Tip with info image
 */
 input.jsuInfo{ /* Info img  */
   background:url('https://raw.github.com/FedericoLevis/JSU/master/images/info.png') no-repeat center center;
+   /* background: #E0E0E0 url(../images/info.png) no-repeat center center; */
   background-color: #19E4DD;
   height: 14px;
   width: 5px;
@@ -41,25 +42,6 @@ input.jsuInfo{ /* Info img  */
   cursor: pointer;
   border: 1px solid #000;
 }
-
-
-
-/*---
-Tooltip: Tip with Small Question Mark on The Top
----
-<b>CSS:</b> ``img.jsuTip``   used with JSU Tooltip API Tip() UnTip()  
-   - <b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html">JSU Tooltip API Doc</a>
-```
-
-*/
-img.jsuTipSmall{
-  height: 15px;
-  width: 15px;
-  margin-left: 2px; 
-  margin-bottom: 6px; 
-  cursor: pointer;
-}
-
 
 
 
@@ -79,10 +61,8 @@ img.jsuTip, input.jsuTip{
   background:url('https://raw.github.com/FedericoLevis/JSU/master/images/tip.png') no-repeat center center;
   height: 20x;
   width: 20x;
-  margin-left: 5px;
+  marging-left: 5px;
 }
-
-
 
 
 
@@ -130,8 +110,7 @@ input.tipFix, input.tipFixUp{  /* Fields Common for input.tipFix and input.tipFi
     cursor: pointer;
 }
 input.tipFix{ /* Specific filed of input.tipFix */
-     background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFix.png) no-repeat center center; 
-    /* background: #E0E0E0 url(../images/tipFix.png) no-repeat center center;  */
+    background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFix.png) no-repeat center center;
 }
 input.tipFixUp{ /* Specific filed of input.tipFixUp : different image */
     background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixUp.png) no-repeat center center;
@@ -162,7 +141,6 @@ input.tipFixCode, input.tipFixCodeUp{
 }
 input.tipFixCode{
     background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixCode.png) no-repeat center center; 
-    /* background: #E0E0E0 url(../images/tipFixCode.png) no-repeat center center; */
 }
 input.tipFixCodeUp{
     background: #E0E0E0 url(https://raw.github.com/FedericoLevis/JSU/master/images/tipFixCodeUp.png) no-repeat center center; 
@@ -209,6 +187,7 @@ input.tipFix,input.tipFixUp,       /* Border in Normal State */
 input.tipFixArrow, input.tipFixArrowUp,
 input.tipFixJS, input.tipFixJSUp,
 input.tipFixCode, input.tipFixCodeUp,
+input.tipInfo,
 input.jsuHelp, input.jsuOpt, input.jsuOptUp
 {
     border: 2px solid gray;
@@ -220,6 +199,7 @@ input.tipFix:hover,input.tipFixUp:hover,   /* Border when Mouse is over */
 input.tipFixArrow:hover, input.tipFixArrowUp:hover,
 input.tipFixJS:hover, input.tipFixJSUp:hover,
 input.tipFixCode:hover, input.tipFixCodeUp:hover,
+input.tipInfo:hover, 
 input.jsuHelp:hover, input.jsuOpt:hover, input.jsuOptUp:hover    
 {
     border: 2px solid #e0e0e0;
@@ -228,11 +208,20 @@ input.jsuHelp:hover, input.jsuOpt:hover, input.jsuOptUp:hover
 
 
 
+
 /*---
 Tooltip: CSS used directly inside tooltip.js 
 ---
 <b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html">JSU Tooltip API Doc</a>
 */
+
+/* Same background og Tooltip Main div */
+div.tip {
+  background-color: #FFFFCC !important; 
+}
+
+
+
 
 div.ttTitle{  /* default Title */
 	/* background-color: #606060!important;  /* dark gray */
@@ -404,7 +393,6 @@ td.tipr, td.tipl, td.tipc, td.tipcBold, td.tiprBold,   td.tipAlr, td.tipOk, , td
 	padding-right: 5px;
 	border: 1px solid #404040; /* Black */
 }
-
 
 .tipc,.tipcBold {
   text-align: center!important;
@@ -1500,10 +1488,10 @@ table.det {
   font-size: 11px;
   color: black; 
   background-color: #ffffff;
-  border: 3px solid #858585; /* Dark Gray */
+  border: 1px solid #858585; /* Dark Gray */
   border-spacing: 0px;
   border-collapse: separate;
-  border-spacing: 2px;  
+  border-spacing: 2px; 
 }
 
 table.detNoBorder {
@@ -1602,6 +1590,136 @@ tr.detFooter, td.detFooter {
   /* border-collapse: collapse;
   border-spacing: 0px; */
 }
+
+
+
+/*----------------------------------------------------
+Button for more "..."
+---    
+<b>CSS:</b>  ``input.jsuMore``  
+   - <b>See <a href="https://rawgit.com/FedericoLevis/JSUDoc/master/tooltip.js/index.html">JSU Tooltip API Doc</a>
+<BR/><BR/><b>Examples:</b>
+```html
+<input class="jsuMore" type="button" onclick="Popup(POPUP_TYPE.INFO,'Test Popup')"/>
+```
+*/
+input.jsuMore{ /* More img  */
+  background:url('https://raw.github.com/FedericoLevis/JSU/master/images/info.png') no-repeat center center; 
+  /* background: #F5F5F5 url(../../images/more.png) no-repeat center center; */
+  background-color: #19E4DD;
+  height: 12px;
+  width: 30px;
+  margin-left: 2px; 
+  cursor: pointer;
+  border: 2px solid #000;
+}
+
+input.jsuMore:hover
+{
+    border: 2px solid #e0e0e0;
+    border-style: ridge;
+} 
+
+
+
+
+input.jsuHelp, input.jsuOpt, input.jsuOptUp
+{
+    border: 2px solid gray;
+    border-style: ridge;
+} 
+
+
+
+div.jsuInfo {
+  text-align: left;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 11px;
+  color: black; 
+}
+
+table.jsuInfo {
+  text-align: left;
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: 11px;
+  color: black; 
+  background-color: #ffffff;
+  border: 1px solid black; 
+  border-spacing: 0px;
+  border-collapse: separate;
+}
+
+tr.jsuInfoTitleBig,th.jsuInfoTitleBig, td.jsuInfoTitleBig { 
+  background-color: blue; 
+  border: 1px solid black; 
+  color: white;
+  border-color: black;  
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 2px;
+}
+
+
+tr.jsuInfoTitle,th.jsuInfoTitle, td.jsuInfoTitle { 
+  background-color: #696969; 
+  border: 1px solid black; 
+  color: white;
+  border-color: black;  
+  font-size: 12px;
+  text-align: center;
+  font-family: Verdana;
+  font-weight: bold;
+  padding: 2px;
+}
+
+tr.jsuInfoAlt:nth-of-type(even) {
+   background-color:#FFFFFF;
+}
+tr.jsuInfoAlt:nth-of-type(odd) {
+   background-color: #F2F2F2;
+}
+
+
+td.jsuInfoRight, td.jsuInfoLeft, td.jsuInfoCenter,  td.jsuInfoAlr, td.jsuInfoOk, , td.jsuInfoGood, , td.jsuInfoErr{
+	padding-right: 5px;
+	border: 1px solid #404040; /* Black */
+}
+.jsuInfoCenter {
+  text-align: center!important;
+}
+
+td.jsuInfoRight{
+	text-align: right !important;
+}
+
+
+td.jsuInfoLeft {
+	text-align: left !important;
+}
+
+.jsuInfoAlr, l.jsuInfoErr {
+	color: #CD3333; /* Red */
+	font-weight: bold;
+}
+
+.jsuInfoOk {
+	color: #009900; /* Green */
+	font-weight: bold;
+}
+
+.jsuInfoWarn{
+	background: #ffffcc; /* Yellow */
+	color: black;
+    font-weight: bold; 
+}
+
+
+
+
+
 
 
 /*---
