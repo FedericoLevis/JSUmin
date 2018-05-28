@@ -1606,7 +1606,7 @@ Button for more "..."
 input.jsuMore{ /* More img  */
   background:url('https://raw.github.com/FedericoLevis/JSU/master/images/more.png') no-repeat center center; 
   /* background: #F5F5F5 url(../../images/more.png) no-repeat center center; */
-  background-color: #19E4DD;
+  background-color: #F5F5F5;
   height: 12px;
   width: 30px;
   margin-left: 2px; 
