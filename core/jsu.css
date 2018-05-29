@@ -1700,7 +1700,7 @@ td.jsuInfoLeft {
 	text-align: left !important;
 }
 
-.jsuInfoAlr, l.jsuInfoErr {
+.jsuInfoErr , .jsuInfoAlr {
 	color: #CD3333; /* Red */
 	font-weight: bold;
 }
@@ -1715,9 +1715,6 @@ td.jsuInfoLeft {
 	color: black;
     font-weight: bold; 
 }
-
-
-
 
 
 
